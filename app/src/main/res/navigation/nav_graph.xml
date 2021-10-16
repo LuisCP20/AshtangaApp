@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.ashtanga1.ui.main.MainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_sequenceMenuFragment2"
+            app:destination="@id/sequenceMenuFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/sequenceQuestionFragment"
+        android:name="com.example.ashtanga1.ui.main.SequenceQuestionFragment"
+        android:label="SequenceQuestionFragment"
+        tools:layout="@layout/fragment_sequence_question">
+        <action
+            android:id="@+id/action_sequenceQuestionFragment_to_finishedFragment2"
+            app:destination="@id/finishedFragment2" />
+        <action
+            android:id="@+id/action_sequenceQuestionFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_sequenceQuestionFragment_to_techniqueQuestionFragment"
+            app:destination="@id/techniqueQuestionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sequenceMenuFragment2"
+        android:name="com.example.ashtanga1.ui.main.SequenceMenuFragment"
+        android:label="fragment_sequence_menu"
+        tools:layout="@layout/fragment_sequence_menu" >
+        <action
+            android:id="@+id/action_sequenceMenuFragment2_to_techniqueMenuFragment"
+            app:destination="@id/techniqueMenuFragment" />
+        <action
+            android:id="@+id/action_sequenceMenuFragment2_to_sequenceQuestionFragment"
+            app:destination="@id/sequenceQuestionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/techniqueMenuFragment"
+        android:name="com.example.ashtanga1.ui.main.TechniqueMenuFragment"
+        android:label="TechniqueMenuFragment"
+        tools:layout="@layout/fragment_technique_menu">
+        <action
+            android:id="@+id/action_techniqueMenuFragment_to_techniqueQuestionFragment"
+            app:destination="@id/techniqueQuestionFragment" />
+        <action
+            android:id="@+id/action_techniqueMenuFragment_to_postureQuestionFragment2"
+            app:destination="@id/postureQuestionFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/techniqueQuestionFragment"
+        android:name="com.example.ashtanga1.ui.main.TechniqueQuestionFragment"
+        android:label="fragment_sequence_question"
+        tools:layout="@layout/fragment_technique_question" >
+        <action
+            android:id="@+id/action_techniqueQuestionFragment_to_finishedFragment2"
+            app:destination="@id/finishedFragment2" />
+        <action
+            android:id="@+id/action_techniqueQuestionFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_techniqueQuestionFragment_to_sequenceQuestionFragment"
+            app:destination="@id/sequenceQuestionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/finishedFragment2"
+        android:name="com.example.ashtanga1.ui.main.FinishedFragment"
+        android:label="FinishedFragment"
+        tools:layout="@layout/fragment_finished">
+        <action
+            android:id="@+id/action_finishedFragment2_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postureQuestionFragment2"
+        android:name="com.example.ashtanga1.ui.main.PostureQuestionFragment"
+        android:label="PostureQuestionFragment"
+        tools:layout="@layout/fragment_posture_question">
+        <action
+            android:id="@+id/action_postureQuestionFragment2_to_finishedFragment2"
+            app:destination="@id/finishedFragment2" />
+        <action
+            android:id="@+id/action_postureQuestionFragment2_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+</navigation>

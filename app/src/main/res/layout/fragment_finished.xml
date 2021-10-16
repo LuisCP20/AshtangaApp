@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.SequenceMenuFragment">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:layout_marginBottom="12dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/finished_textView"
+            android:text="@string/finished"
+            android:textAppearance="?attr/textAppearanceHeadline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="64dp"
+            />
+        <TextView
+            android:id="@+id/accuracy_textView"
+            tools:text="7/14"
+            android:textAppearance="?attr/textAppearanceHeadline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="64dp"
+            />
+        <TextView
+            android:id="@+id/percentage_textView"
+            tools:text="50%"
+            android:textAppearance="?attr/textAppearanceHeadline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="64dp"
+            />
+
+        <Button
+            android:id="@+id/exit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="128dp"
+            android:layout_marginBottom="16dp"
+            android:minWidth="250dp"
+            android:text="@string/exit"
+            android:textAppearance="?attr/textAppearanceHeadline6" />
+
+
+
+    </LinearLayout>
+</ScrollView>

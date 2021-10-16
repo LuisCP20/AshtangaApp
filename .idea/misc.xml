@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Luis Diego/U/Proyecto_electrico/app/src/main/res/layout/main_fragment.xml" value="0.28252351097178685" />
+        <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.3828125" />
+        <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/fragment_finished.xml" value="0.36666666666666664" />
+        <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/fragment_posture_question.xml" value="0.36666666666666664" />
+        <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/fragment_sequence_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/fragment_sequence_question.xml" value="0.36666666666666664" />
+        <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/fragment_technique_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/fragment_technique_question.xml" value="0.36666666666666664" />
+        <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/main_activity.xml" value="0.36666666666666664" />
+        <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/main_fragment.xml" value="0.32518115942028986" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

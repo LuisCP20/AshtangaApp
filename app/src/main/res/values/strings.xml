@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Ashtanga1</string>
+    <string name="postures">Postures</string>
+    <string name="sequence">Sequence</string>
+    <string name="posture_with_sequence">Posture with Sequence</string>
+    <string name="review">Review</string>
+    <string name="decorative_yoga_posture">Decorative yoga posture</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="finishing_sequence">Finishing Sequence</string>
+    <string name="primary_sequence">Primary Sequence</string>
+    <string name="standing_sequence">Standing Sequence</string>
+    <string name="suryanamaskara_b">Suryanamaskara B</string>
+    <string name="suryanamaskara_a">Suryanamaskara A</string>
+    <string name="complete_series">Complete Series</string>
+    <string name="name">Name</string>
+    <string name="bandha">Bandha</string>
+    <string name="drishti">Drishti</string>
+    <string name="posture">Posture</string>
+    <string name="random">Random</string>
+    <string name="choose_a_technique">Choose a technique</string>
+    <string name="choose_a_sequence">Choose a sequence</string>
+    <string name="exit_button">Exit button</string>
+    <string name="choose_next_asana">Choose next asana</string>
+    <string name="choose_right_asana">Choose right asana</string>
+    <string name="exit">Exit</string>
+    <string name="finished">Finished!</string>
+</resources>
