@@ -25,4 +25,6 @@
     <string name="choose_right_asana">Choose right asana</string>
     <string name="exit">Exit</string>
     <string name="finished">Finished!</string>
+
+    <string name="posture_count">%d / %d </string>
 </resources>

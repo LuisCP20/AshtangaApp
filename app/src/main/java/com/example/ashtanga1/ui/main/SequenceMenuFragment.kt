@@ -59,14 +59,7 @@ class SequenceMenuFragment : Fragment() {
     }
 
     fun goToNextScreen(sequence: Int){
-        when (sequence){
-            0 -> sharedViewModel.setSequence(sharedViewModel.sequenceMenu[0])
-            1 -> sharedViewModel.setSequence(sharedViewModel.sequenceMenu[1])
-            2 -> sharedViewModel.setSequence(sharedViewModel.sequenceMenu[2])
-            3 -> sharedViewModel.setSequence(sharedViewModel.sequenceMenu[3])
-            4 -> sharedViewModel.setSequence(sharedViewModel.sequenceMenu[4])
-            5 -> sharedViewModel.setSequence(sharedViewModel.sequenceMenu[5])
-        }
+        sharedViewModel.setSequence(sequence)
         selectNextScreen()
     }
 
