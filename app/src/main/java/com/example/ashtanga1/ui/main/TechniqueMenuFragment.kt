@@ -61,6 +61,29 @@ class TechniqueMenuFragment : Fragment() {
         findNavController().navigate(R.id.action_techniqueMenuFragment_to_techniqueQuestionFragment)
     }
 
+    fun goToNextScreen(technique: Int){
+        when (technique){
+            0 -> sharedViewModel.setTechnique(sharedViewModel.techniqueMenu[0])
+            1 -> sharedViewModel.setTechnique(sharedViewModel.techniqueMenu[1])
+            2 -> sharedViewModel.setTechnique(sharedViewModel.techniqueMenu[2])
+            3 -> sharedViewModel.setTechnique(sharedViewModel.techniqueMenu[3])
+            4 -> sharedViewModel.setTechnique(sharedViewModel.techniqueMenu[4])
+        }
+        selectNextScreen()
+    }
+
+    private fun selectNextScreen(){
+        when (sharedViewModel.technique.value.toString()){
+            sharedViewModel.techniqueMenu[0] -> findNavController().navigate(R.id.action_techniqueMenuFragment_to_techniqueQuestionFragment)
+            sharedViewModel.techniqueMenu[1] -> findNavController().navigate(R.id.action_techniqueMenuFragment_to_techniqueQuestionFragment)
+            sharedViewModel.techniqueMenu[2] -> findNavController().navigate(R.id.action_techniqueMenuFragment_to_techniqueQuestionFragment)
+            sharedViewModel.techniqueMenu[3] -> findNavController().navigate(R.id.action_techniqueMenuFragment_to_postureQuestionFragment2)
+            sharedViewModel.techniqueMenu[4] -> findNavController().navigate(R.id.action_techniqueMenuFragment_to_postureQuestionFragment2)
+            else -> findNavController().navigate(R.id.action_techniqueMenuFragment_to_postureQuestionFragment2)
+            // TODO: revisar otros casos
+        }
+    }
+
     companion object {
         /**
          * Use this factory method to create a new instance of

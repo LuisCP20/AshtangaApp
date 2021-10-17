@@ -41,7 +41,7 @@
 
             <Button
                 android:id="@+id/name_button"
-                android:onClick="@{() -> fragmentTechniqueMenu.goToNextScreen()}"
+                android:onClick="@{() -> fragmentTechniqueMenu.goToNextScreen(0)}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -53,7 +53,7 @@
 
             <Button
                 android:id="@+id/bandha_button"
-                android:onClick="@{() -> fragmentTechniqueMenu.goToNextScreen()}"
+                android:onClick="@{() -> fragmentTechniqueMenu.goToNextScreen(1)}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -65,7 +65,7 @@
 
             <Button
                 android:id="@+id/Drishti_button"
-                android:onClick="@{() -> fragmentTechniqueMenu.goToNextScreen()}"
+                android:onClick="@{() -> fragmentTechniqueMenu.goToNextScreen(2)}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -77,7 +77,7 @@
 
             <Button
                 android:id="@+id/posture_button"
-                android:onClick="@{() -> fragmentTechniqueMenu.goToNextScreen()}"
+                android:onClick="@{() -> fragmentTechniqueMenu.goToNextScreen(3)}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -89,7 +89,7 @@
 
             <Button
                 android:id="@+id/random_button"
-                android:onClick="@{() -> fragmentTechniqueMenu.goToNextScreen()}"
+                android:onClick="@{() -> fragmentTechniqueMenu.goToNextScreen(4)}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

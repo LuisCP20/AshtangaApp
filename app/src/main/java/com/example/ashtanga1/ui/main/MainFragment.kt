@@ -20,6 +20,7 @@ class MainFragment : Fragment() {
 
     // Data binding with the XML
     private var binding: MainFragmentBinding? = null
+    private val sharedViewModel: MainViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,8 +42,19 @@ class MainFragment : Fragment() {
         binding = null
     }
 
-    fun goToNextScreen(){
-        findNavController().navigate(R.id.action_mainFragment_to_sequenceMenuFragment2)
+    fun goToNextScreen(mode: Int){
+        when (mode) {
+            0 -> {findNavController().navigate(R.id.action_mainFragment_to_sequenceMenuFragment2)
+                sharedViewModel.setMode(sharedViewModel.mainMenu[0])}
+            1 -> {findNavController().navigate(R.id.action_mainFragment_to_sequenceMenuFragment2)
+                sharedViewModel.setMode(sharedViewModel.mainMenu[1])}
+            2 -> {findNavController().navigate(R.id.action_mainFragment_to_sequenceMenuFragment2)
+                sharedViewModel.setMode(sharedViewModel.mainMenu[2])}
+            3 -> {findNavController().navigate(R.id.action_mainFragment_to_placeholder)
+                // TODO: Ir a ventana de fichas
+                sharedViewModel.setMode(sharedViewModel.mainMenu[3])}
+            else    -> sharedViewModel.setMode("")
+        }
     }
 
 }

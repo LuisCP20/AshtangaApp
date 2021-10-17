@@ -7,6 +7,10 @@
 
     <data>
         <variable
+            name="viewModel"
+            type="com.example.ashtanga1.ui.main.MainViewModel" />
+
+        <variable
             name="mainFragment"
             type="com.example.ashtanga1.ui.main.MainFragment" />
     </data>
@@ -45,7 +49,7 @@
 
             <Button
                 android:id="@+id/postures_main_button"
-                android:onClick="@{() -> mainFragment.goToNextScreen()}"
+                android:onClick="@{() -> mainFragment.goToNextScreen(0)}"
                 android:layout_marginLeft="32dp"
                 android:layout_marginRight="32dp"
                 android:layout_width="match_parent"
@@ -55,7 +59,7 @@
 
             <Button
                 android:id="@+id/sequence_main_button"
-                android:onClick="@{() -> mainFragment.goToNextScreen()}"
+                android:onClick="@{() -> mainFragment.goToNextScreen(1)}"
                 android:layout_marginLeft="32dp"
                 android:layout_marginRight="32dp"
                 android:layout_marginTop="8dp"
@@ -66,7 +70,7 @@
 
             <Button
                 android:id="@+id/combined_main_button"
-                android:onClick="@{() -> mainFragment.goToNextScreen()}"
+                android:onClick="@{() -> mainFragment.goToNextScreen(2)}"
                 android:layout_marginLeft="32dp"
                 android:layout_marginRight="32dp"
                 android:layout_marginTop="8dp"
@@ -77,7 +81,7 @@
 
             <Button
                 android:id="@+id/review_main_button"
-                android:onClick="@{() -> mainFragment.goToNextScreen()}"
+                android:onClick="@{() -> mainFragment.goToNextScreen(3)}"
                 android:layout_marginLeft="32dp"
                 android:layout_marginRight="32dp"
                 android:layout_marginTop="8dp"

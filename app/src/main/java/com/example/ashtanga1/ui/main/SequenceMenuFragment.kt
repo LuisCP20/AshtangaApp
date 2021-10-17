@@ -1,10 +1,12 @@
 package com.example.ashtanga1.ui.main
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.ashtanga1.R
@@ -56,10 +58,27 @@ class SequenceMenuFragment : Fragment() {
         }
     }
 
-    fun goToNextScreen(){
-        findNavController().navigate(R.id.action_sequenceMenuFragment2_to_techniqueMenuFragment)
+    fun goToNextScreen(sequence: Int){
+        when (sequence){
+            0 -> sharedViewModel.setSequence(sharedViewModel.sequenceMenu[0])
+            1 -> sharedViewModel.setSequence(sharedViewModel.sequenceMenu[1])
+            2 -> sharedViewModel.setSequence(sharedViewModel.sequenceMenu[2])
+            3 -> sharedViewModel.setSequence(sharedViewModel.sequenceMenu[3])
+            4 -> sharedViewModel.setSequence(sharedViewModel.sequenceMenu[4])
+            5 -> sharedViewModel.setSequence(sharedViewModel.sequenceMenu[5])
+        }
+        selectNextScreen()
     }
 
+    private fun selectNextScreen(){
+        when (sharedViewModel.mode.value.toString()){
+            sharedViewModel.mainMenu[0] -> findNavController().navigate(R.id.action_sequenceMenuFragment2_to_techniqueMenuFragment)
+            sharedViewModel.mainMenu[1] -> findNavController().navigate(R.id.action_sequenceMenuFragment2_to_sequenceQuestionFragment)
+            sharedViewModel.mainMenu[2] -> findNavController().navigate(R.id.action_sequenceMenuFragment2_to_sequenceQuestionFragment)
+            else -> findNavController().navigate(R.id.action_sequenceMenuFragment2_to_techniqueMenuFragment)
+            // TODO: revisar otros casos
+        }
+    }
     companion object {
         /**
          * Use this factory method to create a new instance of

@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_mainFragment_to_sequenceMenuFragment2"
             app:destination="@id/sequenceMenuFragment2" />
+        <action
+            android:id="@+id/action_mainFragment_to_placeholder"
+            app:destination="@id/placeholder" />
     </fragment>
     <fragment
         android:id="@+id/sequenceQuestionFragment"
@@ -92,4 +95,5 @@
             android:id="@+id/action_postureQuestionFragment2_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
+    <fragment android:id="@+id/placeholder" />
 </navigation>

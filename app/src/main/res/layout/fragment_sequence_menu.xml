@@ -41,7 +41,7 @@
 
             <Button
                 android:id="@+id/Suryanamaskara_A_button"
-                android:onClick="@{() -> fragmentSequenceMenu.goToNextScreen()}"
+                android:onClick="@{() -> fragmentSequenceMenu.goToNextScreen(0)}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -53,7 +53,7 @@
 
             <Button
                 android:id="@+id/Suryanamaskara_B_button"
-                android:onClick="@{() -> fragmentSequenceMenu.goToNextScreen()}"
+                android:onClick="@{() -> fragmentSequenceMenu.goToNextScreen(1)}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -65,7 +65,7 @@
 
             <Button
                 android:id="@+id/standing_sequence_button"
-                android:onClick="@{() -> fragmentSequenceMenu.goToNextScreen()}"
+                android:onClick="@{() -> fragmentSequenceMenu.goToNextScreen(2)}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -77,7 +77,7 @@
 
             <Button
                 android:id="@+id/primary_sequence_button"
-                android:onClick="@{() -> fragmentSequenceMenu.goToNextScreen()}"
+                android:onClick="@{() -> fragmentSequenceMenu.goToNextScreen(3)}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -89,7 +89,7 @@
 
             <Button
                 android:id="@+id/finishing_sequence_button"
-                android:onClick="@{() -> fragmentSequenceMenu.goToNextScreen()}"
+                android:onClick="@{() -> fragmentSequenceMenu.goToNextScreen(4)}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -101,7 +101,7 @@
 
             <Button
                 android:id="@+id/complete_series_button"
-                android:onClick="@{() -> fragmentSequenceMenu.goToNextScreen()}"
+                android:onClick="@{() -> fragmentSequenceMenu.goToNextScreen(5)}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
