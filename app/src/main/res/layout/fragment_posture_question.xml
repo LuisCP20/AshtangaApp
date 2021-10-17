@@ -4,7 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="fragmentPostureQuestion"
+            type="com.example.ashtanga1.ui.main.PostureQuestionFragment" />
+        <variable
+            name="viewModel"
+            type="com.example.ashtanga1.ui.main.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -47,6 +52,7 @@
 
         <ImageButton
             android:id="@+id/option1_imageButton"
+            android:onClick="@{() -> fragmentPostureQuestion.checkAnswer()}"
             android:padding="2dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
@@ -62,6 +68,7 @@
 
         <ImageButton
             android:id="@+id/option2_imageButton"
+            android:onClick="@{() -> fragmentPostureQuestion.checkAnswer()}"
             android:padding="2dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
@@ -77,6 +84,7 @@
 
         <ImageButton
             android:id="@+id/option3_imageButton"
+            android:onClick="@{() -> fragmentPostureQuestion.checkAnswer()}"
             android:padding="2dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
@@ -92,6 +100,7 @@
 
         <ImageButton
             android:id="@+id/option4_imageButton"
+            android:onClick="@{() -> fragmentPostureQuestion.checkAnswer()}"
             android:padding="2dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
@@ -106,7 +115,8 @@
             tools:ignore="SpeakableTextPresentCheck,ContentDescription" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/exitButton"
+            android:onClick="@{() -> fragmentPostureQuestion.exit()}"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="12dp"

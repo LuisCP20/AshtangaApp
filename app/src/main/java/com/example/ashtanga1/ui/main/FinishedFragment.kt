@@ -5,7 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.ashtanga1.R
+import androidx.fragment.app.activityViewModels
+import com.example.ashtanga1.databinding.FragmentFinishedBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,6 +23,9 @@ class FinishedFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private val sharedViewModel: MainViewModel by activityViewModels()
+    private var binding: FragmentFinishedBinding? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -35,8 +39,28 @@ class FinishedFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_finished, container, false)
+        val fragmentBinding = FragmentFinishedBinding.inflate(inflater, container,false)
+        binding = fragmentBinding
+        return fragmentBinding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Binding ov variables and lifecycle owner.
+        binding?.apply {
+            lifecycleOwner = viewLifecycleOwner
+            viewModel = sharedViewModel
+            fragmentFinished = this@FinishedFragment
+        }
+    }
+
+    fun exit(){
+        // TODO: Volver al inicio, resetear variables y borrar el backstack
+
+    }
+
+    // TODO: funcion que calcule el puntaje. Aqui o en el sharedViewModel
 
     companion object {
         /**
