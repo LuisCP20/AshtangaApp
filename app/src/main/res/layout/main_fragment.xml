@@ -1,88 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.main.MainFragment">
+    tools:context = ".ui.main.MainFragment">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:contentDescription="@string/decorative_yoga_posture"
-        tools:srcCompat="@drawable/asanad"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
+        <variable
+            name="mainFragment"
+            type="com.example.ashtanga1.ui.main.MainFragment" />
+    </data>
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="400dp"
-        android:layout_height="300dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginEnd="64dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
 
-        <Button
-            android:id="@+id/postures_main_button"
-            android:layout_marginLeft="32dp"
-            android:layout_marginRight="32dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/postures"
-            android:textAppearance="?attr/textAppearanceHeadline6"/>
-
-        <Button
-            android:id="@+id/sequence_main_button"
-            android:layout_marginLeft="32dp"
-            android:layout_marginRight="32dp"
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:layout_width="match_parent"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="@string/decorative_yoga_posture"
+            tools:srcCompat="@drawable/asanad"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="400dp"
+            android:layout_height="300dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginEnd="64dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/postures_main_button"
+                android:onClick="@{() -> mainFragment.goToNextScreen()}"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/postures"
+                android:textAppearance="?attr/textAppearanceHeadline6" />
+
+            <Button
+                android:id="@+id/sequence_main_button"
+                android:onClick="@{() -> mainFragment.goToNextScreen()}"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sequence"
+                android:textAppearance="?attr/textAppearanceHeadline6" />
+
+            <Button
+                android:id="@+id/combined_main_button"
+                android:onClick="@{() -> mainFragment.goToNextScreen()}"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/posture_with_sequence"
+                android:textAppearance="?attr/textAppearanceHeadline6" />
+
+            <Button
+                android:id="@+id/review_main_button"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/review"
+                android:textAppearance="?attr/textAppearanceHeadline6" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/title_textView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/sequence"
-            android:textAppearance="?attr/textAppearanceHeadline6"/>
+            android:text="@string/app_name"
+            app:layout_constraintBottom_toTopOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/combined_main_button"
-            android:layout_marginLeft="32dp"
-            android:layout_marginRight="32dp"
-            android:layout_marginTop="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/posture_with_sequence"
-            android:textAppearance="?attr/textAppearanceHeadline6"/>
-
-        <Button
-            android:id="@+id/review_main_button"
-            android:layout_marginLeft="32dp"
-            android:layout_marginRight="32dp"
-            android:layout_marginTop="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/review"
-            android:textAppearance="?attr/textAppearanceHeadline6"/>
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/title_textView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="parent"
-        />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
