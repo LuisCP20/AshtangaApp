@@ -16,7 +16,7 @@ class MainFragment : Fragment() {
         fun newInstance() = MainFragment()
     }
 
-    private val viewModel: MainViewModel by activityViewModels()
+    //private val sharedViewModel: MainViewModel by activityViewModels()
 
     // Data binding with the XML
     private var binding: MainFragmentBinding? = null

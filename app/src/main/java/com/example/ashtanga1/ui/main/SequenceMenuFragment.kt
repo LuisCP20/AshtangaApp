@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.ashtanga1.R
+import com.example.ashtanga1.databinding.FragmentSequenceMenuBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,6 +25,9 @@ class SequenceMenuFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private val sharedViewModel: MainViewModel by activityViewModels()
+    private var binding: FragmentSequenceMenuBinding? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -35,7 +41,23 @@ class SequenceMenuFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sequence_menu, container, false)
+        val fragmentBinding = FragmentSequenceMenuBinding.inflate(inflater, container, false)
+        binding = fragmentBinding
+        return fragmentBinding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding?.apply {
+            lifecycleOwner = viewLifecycleOwner
+            viewModel = sharedViewModel
+            fragmentSequenceMenu = this@SequenceMenuFragment
+        }
+    }
+
+    fun goToNextScreen(){
+        findNavController().navigate(R.id.action_sequenceMenuFragment2_to_techniqueMenuFragment)
     }
 
     companion object {

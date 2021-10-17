@@ -1,181 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/ConstraintLayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.main.TechniqueQuestionFragment" >
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/sequence_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/choose_next_asana"
-        android:textAllCaps="true"
-        android:textAppearance="?attr/textAppearanceHeadline6"
-        app:layout_constraintBottom_toTopOf="@+id/Current_posture_imageView"
-        app:layout_constraintEnd_toStartOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="0.513"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.166" />
+    <data>
 
-    <ImageView
-        android:id="@+id/Current_posture_imageView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="128dp"
-        android:contentDescription="@string/decorative_yoga_posture"
-        app:layout_constraintBottom_toBottomOf="@+id/ConstraintLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/asanad" />
-    <TextView
-        android:id="@+id/current_posture_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        tools:text="Current Posture Name"
-        app:layout_constraintEnd_toEndOf="@id/Current_posture_imageView"
-        app:layout_constraintStart_toStartOf="@id/Current_posture_imageView"
-        app:layout_constraintTop_toBottomOf="@id/Current_posture_imageView" />
+    </data>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.main.TechniqueQuestionFragment">
 
-    <ImageButton
-        android:id="@+id/option1_imageButton"
-        android:padding="2dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:textAppearance="?attr/textAppearanceHeadline6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Current_posture_imageView"
-        tools:srcCompat="@drawable/asanad"
-        tools:ignore="SpeakableTextPresentCheck,ContentDescription,ImageContrastCheck" />
-    <TextView
-        android:id="@+id/option1_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        tools:text="Option 1 Name"
-        app:layout_constraintEnd_toEndOf="@+id/option1_imageButton"
-        app:layout_constraintStart_toStartOf="@+id/option1_imageButton"
-        app:layout_constraintTop_toBottomOf="@+id/option1_imageButton" />
+        <TextView
+            android:id="@+id/sequence_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/choose_next_asana"
+            android:textAllCaps="true"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            app:layout_constraintBottom_toTopOf="@+id/Current_posture_imageView"
+            app:layout_constraintEnd_toStartOf="@+id/textView"
+            app:layout_constraintHorizontal_bias="0.513"
+            app:layout_constraintStart_toEndOf="@+id/imageButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.166" />
 
-    <ImageButton
-        android:id="@+id/option2_imageButton"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="32dp"
-        android:adjustViewBounds="true"
-        android:padding="2dp"
-        android:scaleType="fitCenter"
-        android:textAppearance="?attr/textAppearanceHeadline6"
-        app:layout_constraintBottom_toTopOf="@+id/Current_posture_imageView"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="SpeakableTextPresentCheck,ContentDescription"
-        tools:srcCompat="@drawable/asanad" />
+        <ImageView
+            android:id="@+id/Current_posture_imageView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="128dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="128dp"
+            android:contentDescription="@string/decorative_yoga_posture"
+            app:layout_constraintBottom_toBottomOf="@+id/ConstraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/asanad" />
 
-    <TextView
-        android:id="@+id/option2_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        tools:text="Option 2 Name"
-        app:layout_constraintEnd_toEndOf="@+id/option2_imageButton"
-        app:layout_constraintStart_toStartOf="@+id/option2_imageButton"
-        app:layout_constraintTop_toBottomOf="@+id/option2_imageButton" />
-
-    <ImageButton
-        android:id="@+id/option3_imageButton"
-        android:padding="2dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Current_posture_imageView"
-        android:textAppearance="?attr/textAppearanceHeadline6"
-        tools:srcCompat="@drawable/asanad"
-        tools:ignore="SpeakableTextPresentCheck,ContentDescription"
-        />
-
-    <TextView
-        android:id="@+id/option3_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        tools:text="Option 3 Name"
-        app:layout_constraintEnd_toEndOf="@+id/option3_imageButton"
-        app:layout_constraintStart_toStartOf="@+id/option3_imageButton"
-        app:layout_constraintTop_toBottomOf="@+id/option3_imageButton" />
+        <TextView
+            android:id="@+id/current_posture_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            tools:text="Current Posture Name"
+            app:layout_constraintEnd_toEndOf="@id/Current_posture_imageView"
+            app:layout_constraintStart_toStartOf="@id/Current_posture_imageView"
+            app:layout_constraintTop_toBottomOf="@id/Current_posture_imageView" />
 
 
-    <ImageButton
-        android:id="@+id/option4_imageButton"
-        android:padding="2dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/Current_posture_imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:textAppearance="?attr/textAppearanceHeadline6"
-        tools:srcCompat="@drawable/asanad"
-        tools:ignore="SpeakableTextPresentCheck,ContentDescription"
-        />
+        <ImageButton
+            android:id="@+id/option1_imageButton"
+            android:padding="2dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Current_posture_imageView"
+            tools:srcCompat="@drawable/asanad"
+            tools:ignore="SpeakableTextPresentCheck,ContentDescription,ImageContrastCheck" />
 
-    <TextView
-        android:id="@+id/option4_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        tools:text="Option 4 Name"
-        app:layout_constraintEnd_toEndOf="@+id/option4_imageButton"
-        app:layout_constraintStart_toStartOf="@+id/option4_imageButton"
-        app:layout_constraintTop_toBottomOf="@+id/option4_imageButton" />
+        <TextView
+            android:id="@+id/option1_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            tools:text="Option 1 Name"
+            app:layout_constraintEnd_toEndOf="@+id/option1_imageButton"
+            app:layout_constraintStart_toStartOf="@+id/option1_imageButton"
+            app:layout_constraintTop_toBottomOf="@+id/option1_imageButton" />
+
+        <ImageButton
+            android:id="@+id/option2_imageButton"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="32dp"
+            android:adjustViewBounds="true"
+            android:padding="2dp"
+            android:scaleType="fitCenter"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            app:layout_constraintBottom_toTopOf="@+id/Current_posture_imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="SpeakableTextPresentCheck,ContentDescription"
+            tools:srcCompat="@drawable/asanad" />
+
+        <TextView
+            android:id="@+id/option2_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            tools:text="Option 2 Name"
+            app:layout_constraintEnd_toEndOf="@+id/option2_imageButton"
+            app:layout_constraintStart_toStartOf="@+id/option2_imageButton"
+            app:layout_constraintTop_toBottomOf="@+id/option2_imageButton" />
+
+        <ImageButton
+            android:id="@+id/option3_imageButton"
+            android:padding="2dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Current_posture_imageView"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            tools:srcCompat="@drawable/asanad"
+            tools:ignore="SpeakableTextPresentCheck,ContentDescription" />
+
+        <TextView
+            android:id="@+id/option3_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            tools:text="Option 3 Name"
+            app:layout_constraintEnd_toEndOf="@+id/option3_imageButton"
+            app:layout_constraintStart_toStartOf="@+id/option3_imageButton"
+            app:layout_constraintTop_toBottomOf="@+id/option3_imageButton" />
 
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
-        android:src="@drawable/ic_baseline_close_24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck,ContentDescription"
-        />
+        <ImageButton
+            android:id="@+id/option4_imageButton"
+            android:padding="2dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/Current_posture_imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            tools:srcCompat="@drawable/asanad"
+            tools:ignore="SpeakableTextPresentCheck,ContentDescription" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="12dp"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textAppearance="?attr/textAppearanceHeadline4"
-        tools:text="5/14" />
+        <TextView
+            android:id="@+id/option4_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            tools:text="Option 4 Name"
+            app:layout_constraintEnd_toEndOf="@+id/option4_imageButton"
+            app:layout_constraintStart_toStartOf="@+id/option4_imageButton"
+            app:layout_constraintTop_toBottomOf="@+id/option4_imageButton" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_baseline_close_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck,ContentDescription" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textAppearance="?attr/textAppearanceHeadline4"
+            tools:text="5/14" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
 

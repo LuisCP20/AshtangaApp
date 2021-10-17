@@ -52,6 +52,9 @@
         <action
             android:id="@+id/action_techniqueMenuFragment_to_postureQuestionFragment2"
             app:destination="@id/postureQuestionFragment2" />
+        <action
+            android:id="@+id/action_techniqueMenuFragment_to_sequenceMenuFragment2"
+            app:destination="@id/sequenceMenuFragment2" />
     </fragment>
     <fragment
         android:id="@+id/techniqueQuestionFragment"
