@@ -46,7 +46,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@drawable/asanad" />
+            app:imageResource = "@{viewModel.asana.postureImageResourceId}"
+            tools:srcCompat="@drawable/sa1" />
 
         <TextView
             android:id="@+id/current_posture_textView"
@@ -61,7 +62,7 @@
 
         <ImageButton
             android:id="@+id/option1_imageButton"
-            android:onClick="@{() -> fragmentSequenceQuestion.checkAnswer()}"
+            android:onClick="@{() -> fragmentSequenceQuestion.checkAnswer(viewModel.asanaOptions.get(0).postureImageResourceId)}"
             android:padding="2dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
@@ -72,6 +73,7 @@
             android:textAppearance="?attr/textAppearanceHeadline6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Current_posture_imageView"
+            app:imageResource = "@{viewModel.asanaOptions.get(0).postureImageResourceId}"
             tools:srcCompat="@drawable/asanad"
             tools:ignore="SpeakableTextPresentCheck,ContentDescription,ImageContrastCheck" />
 
@@ -87,7 +89,7 @@
 
         <ImageButton
             android:id="@+id/option2_imageButton"
-            android:onClick="@{() -> fragmentSequenceQuestion.checkAnswer()}"
+            android:onClick="@{() -> fragmentSequenceQuestion.checkAnswer(viewModel.asanaOptions.get(1).postureImageResourceId)}"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginStart="16dp"
@@ -98,6 +100,7 @@
             android:textAppearance="?attr/textAppearanceHeadline6"
             app:layout_constraintBottom_toTopOf="@+id/Current_posture_imageView"
             app:layout_constraintStart_toStartOf="parent"
+            app:imageResource = "@{viewModel.asanaOptions.get(1).postureImageResourceId}"
             tools:ignore="SpeakableTextPresentCheck,ContentDescription"
             tools:srcCompat="@drawable/asanad" />
 
@@ -113,7 +116,7 @@
 
         <ImageButton
             android:id="@+id/option3_imageButton"
-            android:onClick="@{() -> fragmentSequenceQuestion.checkAnswer()}"
+            android:onClick="@{() -> fragmentSequenceQuestion.checkAnswer(viewModel.asanaOptions.get(2).postureImageResourceId)}"
             android:padding="2dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
@@ -124,6 +127,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Current_posture_imageView"
             android:textAppearance="?attr/textAppearanceHeadline6"
+            app:imageResource = "@{viewModel.asanaOptions.get(2).postureImageResourceId}"
             tools:srcCompat="@drawable/asanad"
             tools:ignore="SpeakableTextPresentCheck,ContentDescription" />
 
@@ -140,7 +144,7 @@
 
         <ImageButton
             android:id="@+id/option4_imageButton"
-            android:onClick="@{() -> fragmentSequenceQuestion.checkAnswer()}"
+            android:onClick="@{() -> fragmentSequenceQuestion.checkAnswer(viewModel.asanaOptions.get(3).postureImageResourceId)}"
             android:padding="2dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
@@ -151,6 +155,7 @@
             app:layout_constraintBottom_toTopOf="@+id/Current_posture_imageView"
             app:layout_constraintEnd_toEndOf="parent"
             android:textAppearance="?attr/textAppearanceHeadline6"
+            app:imageResource = "@{viewModel.asanaOptions.get(3).postureImageResourceId}"
             tools:srcCompat="@drawable/asanad"
             tools:ignore="SpeakableTextPresentCheck,ContentDescription" />
 
@@ -159,6 +164,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:text="@{viewModel.asanaOptions.get(3).name}"
             tools:text="Option 4 Name"
             app:layout_constraintEnd_toEndOf="@+id/option4_imageButton"
             app:layout_constraintStart_toStartOf="@+id/option4_imageButton"
@@ -189,7 +195,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:textAppearance="?attr/textAppearanceHeadline4"
-            android:text="@{@string/posture_count(viewModel.currentPosture, viewModel.seqLength)}"
+            android:text="@{@string/posture_count(viewModel.sequencePosition, viewModel.seqLength)}"
              />
 
 

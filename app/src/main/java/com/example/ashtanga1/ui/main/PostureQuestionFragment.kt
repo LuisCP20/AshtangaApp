@@ -61,6 +61,8 @@ class PostureQuestionFragment : Fragment() {
         findNavController().navigate(R.id.action_postureQuestionFragment2_to_finishedFragment2)
     }
 
+    fun loadOptions(){}
+
     fun exit(){
         // TODO: Volver al inicio, resetear variables y borrar el backstack
 

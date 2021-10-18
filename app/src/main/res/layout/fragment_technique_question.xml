@@ -27,7 +27,6 @@
             android:layout_marginTop="128dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="128dp"
-            android:contentDescription="@string/decorative_yoga_posture"
             app:layout_constraintBottom_toBottomOf="@+id/ConstraintLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -107,7 +106,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:textAppearance="?attr/textAppearanceHeadline4"
-            android:text="@{@string/posture_count(viewModel.currentPosture, viewModel.seqLength)}" />
+            android:text="@{@string/posture_count(viewModel.sequencePosition , viewModel.seqLength)}" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -29,7 +29,7 @@
             app:layout_constraintBottom_toTopOf="@+id/current_name_textView"
             app:layout_constraintEnd_toStartOf="@+id/textView"
             app:layout_constraintHorizontal_bias="0.513"
-            app:layout_constraintStart_toEndOf="@+id/imageButton"
+            app:layout_constraintStart_toEndOf="@+id/exitButton"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.166" />
 
@@ -48,6 +48,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:text="@{viewModel.asana.name}"
             tools:text="Current Name" />
 
         <ImageButton
@@ -138,7 +139,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:text="@{@string/posture_count(viewModel.currentPosture, viewModel.seqLength)}" />
+            android:text="@{@string/posture_count(viewModel.sequencePosition , viewModel.seqLength)}" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
