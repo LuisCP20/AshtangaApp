@@ -55,6 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             tools:text="Current Posture Name"
+            android:text="@{viewModel.asana.name}"
             app:layout_constraintEnd_toEndOf="@id/Current_posture_imageView"
             app:layout_constraintStart_toStartOf="@id/Current_posture_imageView"
             app:layout_constraintTop_toBottomOf="@id/Current_posture_imageView" />
@@ -83,6 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             tools:text="Option 1 Name"
+            android:text="@{viewModel.asanaOptions.get(0).name}"
             app:layout_constraintEnd_toEndOf="@+id/option1_imageButton"
             app:layout_constraintStart_toStartOf="@+id/option1_imageButton"
             app:layout_constraintTop_toBottomOf="@+id/option1_imageButton" />
@@ -110,6 +112,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             tools:text="Option 2 Name"
+            android:text="@{viewModel.asanaOptions.get(1).name}"
             app:layout_constraintEnd_toEndOf="@+id/option2_imageButton"
             app:layout_constraintStart_toStartOf="@+id/option2_imageButton"
             app:layout_constraintTop_toBottomOf="@+id/option2_imageButton" />
@@ -137,6 +140,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             tools:text="Option 3 Name"
+            android:text="@{viewModel.asanaOptions.get(2).name}"
             app:layout_constraintEnd_toEndOf="@+id/option3_imageButton"
             app:layout_constraintStart_toStartOf="@+id/option3_imageButton"
             app:layout_constraintTop_toBottomOf="@+id/option3_imageButton" />

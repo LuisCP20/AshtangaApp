@@ -155,7 +155,7 @@ class MainViewModel : ViewModel() {
                 , _sequencesData[0][Random.nextInt(0,_sequencesData[_sequenceIndex].size)])
 
             for(i in 1..3){ // Add wrong answers
-                while(options.count{it == options[i]} > 1){
+                while(options.count{it == options[i]} > 1 || options[i].name == _sequencesData[0][_sequencePosition.value!!-1].name){
                     options[i] = _sequencesData[0][Random.nextInt(0,_sequencesData[_sequenceIndex].size.minus(1))]
                 }
             }
