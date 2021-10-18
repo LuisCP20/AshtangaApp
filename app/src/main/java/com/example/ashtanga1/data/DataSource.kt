@@ -15,43 +15,43 @@ object DataSource {
         Asana(
             R.drawable.sa2,
         "Urdhva Hasthasana",
-        "dristhi1",
+        "dristhi2",
         "bandha1"),
 
         Asana(
             R.drawable.sa3,
             "Uttanasana",
-            "dristhi1",
+            "dristhi3",
             "bandha1"),
 
         Asana(
             R.drawable.sa4,
             "Ardha Uttanasana",
-            "dristhi1",
+            "dristhi4",
             "bandha1"),
 
         Asana(
             R.drawable.sa5,
             "Chaturanga Dandasana",
-            "dristhi1",
+            "dristhi5",
             "bandha1"),
 
         Asana(
             R.drawable.sa6,
             "Urdhva Mukha Svanasana",
-            "dristhi1",
+            "dristhi6",
             "bandha1"),
 
         Asana(
             R.drawable.sa7,
             "Adho Mukha Svanasana",
-            "dristhi1",
+            "dristhi7",
             "bandha1"),
 
         Asana(
             R.drawable.sa4,
             "Ardha Uttanasana",
-            "dristhi1",
+            "dristhi8",
             "bandha1"),
 
         Asana(

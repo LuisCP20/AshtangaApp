@@ -51,17 +51,17 @@
                 android:text="@string/name"
                 android:textAppearance="?attr/textAppearanceHeadline6" />
 
-            <Button
-                android:id="@+id/bandha_button"
-                android:onClick="@{() -> fragmentTechniqueMenu.goToNextScreen(1)}"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
-                android:minWidth="250dp"
-                android:text="@string/bandha"
-                android:textAppearance="?attr/textAppearanceHeadline6" />
+<!--            <Button-->
+<!--                android:id="@+id/bandha_button"-->
+<!--                android:onClick="@{() -> fragmentTechniqueMenu.goToNextScreen(1)}"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center_horizontal"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:layout_marginBottom="16dp"-->
+<!--                android:minWidth="250dp"-->
+<!--                android:text="@string/bandha"-->
+<!--                android:textAppearance="?attr/textAppearanceHeadline6" />-->
 
             <Button
                 android:id="@+id/Drishti_button"

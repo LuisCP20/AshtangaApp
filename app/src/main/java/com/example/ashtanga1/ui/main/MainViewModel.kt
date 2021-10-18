@@ -36,7 +36,9 @@ class MainViewModel : ViewModel() {
 
     // Selected sequence index
     // TODO: ese 3 a algo mas decente
-    private var _sequenceIndex: Int = 3
+    private var _sequenceIndex: Int = 5
+    private var _techniqueIndex: Int = 3
+    var techniqueIndex = _techniqueIndex
 
     // Selected technique
     private val _technique = MutableLiveData<String>()
@@ -69,6 +71,11 @@ class MainViewModel : ViewModel() {
     private val _asanaOptions = MutableLiveData<List<Asana>>()
     var asanaOptions = _asanaOptions
 
+    // Text options for buttons
+    private val _textOptions = MutableLiveData<MutableList<String>>()
+    var textOptions = _textOptions
+
+
     var finalScoreVar = ""
     //init{setAsana()}
 
@@ -80,20 +87,24 @@ class MainViewModel : ViewModel() {
         _sequenceIndex = selectedSequence
         _sequence.value = sequenceMenu[selectedSequence]
         _seqLength.value = _sequencesData[selectedSequence].size
-        setAsana()
-        setOptions()
-
+        if(_mode.value != mainMenu[0]){
+            setAsana()
+            setOptions()
+        }
     }
 
-    fun setTechnique(selectedTechnique: String){
-        _technique.value = selectedTechnique
+    fun setTechnique(selectedTechnique: Int){
+        _technique.value = techniqueMenu[selectedTechnique]
+        _techniqueIndex = selectedTechnique
+        setAsana()
+        setOptions()
     }
 
     fun correctAnswer(){
         _score.value = _score.value?.plus(1)
         _sequencePosition.value = _sequencePosition.value?.plus(1)
         if (_sequencePosition.value != _seqLength.value){
-            Log.d("Test","Correct ${_sequencePosition.value} ${_score.value}")
+            Log.d("Test","Correct. Pos: ${_sequencePosition.value} Score: ${_score.value}")
             setAsana()
             setOptions()}
     }
@@ -101,10 +112,30 @@ class MainViewModel : ViewModel() {
     fun incorrectAnswer(){
         _sequencePosition.value = _sequencePosition.value?.plus(1)
         if (_sequencePosition.value != _seqLength.value){
-            Log.d("Test","Incorrect ${_sequencePosition.value} ${_score.value}")
+            Log.d("Test","Incorrect. Pos: ${_sequencePosition.value} Score: ${_score.value}")
             setAsana()
             setOptions()}
     }
+
+    fun correctAnswerTechnique(){
+        _score.value = _score.value?.plus(1)
+        if (_sequencePosition.value != _seqLength.value){
+            _sequencePosition.value = _sequencePosition.value?.plus(1)
+            Log.d("Test","Correct. Pos: ${_sequencePosition.value} Score: ${_score.value}")
+            setAsana()
+            setOptions()}
+        else{_sequencePosition.value = _sequencePosition.value?.plus(1)}
+    }
+
+    fun incorrectAnswerTechnique(){
+        if (_sequencePosition.value != _seqLength.value){
+            _sequencePosition.value = _sequencePosition.value?.plus(1)
+            Log.d("Test","Incorrect. Pos: ${_sequencePosition.value} Score: ${_score.value}")
+            setAsana()
+            setOptions()}
+        else{_sequencePosition.value = _sequencePosition.value?.plus(1)}
+    }
+
 
     fun setAsana(){
         //sequenceMenu.indexOf(_sequencevalue)
@@ -120,7 +151,8 @@ class MainViewModel : ViewModel() {
 
     fun asanaPicker(sequence: Int, position: Int){
         _asana.value = _sequencesData[sequence][position-1]
-        _nextAsana.value = _sequencesData[sequence][position]
+        if(_mode.value != mainMenu[0]){
+            _nextAsana.value = _sequencesData[sequence][position]}
     }
 
     // Assign four different postures, one being the correct one.
@@ -137,32 +169,47 @@ class MainViewModel : ViewModel() {
         if (includeCurrent){
             // TODO: los ceros son surya A, cambiarlo para que varie con cada secuencia. Revisar que sirva en las otras
                 // TODO: Que no salgan repetidas, pasa porque hay repetidas en las secuencias
-            var options =mutableListOf(_sequencesData[0][_sequencePosition.value!!-1]// Correct answer
-                , _sequencesData[0][Random.nextInt(0,_sequencesData[_sequenceIndex].size)]
-                , _sequencesData[0][Random.nextInt(0,_sequencesData[_sequenceIndex].size)]
-                , _sequencesData[0][Random.nextInt(0,_sequencesData[_sequenceIndex].size)])
+            var options =mutableListOf(_sequencesData[_sequenceIndex][_sequencePosition.value!!-1]// Correct answer
+                , _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)]
+                , _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)]
+                , _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)])
 
             for(i in 1..3){ // Add wrong answers
                 while(options.count{it == options[i]} > 1){
-                    options[i] = _sequencesData[0][Random.nextInt(0,_sequencesData[_sequenceIndex].size)]
+                    options[i] = _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)]
                 }
             }
-            _asanaOptions.value = options.shuffled()
+            options.shuffle()
+            _asanaOptions.value = options
+            setTextOptions(options)
         } else {
-            var options =mutableListOf(_sequencesData[0][_sequencePosition.value!!]// Correct answer
-                , _sequencesData[0][Random.nextInt(0,_sequencesData[_sequenceIndex].size)]
-                , _sequencesData[0][Random.nextInt(0,_sequencesData[_sequenceIndex].size)]
-                , _sequencesData[0][Random.nextInt(0,_sequencesData[_sequenceIndex].size)])
+            var options =mutableListOf(_sequencesData[_sequenceIndex][_sequencePosition.value!!]// Correct answer
+                , _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)]
+                , _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)]
+                , _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)])
 
             for(i in 1..3){ // Add wrong answers
-                while(options.count{it == options[i]} > 1 || options[i].name == _sequencesData[0][_sequencePosition.value!!-1].name){
-                    options[i] = _sequencesData[0][Random.nextInt(0,_sequencesData[_sequenceIndex].size.minus(1))]
+                while(options.count{it == options[i]} > 1 || options[i].name == _sequencesData[_sequenceIndex][_sequencePosition.value!!-1].name){
+                    options[i] = _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size.minus(1))]
                 }
             }
-            _asanaOptions.value = options.shuffled()
+            options.shuffle()
+            _asanaOptions.value = options
+            setTextOptions(options)
         }
     }
 
+    fun setTextOptions(options: List<Asana>){
+        //Log.d("Test", "TechniqueIndex:${_techniqueIndex.toString()}")
+        when(_techniqueIndex){
+            0-> _textOptions.value = mutableListOf(options[0].name, options[1].name,
+                options[2].name, options[3].name)
+            1-> _textOptions.value = mutableListOf(options[0].bandha, options[1].bandha,
+                options[2].bandha, options[3].bandha)
+            2-> _textOptions.value = mutableListOf(options[0].drishti, options[1].drishti,
+                options[2].drishti, options[3].drishti)
+        }
+    }
     fun finalScoreString():String{
         var finalScore: String = ""
         when (_mode.value){
@@ -175,6 +222,8 @@ class MainViewModel : ViewModel() {
     fun reset(){
         _score.value = 0
         _sequencePosition.value = 1
+        _sequenceIndex = 5
+        finalScoreVar = "0"
     }
 
 }

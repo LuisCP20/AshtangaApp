@@ -31,13 +31,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:imageResource="@{viewModel.asana.postureImageResourceId}"
             tools:srcCompat="@drawable/asanad" />
 
         <Button
             android:id="@+id/option1_button"
-            android:onClick="@{() -> fragmentTechniqueQuestion.checkAnswer()}"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:onClick="@{() -> fragmentTechniqueQuestion.checkAnswer(viewModel.asanaOptions.get(0))}"
+            android:text="@{viewModel.textOptions.get(0)}"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -47,9 +49,10 @@
 
         <Button
             android:id="@+id/option2_button"
-            android:onClick="@{() -> fragmentTechniqueQuestion.checkAnswer()}"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:onClick="@{() -> fragmentTechniqueQuestion.checkAnswer(viewModel.asanaOptions.get(1))}"
+            android:text="@{viewModel.textOptions.get(1)}"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
             android:layout_marginStart="16dp"
             android:layout_marginBottom="32dp"
             app:layout_constraintBottom_toTopOf="@+id/imageView2"
@@ -59,9 +62,10 @@
 
         <Button
             android:id="@+id/option3_button"
-            android:onClick="@{() -> fragmentTechniqueQuestion.checkAnswer()}"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:onClick="@{() -> fragmentTechniqueQuestion.checkAnswer(viewModel.asanaOptions.get(2))}"
+            android:text="@{viewModel.textOptions.get(2)}"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -71,9 +75,10 @@
 
         <Button
             android:id="@+id/option4_button"
-            android:onClick="@{() -> fragmentTechniqueQuestion.checkAnswer()}"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:onClick="@{() -> fragmentTechniqueQuestion.checkAnswer(viewModel.asanaOptions.get(3))}"
+            android:text="@{viewModel.textOptions.get(3)}"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="32dp"
             app:layout_constraintBottom_toTopOf="@+id/imageView2"
