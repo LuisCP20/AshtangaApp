@@ -43,12 +43,12 @@ class MainViewModel : ViewModel() {
     val technique: LiveData<String> = _technique
 
     // Length of sequence
-    private val _seqLength = MutableLiveData<Int>()
+    private val _seqLength = MutableLiveData<Int>(1)
     val seqLength: LiveData<Int>
         get() = _seqLength
 
     // Score
-    private val _score = MutableLiveData(0)
+    private val _score = MutableLiveData<Int>(0)
     val score: LiveData<Int>
         get() = _score
 
@@ -69,6 +69,7 @@ class MainViewModel : ViewModel() {
     private val _asanaOptions = MutableLiveData<List<Asana>>()
     var asanaOptions = _asanaOptions
 
+    var finalScoreVar = ""
     //init{setAsana()}
 
     fun setMode(selectedMode: Int){
@@ -160,6 +161,20 @@ class MainViewModel : ViewModel() {
             }
             _asanaOptions.value = options.shuffled()
         }
+    }
+
+    fun finalScoreString():String{
+        var finalScore: String = ""
+        when (_mode.value){
+            mainMenu[0] -> finalScore = "${_score.value}/${_seqLength.value}"
+            mainMenu[1] -> finalScore ="${_score.value}/${_seqLength.value?.minus(1)}"
+            mainMenu[2] -> finalScore ="${_score.value}/${_seqLength.value?.minus(1)}"
+        }
+        return finalScore
+    }
+    fun reset(){
+        _score.value = 0
+        _sequencePosition.value = 1
     }
 
 }

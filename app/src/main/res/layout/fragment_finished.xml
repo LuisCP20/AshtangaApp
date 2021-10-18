@@ -41,7 +41,7 @@
 
             <TextView
                 android:id="@+id/accuracy_textView"
-                android:text="@{@string/posture_count(viewModel.score, viewModel.seqLength)}"
+                android:text="@{@string/final_score(viewModel.finalScoreVar)}"
                 tools:text="7/14"
                 android:textAppearance="?attr/textAppearanceHeadline4"
                 android:layout_width="wrap_content"

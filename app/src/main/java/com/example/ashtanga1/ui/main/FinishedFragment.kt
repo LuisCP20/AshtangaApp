@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import com.example.ashtanga1.R
 import com.example.ashtanga1.databinding.FragmentFinishedBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -56,9 +58,17 @@ class FinishedFragment : Fragment() {
     }
 
     fun exit(){
+        sharedViewModel.reset()
+        findNavController().navigate(R.id.action_finishedFragment2_to_mainFragment)
         // TODO: Volver al inicio, resetear variables y borrar el backstack
 
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
+    }
+
 
     // TODO: funcion que calcule el puntaje. Aqui o en el sharedViewModel
 

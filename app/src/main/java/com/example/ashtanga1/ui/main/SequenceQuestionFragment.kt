@@ -39,13 +39,15 @@ class SequenceQuestionFragment : Fragment() {
     fun checkAnswer(imageId: Int){
         if(imageId == sharedViewModel.nextAsana.value?.postureImageResourceId){
             sharedViewModel.correctAnswer()
-            if(sharedViewModel.sequencePosition.value?.plus(1) == sharedViewModel.seqLength.value){
+            if(sharedViewModel.sequencePosition.value == sharedViewModel.seqLength.value){
+                sharedViewModel.finalScoreVar = sharedViewModel.finalScoreString()
                 findNavController().navigate(R.id.action_sequenceQuestionFragment_to_finishedFragment2)
             }
         }
         else{
             sharedViewModel.incorrectAnswer()
-            if(sharedViewModel.sequencePosition.value?.plus(1) == sharedViewModel.seqLength.value){
+            if(sharedViewModel.sequencePosition.value == sharedViewModel.seqLength.value){
+                sharedViewModel.finalScoreVar = sharedViewModel.finalScoreString()
                 findNavController().navigate(R.id.action_sequenceQuestionFragment_to_finishedFragment2)
             }
         }
@@ -53,9 +55,13 @@ class SequenceQuestionFragment : Fragment() {
     }
 
 
-
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
+    }
     fun exit(){
-        // TODO: Volver al inicio, resetear variables y borrar el backstack
+        sharedViewModel.reset()
+        findNavController().navigate(R.id.action_sequenceQuestionFragment_to_mainFragment)
 
     }
 }
