@@ -53,7 +53,8 @@
 
         <ImageButton
             android:id="@+id/option1_imageButton"
-            android:onClick="@{() -> fragmentPostureQuestion.checkAnswer()}"
+            android:onClick="@{() -> fragmentPostureQuestion.checkAnswer(viewModel.asanaOptions.get(0))}"
+            app:imageResource = "@{viewModel.asanaOptions.get(0).postureImageResourceId}"
             android:padding="2dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
@@ -69,7 +70,8 @@
 
         <ImageButton
             android:id="@+id/option2_imageButton"
-            android:onClick="@{() -> fragmentPostureQuestion.checkAnswer()}"
+            android:onClick="@{() -> fragmentPostureQuestion.checkAnswer(viewModel.asanaOptions.get(1))}"
+            app:imageResource = "@{viewModel.asanaOptions.get(1).postureImageResourceId}"
             android:padding="2dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
@@ -85,7 +87,8 @@
 
         <ImageButton
             android:id="@+id/option3_imageButton"
-            android:onClick="@{() -> fragmentPostureQuestion.checkAnswer()}"
+            android:onClick="@{() -> fragmentPostureQuestion.checkAnswer(viewModel.asanaOptions.get(2))}"
+            app:imageResource = "@{viewModel.asanaOptions.get(2).postureImageResourceId}"
             android:padding="2dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
@@ -101,7 +104,8 @@
 
         <ImageButton
             android:id="@+id/option4_imageButton"
-            android:onClick="@{() -> fragmentPostureQuestion.checkAnswer()}"
+            android:onClick="@{() -> fragmentPostureQuestion.checkAnswer(viewModel.asanaOptions.get(3))}"
+            app:imageResource = "@{viewModel.asanaOptions.get(3).postureImageResourceId}"
             android:padding="2dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"

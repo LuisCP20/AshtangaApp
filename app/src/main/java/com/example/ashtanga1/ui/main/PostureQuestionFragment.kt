@@ -1,6 +1,7 @@
 package com.example.ashtanga1.ui.main
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.ashtanga1.R
 import com.example.ashtanga1.databinding.FragmentPostureQuestionBinding
 import com.example.ashtanga1.databinding.FragmentTechniqueQuestionBinding
+import com.example.ashtanga1.model.Asana
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -57,35 +59,35 @@ class PostureQuestionFragment : Fragment() {
         }
     }
 
-    fun checkAnswer(){
-        findNavController().navigate(R.id.action_postureQuestionFragment2_to_finishedFragment2)
+    fun checkAnswer(selection: Asana){
+        // TODO: Arreglar bug cuando salen dos repetidas en las opciones
+        Log.d("Test", "${selection}, ${sharedViewModel.asana.value}")
+        // Comparar nombres deberia funcionar con Drishti y con imagenes
+        if(selection == (sharedViewModel.asana.value)){
+            sharedViewModel.correctAnswerTechnique()
+            checkLast()
+        }
+        else{
+            sharedViewModel.incorrectAnswerTechnique()
+            checkLast()
+        }
     }
 
-    fun loadOptions(){}
-
+    // Check if current posture was the last one
+    fun checkLast(){
+        if(sharedViewModel.sequencePosition.value?.minus(1)?:exit() == sharedViewModel.seqLength.value){
+            sharedViewModel.finalScoreVar = sharedViewModel.finalScoreString()
+            findNavController().navigate(R.id.action_postureQuestionFragment2_to_finishedFragment2)
+        }
+    }
     fun exit(){
-        // TODO: Volver al inicio, resetear variables y borrar el backstack
+        sharedViewModel.reset()
+        findNavController().navigate(R.id.action_postureQuestionFragment2_to_mainFragment)
 
     }
 
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment PostureQuestionFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            PostureQuestionFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
     }
 }
