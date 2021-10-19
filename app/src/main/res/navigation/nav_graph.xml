@@ -33,6 +33,9 @@
         <action
             android:id="@+id/action_sequenceQuestionFragment_to_techniqueQuestionFragment"
             app:destination="@id/techniqueQuestionFragment" />
+        <action
+            android:id="@+id/action_sequenceQuestionFragment_to_postureQuestionFragment2"
+            app:destination="@id/postureQuestionFragment2" />
     </fragment>
     <fragment
         android:id="@+id/sequenceMenuFragment2"
@@ -103,6 +106,9 @@
             app:destination="@id/mainFragment"
             app:popUpTo="@id/mainFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_postureQuestionFragment2_to_sequenceQuestionFragment"
+            app:destination="@id/sequenceQuestionFragment" />
     </fragment>
     <fragment android:id="@+id/placeholder" />
 </navigation>
