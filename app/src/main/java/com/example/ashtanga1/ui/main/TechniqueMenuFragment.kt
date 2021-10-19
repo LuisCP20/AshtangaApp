@@ -1,6 +1,7 @@
 package com.example.ashtanga1.ui.main
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.ashtanga1.R
 import com.example.ashtanga1.databinding.FragmentTechniqueMenuBinding
+import kotlin.random.Random
 
 /**
  * A simple [Fragment] subclass.
@@ -48,14 +50,23 @@ class TechniqueMenuFragment : Fragment() {
 
     private fun selectNextScreen(){
         when (sharedViewModel.technique.value.toString()){
+            // Name
             sharedViewModel.techniqueMenu[0] -> findNavController().navigate(R.id.action_techniqueMenuFragment_to_techniqueQuestionFragment)
+            // Bandha
             sharedViewModel.techniqueMenu[1] -> findNavController().navigate(R.id.action_techniqueMenuFragment_to_techniqueQuestionFragment)
+            // Drishti
             sharedViewModel.techniqueMenu[2] -> findNavController().navigate(R.id.action_techniqueMenuFragment_to_techniqueQuestionFragment)
+            // Posture
             sharedViewModel.techniqueMenu[3] -> findNavController().navigate(R.id.action_techniqueMenuFragment_to_postureQuestionFragment2)
-            sharedViewModel.techniqueMenu[4] -> findNavController().navigate(R.id.action_techniqueMenuFragment_to_postureQuestionFragment2)
-            else -> findNavController().navigate(R.id.action_techniqueMenuFragment_to_postureQuestionFragment2)
-            // TODO: revisar otros casos
+
+            else -> findNavController().navigate(R.id.action_techniqueMenuFragment_to_postureQuestionFragment2) // TODO: revisar otros casos
         }
+    }
+
+    fun randomTechnique(): Int{
+        val techniques = listOf<Int>(0,2,3)
+        sharedViewModel.setRandomTech(true)
+        return techniques[Random.nextInt(0,techniques.size)]
     }
 
 }

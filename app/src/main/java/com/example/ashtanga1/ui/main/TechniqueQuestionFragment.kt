@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.ashtanga1.R
 import com.example.ashtanga1.databinding.FragmentTechniqueQuestionBinding
 import com.example.ashtanga1.model.Asana
+import kotlin.random.Random
 
 /**
  * A simple [Fragment] subclass.
@@ -54,6 +55,7 @@ class TechniqueQuestionFragment : Fragment() {
             sharedViewModel.incorrectAnswerTechnique()
             checkLast()
         }
+
     }
 
     // Check if current posture was the last one
@@ -61,13 +63,28 @@ class TechniqueQuestionFragment : Fragment() {
         if(sharedViewModel.sequencePosition.value?.minus(1)?:exit() == sharedViewModel.seqLength.value){
             sharedViewModel.finalScoreVar = sharedViewModel.finalScoreString()
             findNavController().navigate(R.id.action_techniqueQuestionFragment_to_finishedFragment2)
+        } else {
+            if(sharedViewModel.randomT.value == true){
+                val nextTech = randomTechnique()
+                if (nextTech == 3){ findNavController().navigate(R.id.action_techniqueQuestionFragment_to_postureQuestionFragment2) }
+            }
         }
     }
+
+    private fun randomTechnique() :Int{
+        val techniques = listOf<Int>(0,2,3)
+        val selected = techniques[Random.nextInt(0,techniques.size)]
+        Log.d("RandomTech", "NextQ${selected}")
+        sharedViewModel.setTechnique(selected)
+        return selected
+    }
+
     fun exit(){
         sharedViewModel.reset()
         findNavController().navigate(R.id.action_techniqueQuestionFragment_to_mainFragment)
 
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

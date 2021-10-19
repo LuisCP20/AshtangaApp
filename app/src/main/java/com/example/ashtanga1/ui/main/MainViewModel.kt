@@ -44,6 +44,11 @@ class MainViewModel : ViewModel() {
     private val _technique = MutableLiveData<String>()
     val technique: LiveData<String> = _technique
 
+    // Random technique
+
+    private val _randomT = MutableLiveData<Boolean> (false)
+    val randomT = _randomT
+
     // Length of sequence
     private val _seqLength = MutableLiveData<Int>(1)
     val seqLength: LiveData<Int>
@@ -100,6 +105,10 @@ class MainViewModel : ViewModel() {
         setOptions()
     }
 
+    fun setRandomTech(activated:Boolean){
+        _randomT.value = activated
+    }
+
     fun correctAnswer(){
         _score.value = _score.value?.plus(1)
         _sequencePosition.value = _sequencePosition.value?.plus(1)
@@ -118,6 +127,8 @@ class MainViewModel : ViewModel() {
     }
 
     fun correctAnswerTechnique(){
+        // Se puede combinar con IncorrectAnswerTechnique, que reciba un bool llamarla con un .equals
+        // comparando la elección con la respuesta correcta
         _score.value = _score.value?.plus(1)
         if (_sequencePosition.value != _seqLength.value){
             _sequencePosition.value = _sequencePosition.value?.plus(1)
@@ -202,14 +213,19 @@ class MainViewModel : ViewModel() {
     fun setTextOptions(options: List<Asana>){
         //Log.d("Test", "TechniqueIndex:${_techniqueIndex.toString()}")
         when(_techniqueIndex){
-            0-> _textOptions.value = mutableListOf(options[0].name, options[1].name,
-                options[2].name, options[3].name)
+//            0-> _textOptions.value = mutableListOf(options[0].name, options[1].name,
+//                options[2].name, options[3].name)
             1-> _textOptions.value = mutableListOf(options[0].bandha, options[1].bandha,
                 options[2].bandha, options[3].bandha)
             2-> _textOptions.value = mutableListOf(options[0].drishti, options[1].drishti,
                 options[2].drishti, options[3].drishti)
+            3 ->_textOptions.value = mutableListOf(options[0].drishti, options[1].drishti,
+                options[2].drishti, options[3].drishti)
+            else-> _textOptions.value = mutableListOf(options[0].name, options[1].name,
+                options[2].name, options[3].name)
         }
     }
+
     fun finalScoreString():String{
         var finalScore: String = ""
         when (_mode.value){
@@ -223,6 +239,7 @@ class MainViewModel : ViewModel() {
         _score.value = 0
         _sequencePosition.value = 1
         _sequenceIndex = 5
+        _randomT.value = false
         finalScoreVar = "0"
     }
 
