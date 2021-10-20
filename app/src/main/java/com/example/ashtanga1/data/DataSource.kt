@@ -51,19 +51,19 @@ object DataSource {
         Asana(
             R.drawable.sa4,
             "Ardha Uttanasana",
-            "dristhi8",
+            "dristhi4",
             "bandha1"),
 
         Asana(
             R.drawable.sa3,
             "Uttanasana",
-            "dristhi1",
+            "dristhi3",
             "bandha1"),
 
         Asana(
             R.drawable.sa2,
             "Urdhva Hasthasana",
-            "dristhi1",
+            "dristhi2",
             "bandha1"),
 
         Asana(

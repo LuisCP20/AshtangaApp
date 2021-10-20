@@ -176,7 +176,7 @@ class MainViewModel : ViewModel() {
         _score.value = _score.value?.plus(1)
         if (_questionPosition.value != _seqLength.value){
             advance()
-            Log.d("Test","Correct. Pos: ${_questionPosition.value} Score: ${_score.value}")
+            Log.d("Correct","Correct. Pos: ${_questionPosition.value} Score: ${_score.value}")
             setAsana()
             setOptions()}
         else{advance()}
@@ -185,7 +185,7 @@ class MainViewModel : ViewModel() {
     fun incorrectAnswerTechnique(){
         if (_questionPosition.value != _seqLength.value){
             advance()
-            Log.d("Test","Incorrect. Pos: ${_questionPosition.value} Score: ${_score.value}")
+            Log.d("Correct","Incorrect. Pos: ${_questionPosition.value} Score: ${_score.value}")
             setAsana()
             setOptions()}
         else{advance()}
@@ -230,10 +230,9 @@ class MainViewModel : ViewModel() {
                 , _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)]
                 , _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)]
                 , _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)])
-
-            for(i in 1..3){ // Add wrong answers
-                while(options.count{it == options[i]} > 1){
-                    options[i] = _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)]
+            while(options.toSet().size != options.size){
+                for(i in 1..3){ // Add wrong answers
+                        options[i] = _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)]
                 }
             }
             options.shuffle()
@@ -248,10 +247,12 @@ class MainViewModel : ViewModel() {
                 , _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)]
                 , _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)]
                 , _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)])
-
-            for(i in 1..3){ // Add wrong answers
-                while(options.count{it == options[i]} > 1 || options[i].name == _sequencesData[_sequenceIndex][_sequencePosition.value!!-1].name){
-                    options[i] = _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size.minus(1))]
+            while(options.toSet().size < options.size){
+                for(i in 1..3){ // Add wrong answers
+                    options[i] = _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)]
+                    while(options[i] == _sequencesData[_sequenceIndex][_sequencePosition.value!!-1]/*TODO: Que no salga la pregunta en las opciones*/){
+                        options[i] = _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)]
+                    }
                 }
             }
             options.shuffle()
@@ -277,6 +278,10 @@ class MainViewModel : ViewModel() {
             3 ->_textOptions.value = mutableListOf(options[0].drishti, options[1].drishti,
                 options[2].drishti, options[3].drishti)
             else-> _textOptions.value = mutableListOf(options[0].name, options[1].name,
+                options[2].name, options[3].name)
+        }
+        if(_mode.value == mainMenu[1]){
+            _textOptions.value = mutableListOf(options[0].name, options[1].name,
                 options[2].name, options[3].name)
         }
     }
