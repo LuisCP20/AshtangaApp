@@ -114,7 +114,7 @@ class MainViewModel : ViewModel() {
             setAsana()
             setOptions()
         }
-        
+
         when (_mode.value){
             mainMenu[0] -> _posCounter.value= _seqLength.value
             mainMenu[1] -> _posCounter.value =_seqLength.value?.minus(1)
@@ -136,6 +136,10 @@ class MainViewModel : ViewModel() {
 
     fun setCombinedMode(activated:Boolean){
         _combined.value = true
+    }
+
+    fun clearText(){
+        _textOptions.value = mutableListOf<String>("","","","")
     }
 
     fun correctAnswer(){
@@ -234,7 +238,11 @@ class MainViewModel : ViewModel() {
             }
             options.shuffle()
             _asanaOptions.value = options
-            setTextOptions(options)
+            if(_combined.value == true && bothAnswered){
+                Log.d("NoText", "Combined:${combined.value},Mode: ${_mode.value}")
+                clearText()}
+            else
+                setTextOptions(options)
         } else {
             var options =mutableListOf(_sequencesData[_sequenceIndex][_sequencePosition.value!!]// Correct answer
                 , _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)]
@@ -248,7 +256,11 @@ class MainViewModel : ViewModel() {
             }
             options.shuffle()
             _asanaOptions.value = options
-            setTextOptions(options)
+            if(_combined.value == true && bothAnswered){
+                Log.d("NoText", "Combined:${combined.value},Mode: ${_mode.value}")
+                clearText()}
+            else
+                setTextOptions(options)
         }
     }
 
