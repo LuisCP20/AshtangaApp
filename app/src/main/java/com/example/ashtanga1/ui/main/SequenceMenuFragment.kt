@@ -43,7 +43,6 @@ class SequenceMenuFragment : Fragment() {
 
     fun goToNextScreen(sequence: Int){
         sharedViewModel.setSequence(sequence)
-        Log.d("Combined","Mode${sharedViewModel.mode.value}, ${sharedViewModel.mainMenu[3]}")
         selectNextScreen()
     }
 

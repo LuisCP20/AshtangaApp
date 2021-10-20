@@ -84,7 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             tools:text="Option 1 Name"
-            android:text="@{viewModel.asanaOptions.get(0).name}"
+            android:text="@{viewModel.textOptions.get(0)}"
             app:layout_constraintEnd_toEndOf="@+id/option1_imageButton"
             app:layout_constraintStart_toStartOf="@+id/option1_imageButton"
             app:layout_constraintTop_toBottomOf="@+id/option1_imageButton" />
@@ -112,7 +112,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             tools:text="Option 2 Name"
-            android:text="@{viewModel.asanaOptions.get(1).name}"
+            android:text="@{viewModel.textOptions.get(1)}"
             app:layout_constraintEnd_toEndOf="@+id/option2_imageButton"
             app:layout_constraintStart_toStartOf="@+id/option2_imageButton"
             app:layout_constraintTop_toBottomOf="@+id/option2_imageButton" />
@@ -140,7 +140,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             tools:text="Option 3 Name"
-            android:text="@{viewModel.asanaOptions.get(2).name}"
+            android:text="@{viewModel.textOptions.get(2)}"
             app:layout_constraintEnd_toEndOf="@+id/option3_imageButton"
             app:layout_constraintStart_toStartOf="@+id/option3_imageButton"
             app:layout_constraintTop_toBottomOf="@+id/option3_imageButton" />
@@ -168,7 +168,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@{viewModel.asanaOptions.get(3).name}"
+            android:text="@{viewModel.textOptions.get(3)}"
             tools:text="Option 4 Name"
             app:layout_constraintEnd_toEndOf="@+id/option4_imageButton"
             app:layout_constraintStart_toStartOf="@+id/option4_imageButton"
@@ -199,7 +199,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:textAppearance="?attr/textAppearanceHeadline4"
-            android:text="@{@string/posture_count(viewModel.questionPosition, viewModel.seqLength)}"
+            android:text="@{@string/posture_count(viewModel.questionPosition, viewModel.posCounter)}"
              />
 
 

@@ -8,9 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.example.ashtanga1.R
 import com.example.ashtanga1.databinding.FragmentSequenceQuestionBinding
 import kotlin.random.Random
+import android.R
+
+import android.widget.TextView
+import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
+
 
 class SequenceQuestionFragment : Fragment() {
 
@@ -43,7 +48,7 @@ class SequenceQuestionFragment : Fragment() {
             sharedViewModel.correctAnswer()
             if(sharedViewModel.questionPosition.value == sharedViewModel.seqLength.value){
                 sharedViewModel.finalScoreVar = sharedViewModel.finalScoreString()
-                findNavController().navigate(R.id.action_sequenceQuestionFragment_to_finishedFragment2)
+                findNavController().navigate(com.example.ashtanga1.R.id.action_sequenceQuestionFragment_to_finishedFragment2)
             } else{
                 if(sharedViewModel.combined.value == true){navigateNextScreen()}
             }
@@ -52,7 +57,7 @@ class SequenceQuestionFragment : Fragment() {
             sharedViewModel.incorrectAnswer()
             if(sharedViewModel.questionPosition.value == sharedViewModel.seqLength.value){
                 sharedViewModel.finalScoreVar = sharedViewModel.finalScoreString()
-                findNavController().navigate(R.id.action_sequenceQuestionFragment_to_finishedFragment2)
+                findNavController().navigate(com.example.ashtanga1.R.id.action_sequenceQuestionFragment_to_finishedFragment2)
             }else{
                 if(sharedViewModel.combined.value == true){navigateNextScreen()}
             }
@@ -61,19 +66,16 @@ class SequenceQuestionFragment : Fragment() {
 
 
     private fun navigateNextScreen(){
-        val techniques = listOf<Int>(0,2,3)
+        val techniques = listOf<Int>(0,2) // technique 0: Name technique 2: Drishti
         val selected = techniques[Random.nextInt(0,techniques.size)]
         Log.d("RandomTech", "NextQ${selected}")
         sharedViewModel.setTechnique(selected)
-        when(selected){
-            techniques[2] -> findNavController().navigate(R.id.action_sequenceQuestionFragment_to_postureQuestionFragment2)
-            else -> findNavController().navigate(R.id.action_sequenceQuestionFragment_to_techniqueQuestionFragment)
-        }
+        findNavController().navigate(com.example.ashtanga1.R.id.action_sequenceQuestionFragment_to_techniqueQuestionFragment)
     }
 
     fun exit(){
         sharedViewModel.reset()
-        findNavController().navigate(R.id.action_sequenceQuestionFragment_to_mainFragment)
+        findNavController().navigate(com.example.ashtanga1.R.id.action_sequenceQuestionFragment_to_mainFragment)
 
     }
 
