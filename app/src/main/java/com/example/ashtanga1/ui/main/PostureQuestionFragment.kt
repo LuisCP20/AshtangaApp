@@ -10,7 +10,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.ashtanga1.R
 import com.example.ashtanga1.databinding.FragmentPostureQuestionBinding
-import com.example.ashtanga1.databinding.FragmentTechniqueQuestionBinding
 import com.example.ashtanga1.model.Asana
 import kotlin.random.Random
 
@@ -76,7 +75,7 @@ class PostureQuestionFragment : Fragment() {
 
     // Check if current posture was the last one
     fun checkLast(){
-        if(sharedViewModel.sequencePosition.value?.minus(1)?:exit() == sharedViewModel.seqLength.value){
+        if(sharedViewModel.questionPosition.value?.minus(1)?:exit() == sharedViewModel.seqLength.value){
             sharedViewModel.finalScoreVar = sharedViewModel.finalScoreString()
             findNavController().navigate(R.id.action_postureQuestionFragment2_to_finishedFragment2)
         }else {

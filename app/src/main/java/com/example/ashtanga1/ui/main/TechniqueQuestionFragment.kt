@@ -60,11 +60,14 @@ class TechniqueQuestionFragment : Fragment() {
 
     // Check if current posture was the last one
     fun checkLast(){
-        if(sharedViewModel.sequencePosition.value?.minus(1)?:exit() == sharedViewModel.seqLength.value){
+        if(sharedViewModel.questionPosition.value?.minus(1)?:exit() == sharedViewModel.seqLength.value){
             sharedViewModel.finalScoreVar = sharedViewModel.finalScoreString()
             findNavController().navigate(R.id.action_techniqueQuestionFragment_to_finishedFragment2)
         } else {
-            if(sharedViewModel.randomT.value == true){
+            if (sharedViewModel.combined.value == true){
+                findNavController().navigate(R.id.action_techniqueQuestionFragment_to_sequenceQuestionFragment)
+            }
+            else if(sharedViewModel.randomT.value == true){
                 val nextTech = randomTechnique()
                 if (nextTech == 3){ findNavController().navigate(R.id.action_techniqueQuestionFragment_to_postureQuestionFragment2) }
             }

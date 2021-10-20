@@ -199,7 +199,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:textAppearance="?attr/textAppearanceHeadline4"
-            android:text="@{@string/posture_count(viewModel.sequencePosition, viewModel.seqLength)}"
+            android:text="@{@string/posture_count(viewModel.questionPosition, viewModel.seqLength)}"
              />
 
 

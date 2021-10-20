@@ -44,16 +44,26 @@ class MainFragment : Fragment() {
 
     fun goToNextScreen(mode: Int){
         when (mode) {
+            // Techniques
             0 -> {findNavController().navigate(R.id.action_mainFragment_to_sequenceMenuFragment2)
                 sharedViewModel.setMode(0)}
+            // Sequence Order
             1 -> {findNavController().navigate(R.id.action_mainFragment_to_sequenceMenuFragment2)
                 sharedViewModel.setMode(1)}
-            2 -> {findNavController().navigate(R.id.action_mainFragment_to_sequenceMenuFragment2)
+            // Combined
+            2 -> {combinedMode()
+                findNavController().navigate(R.id.action_mainFragment_to_sequenceMenuFragment2)
                 sharedViewModel.setMode(2)}
+            // Review
             3 -> {findNavController().navigate(R.id.action_mainFragment_to_placeholder)
                 // TODO: Ir a ventana de fichas
                 sharedViewModel.setMode(3)}
         }
+    }
+
+    private fun combinedMode(){
+        sharedViewModel.setRandomTech(true)
+        sharedViewModel.setCombinedMode(true)
     }
 
 }
