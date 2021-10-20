@@ -59,8 +59,14 @@ class TechniqueQuestionFragment : Fragment() {
     }
 
     // Check if current posture was the last one
-    fun checkLast(){
-        if(sharedViewModel.questionPosition.value?.minus(1)?:exit() == sharedViewModel.seqLength.value){
+    private fun checkLast(){
+
+        // Change last question limit depending of mode
+        var limit = sharedViewModel.seqLength.value?.plus(1)
+        if(sharedViewModel.combined.value == true){
+            limit = sharedViewModel.seqLength.value}
+
+        if(sharedViewModel.questionPosition.value == limit){
             sharedViewModel.finalScoreVar = sharedViewModel.finalScoreString()
             findNavController().navigate(R.id.action_techniqueQuestionFragment_to_finishedFragment2)
         } else {
