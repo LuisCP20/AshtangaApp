@@ -223,7 +223,7 @@ class MainViewModel : ViewModel() {
 
     // Create list of options including correct answer.
     private fun optionsList(includeCurrent: Boolean){
-        if (includeCurrent){
+        if (includeCurrent && !bothAnswered){
             // TODO: los ceros son surya A, cambiarlo para que varie con cada secuencia. Revisar que sirva en las otras
                 // TODO: Que no salgan repetidas, pasa porque hay repetidas en las secuencias
             var options =mutableListOf(_sequencesData[_sequenceIndex][_sequencePosition.value!!-1]// Correct answer
@@ -244,6 +244,7 @@ class MainViewModel : ViewModel() {
         } else {
             // TODO: que postura actual no salga en las opciones
             val rightAnswer = _sequencePosition.value?:0
+            if (rightAnswer < _sequencesData[_sequenceIndex].size){ // Check if last
             var options =mutableListOf(_sequencesData[_sequenceIndex][rightAnswer]// Correct answer
                 , _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)]
                 , _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)]
@@ -262,7 +263,7 @@ class MainViewModel : ViewModel() {
                 clearText()}
             else
                 setTextOptions(options)
-        }
+        }}
     }
 
     fun setTextOptions(options: List<Asana>){
