@@ -58,6 +58,11 @@ class MainViewModel : ViewModel() {
     val seqLength: LiveData<Int>
         get() = _seqLength
 
+    // Length of sequence
+    private val _posCounter = MutableLiveData<Int>(1)
+    val posCounter: LiveData<Int>
+        get() = _posCounter
+
     // Score
     private val _score = MutableLiveData<Int>(0)
     val score: LiveData<Int>
@@ -108,6 +113,13 @@ class MainViewModel : ViewModel() {
         if(_mode.value != mainMenu[0]){
             setAsana()
             setOptions()
+        }
+        
+        when (_mode.value){
+            mainMenu[0] -> _posCounter.value= _seqLength.value
+            mainMenu[1] -> _posCounter.value =_seqLength.value?.minus(1)
+            mainMenu[2] -> _posCounter.value =_seqLength.value?.minus(1)
+            mainMenu[3] -> _posCounter.value = 2 * _seqLength.value!! - 1
         }
     }
 
@@ -259,12 +271,7 @@ class MainViewModel : ViewModel() {
 
     fun finalScoreString():String{
         var finalScore: String = ""
-        when (_mode.value){
-            mainMenu[0] -> finalScore = "${_score.value}/${_seqLength.value}"
-            mainMenu[1] -> finalScore ="${_score.value}/${_seqLength.value?.minus(1)}"
-            mainMenu[2] -> finalScore ="${_score.value}/${_seqLength.value?.minus(1)}"
-            mainMenu[3] -> finalScore = "${_score.value}/${2 * _seqLength.value!!}"
-        }
+        finalScore = "${_score.value}/${posCounter.value.toString()}"
         return finalScore
     }
     fun reset(){
