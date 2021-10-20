@@ -230,7 +230,7 @@ class MainViewModel : ViewModel() {
                 , _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)]
                 , _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)]
                 , _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)])
-            while(options.toSet().size != options.size){
+            while(options.distinct().size < options.size){
                 for(i in 1..3){ // Add wrong answers
                         options[i] = _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)]
                 }
@@ -238,23 +238,23 @@ class MainViewModel : ViewModel() {
             options.shuffle()
             _asanaOptions.value = options
             if(_combined.value == true && bothAnswered){
-                Log.d("NoText", "Combined:${combined.value},Mode: ${_mode.value}")
                 clearText()}
             else
                 setTextOptions(options)
         } else {
-            var options =mutableListOf(_sequencesData[_sequenceIndex][_sequencePosition.value!!]// Correct answer
+            // TODO: que postura actual no salga en las opciones
+            val rightAnswer = _sequencePosition.value?:0
+            var options =mutableListOf(_sequencesData[_sequenceIndex][rightAnswer]// Correct answer
                 , _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)]
                 , _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)]
                 , _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)])
-            while(options.toSet().size < options.size){
+            Log.d("Correct", "Answer:${options[0].name}")
+            while(options.distinct().size < options.size || options.contains(_asana.value)){
                 for(i in 1..3){ // Add wrong answers
                     options[i] = _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)]
-                    while(options[i] == _sequencesData[_sequenceIndex][_sequencePosition.value!!-1]/*TODO: Que no salga la pregunta en las opciones*/){
-                        options[i] = _sequencesData[_sequenceIndex][Random.nextInt(0,_sequencesData[_sequenceIndex].size)]
-                    }
                 }
             }
+            Log.d("Repeat", "After:${options[0].name}${options[1].name}${options[2].name}${options[3].name}")
             options.shuffle()
             _asanaOptions.value = options
             if(_combined.value == true && bothAnswered){

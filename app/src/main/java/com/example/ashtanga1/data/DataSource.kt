@@ -7,10 +7,10 @@ object DataSource {
 
     val suryaA: List<Asana> = listOf(
         Asana(
-        R.drawable.sa1,
-        "Samashthitti",
-        "dristhi1",
-        "bandha1"),
+            R.drawable.sa1,
+            "Samashthitti",
+            "dristhi1",
+            "bandha1"),
 
         Asana(
             R.drawable.sa2,
