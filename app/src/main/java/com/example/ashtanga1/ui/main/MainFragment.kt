@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.ashtanga1.R
+import com.example.ashtanga1.ReviewActivity
 import com.example.ashtanga1.databinding.MainFragmentBinding
 
 class MainFragment : Fragment() {

@@ -1,13 +1,13 @@
-package com.example.ashtanga1.ui.main
+package com.example.ashtanga1
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.ashtanga1.R
 import com.example.ashtanga1.adapter.CardAdapter
 import com.example.ashtanga1.data.DataSource
 import com.example.ashtanga1.databinding.ReviewActivityBinding
+import com.example.ashtanga1.ui.main.MainFragment
 
 
 class ReviewActivity : AppCompatActivity() {
@@ -25,10 +25,10 @@ class ReviewActivity : AppCompatActivity() {
 
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         binding.recyclerView.adapter = CardAdapter(series1, this)
-        
+
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         val intent = Intent(this.applicationContext, MainFragment::class.java)
-        binding.button.setOnClickListener { supportNavigateUpTo(intent) }
+        binding.button.setOnClickListener {supportNavigateUpTo(intent)}
         //supportNavigateUpTo(intent)
     }
 
