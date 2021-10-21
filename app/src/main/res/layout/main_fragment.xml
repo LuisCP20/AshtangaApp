@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context = ".ui.main.MainFragment">
 
+
     <data>
         <variable
             name="viewModel"

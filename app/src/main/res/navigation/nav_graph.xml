@@ -14,8 +14,8 @@
             android:id="@+id/action_mainFragment_to_sequenceMenuFragment2"
             app:destination="@id/sequenceMenuFragment2" />
         <action
-            android:id="@+id/action_mainFragment_to_placeholder"
-            app:destination="@id/placeholder" />
+            android:id="@+id/action_mainFragment_to_reviewFragment"
+            app:destination="@id/reviewFragment" />
     </fragment>
     <fragment
         android:id="@+id/sequenceQuestionFragment"
@@ -116,5 +116,14 @@
             android:id="@+id/action_postureQuestionFragment2_to_techniqueQuestionFragment"
             app:destination="@id/techniqueQuestionFragment" />
     </fragment>
-    <fragment android:id="@+id/placeholder" />
+    <fragment
+        android:id="@+id/reviewFragment"
+        android:name="com.example.ashtanga1.ui.main.ReviewFragment"
+        android:label="fragment_review"
+        tools:layout="@layout/review_activity" >
+        <action
+            android:id="@+id/action_reviewFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

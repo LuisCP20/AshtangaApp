@@ -1,5 +1,6 @@
 package com.example.ashtanga1.ui.main
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,10 +12,6 @@ import com.example.ashtanga1.R
 import com.example.ashtanga1.databinding.MainFragmentBinding
 
 class MainFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = MainFragment()
-    }
 
     //private val sharedViewModel: MainViewModel by activityViewModels()
 
@@ -55,9 +52,12 @@ class MainFragment : Fragment() {
                 findNavController().navigate(R.id.action_mainFragment_to_sequenceMenuFragment2)
                 sharedViewModel.setMode(2)}
             // Review
-            3 -> {findNavController().navigate(R.id.action_mainFragment_to_placeholder)
-                // TODO: Ir a ventana de fichas
-                sharedViewModel.setMode(3)}
+            3 -> { // TODO: Ir a ventana de fichas
+                sharedViewModel.setMode(3)
+                val intent = Intent(context, ReviewActivity::class.java)
+                context?.startActivity(intent)}
+
+
         }
     }
 
