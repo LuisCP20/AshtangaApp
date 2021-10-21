@@ -42,12 +42,12 @@
             android:layout_marginTop="128dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="128dp"
-            android:contentDescription="@string/decorative_yoga_posture"
             app:layout_constraintBottom_toBottomOf="@+id/ConstraintLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:imageResource = "@{viewModel.asana.postureImageResourceId}"
+            android:contentDescription = "current posture"
             tools:srcCompat="@drawable/sa1" />
 
         <TextView
@@ -58,6 +58,7 @@
             android:layout_marginTop="2dp"
             tools:text="Current Posture Name"
             android:text="@{viewModel.asana.name}"
+            android:textColor="@color/design_default_color_on_secondary"
             app:layout_constraintEnd_toEndOf="@id/Current_posture_imageView"
             app:layout_constraintStart_toStartOf="@id/Current_posture_imageView"
             app:layout_constraintTop_toBottomOf="@id/Current_posture_imageView" />
@@ -90,6 +91,7 @@
             android:layout_marginTop="8dp"
             tools:text="Option 1 Name"
             android:text="@{viewModel.textOptions.get(0)}"
+            android:textColor="@color/design_default_color_on_secondary"
             app:layout_constraintEnd_toEndOf="@+id/option1_imageButton"
             app:layout_constraintStart_toStartOf="@+id/option1_imageButton"
             app:layout_constraintTop_toBottomOf="@+id/option1_imageButton" />
@@ -102,6 +104,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginBottom="32dp"
             android:adjustViewBounds="true"
+            android:hapticFeedbackEnabled="true"
             android:padding="2dp"
             android:background="@drawable/roundcorners"
             android:scaleType="fitCenter"
@@ -120,6 +123,7 @@
             android:layout_marginTop="8dp"
             tools:text="Option 2 Name"
             android:text="@{viewModel.textOptions.get(1)}"
+            android:textColor="@color/design_default_color_on_secondary"
             app:layout_constraintEnd_toEndOf="@+id/option2_imageButton"
             app:layout_constraintStart_toStartOf="@+id/option2_imageButton"
             app:layout_constraintTop_toBottomOf="@+id/option2_imageButton" />
@@ -150,6 +154,7 @@
             android:layout_marginTop="8dp"
             tools:text="Option 3 Name"
             android:text="@{viewModel.textOptions.get(2)}"
+            android:textColor="@color/design_default_color_on_secondary"
             app:layout_constraintEnd_toEndOf="@+id/option3_imageButton"
             app:layout_constraintStart_toStartOf="@+id/option3_imageButton"
             app:layout_constraintTop_toBottomOf="@+id/option3_imageButton" />
@@ -182,6 +187,7 @@
             android:textAlignment="center"
             android:layout_marginTop="8dp"
             android:text="@{viewModel.textOptions.get(3)}"
+            android:textColor="@color/design_default_color_on_secondary"
             tools:text="Option 4 Name"
             app:layout_constraintEnd_toEndOf="@+id/option4_imageButton"
             app:layout_constraintStart_toStartOf="@+id/option4_imageButton"
@@ -215,7 +221,6 @@
             android:textAppearance="?attr/textAppearanceHeadline4"
             android:text="@{@string/posture_count(viewModel.questionPosition, viewModel.posCounter)}"
              />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
