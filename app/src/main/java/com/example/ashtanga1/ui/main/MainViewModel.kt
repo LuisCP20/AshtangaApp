@@ -225,9 +225,7 @@ class MainViewModel : ViewModel() {
     }
 
     private fun asanaPicker(sequence: Int, position: Int) {
-        Log.d("Crash", "Actual${position}/maximo${_sequencesData[sequence].size}, ${bothAnswered}")
         _asana.value = _sequencesData[sequence][position - 1]
-        Log.d("Test", "Actual${position}/maximo${_sequencesData[sequence].size}")
         if (position < _sequencesData[sequence].size) {
             _nextAsana.value = _sequencesData[sequence][position]
         }
@@ -278,7 +276,6 @@ class MainViewModel : ViewModel() {
             } else
                 setTextOptions(options)
         } else {
-            // TODO: que postura actual no salga en las opciones
             val rightAnswer = _sequencePosition.value ?: 0
             if (rightAnswer < _sequencesData[_sequenceIndex].size) { // Check if last
                 var options = mutableListOf(
@@ -321,7 +318,7 @@ class MainViewModel : ViewModel() {
         }
     }
 
-    fun setTextOptions(options: List<Asana>) {
+    private fun setTextOptions(options: List<Asana>) {
         //Log.d("Test", "TechniqueIndex:${_techniqueIndex.toString()}")
 
         when (_techniqueIndex) {
