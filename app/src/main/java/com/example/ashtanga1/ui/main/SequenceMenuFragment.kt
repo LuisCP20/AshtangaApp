@@ -1,7 +1,6 @@
 package com.example.ashtanga1.ui.main
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,12 +10,13 @@ import androidx.navigation.fragment.findNavController
 import com.example.ashtanga1.R
 import com.example.ashtanga1.databinding.FragmentSequenceMenuBinding
 
-/**
- * A simple [Fragment] subclass.
- * Use the [SequenceMenuFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class SequenceMenuFragment : Fragment() {
+    /* TODO: Arreglar bug en complete series. Se queda pegado porque la ultima postura de
+    *  TODO: Surya A es igual a la primera de Surya B y yo puse que no la actual no puede ser
+    *  TODO: igual a la siguiente
+    * */
+
 
     private val sharedViewModel: MainViewModel by activityViewModels()
     private var binding: FragmentSequenceMenuBinding? = null

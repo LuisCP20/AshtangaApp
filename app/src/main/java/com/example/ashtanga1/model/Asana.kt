@@ -7,5 +7,6 @@ data class Asana(
     @DrawableRes val postureImageResourceId: Int,
     val name: String,
     val drishti: String,
-    val bandha: String
+    val bandha: String,
+    val sequence: String
 )

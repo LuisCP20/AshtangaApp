@@ -44,10 +44,9 @@ class TechniqueQuestionFragment : Fragment() {
     }
 
     fun checkAnswer(selection: Asana){
-        // TODO: Arreglar bug cuando salen dos repetidas en las opciones
         Log.d("Test", "${selection}, ${sharedViewModel.asana.value}")
         // Comparar nombres deberia funcionar con Drishti y con imagenes
-        if(selection == (sharedViewModel.asana.value)){
+        if(selection.postureImageResourceId == (sharedViewModel.asana.value?.postureImageResourceId)){ // Comparo con imagenes, ya que nombres pueden variar (ABC)
             sharedViewModel.correctAnswerTechnique()
             checkLast()
         }
