@@ -2,15 +2,11 @@ package com.example.ashtanga1
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ashtanga1.adapter.CardAdapter
 import com.example.ashtanga1.data.DataSource
 import com.example.ashtanga1.databinding.ReviewActivityBinding
 import com.example.ashtanga1.ui.main.MainFragment
-import android.R
-import android.view.View
-
 
 class ReviewActivity : AppCompatActivity() {
 

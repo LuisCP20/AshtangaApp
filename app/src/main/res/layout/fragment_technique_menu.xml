@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="fragmentTechniqueMenu"
             type="com.example.ashtanga1.ui.main.TechniqueMenuFragment" />
+
         <variable
             name="viewModel"
             type="com.example.ashtanga1.ui.main.MainViewModel" />
     </data>
 
     <ScrollView
-        android:background="#FFECB3"
         android:id="@+id/ConstraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -33,70 +34,70 @@
 
             <TextView
                 android:id="@+id/technique_textView"
-                android:text="@string/choose_a_technique"
-                android:textAppearance="?attr/textAppearanceHeadline4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="64dp" />
+                android:layout_marginBottom="64dp"
+                android:text="@string/choose_a_technique"
+                android:textAppearance="?attr/textAppearanceHeadline4" />
 
             <Button
                 android:id="@+id/name_button"
-                android:onClick="@{() -> fragmentTechniqueMenu.goToNextScreen(0)}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="0dp"
                 android:layout_marginBottom="16dp"
                 android:minWidth="250dp"
+                android:onClick="@{() -> fragmentTechniqueMenu.goToNextScreen(0)}"
                 android:text="@string/name"
                 android:textAppearance="?attr/textAppearanceHeadline6" />
 
-<!--            <Button-->
-<!--                android:id="@+id/bandha_button"-->
-<!--                android:onClick="@{() -> fragmentTechniqueMenu.goToNextScreen(1)}"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_gravity="center_horizontal"-->
-<!--                android:layout_marginTop="8dp"-->
-<!--                android:layout_marginBottom="16dp"-->
-<!--                android:minWidth="250dp"-->
-<!--                android:text="@string/bandha"-->
-<!--                android:textAppearance="?attr/textAppearanceHeadline6" />-->
+            <!--            <Button-->
+            <!--                android:id="@+id/bandha_button"-->
+            <!--                android:onClick="@{() -> fragmentTechniqueMenu.goToNextScreen(1)}"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_gravity="center_horizontal"-->
+            <!--                android:layout_marginTop="8dp"-->
+            <!--                android:layout_marginBottom="16dp"-->
+            <!--                android:minWidth="250dp"-->
+            <!--                android:text="@string/bandha"-->
+            <!--                android:textAppearance="?attr/textAppearanceHeadline6" />-->
 
             <Button
                 android:id="@+id/Drishti_button"
-                android:onClick="@{() -> fragmentTechniqueMenu.goToNextScreen(2)}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
                 android:minWidth="250dp"
+                android:onClick="@{() -> fragmentTechniqueMenu.goToNextScreen(2)}"
                 android:text="@string/drishti"
                 android:textAppearance="?attr/textAppearanceHeadline6" />
 
             <Button
                 android:id="@+id/posture_button"
-                android:onClick="@{() -> fragmentTechniqueMenu.goToNextScreen(3)}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
                 android:minWidth="250dp"
+                android:onClick="@{() -> fragmentTechniqueMenu.goToNextScreen(3)}"
                 android:text="@string/posture"
                 android:textAppearance="?attr/textAppearanceHeadline6" />
 
             <Button
                 android:id="@+id/random_button"
-                android:onClick="@{() -> fragmentTechniqueMenu.goToNextScreen(fragmentTechniqueMenu.randomTechnique())}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
                 android:minWidth="250dp"
+                android:onClick="@{() -> fragmentTechniqueMenu.goToNextScreen(fragmentTechniqueMenu.randomTechnique())}"
                 android:text="@string/random"
                 android:textAppearance="?attr/textAppearanceHeadline6" />
 

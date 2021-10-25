@@ -13,11 +13,6 @@ import com.example.ashtanga1.databinding.FragmentTechniqueQuestionBinding
 import com.example.ashtanga1.model.Asana
 import kotlin.random.Random
 
-/**
- * A simple [Fragment] subclass.
- * Use the [TechniqueQuestionFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class TechniqueQuestionFragment : Fragment() {
 
     private val sharedViewModel: MainViewModel by activityViewModels()
@@ -80,7 +75,7 @@ class TechniqueQuestionFragment : Fragment() {
     }
 
     private fun randomTechnique() :Int{
-        val techniques = listOf<Int>(0,2,3)
+        val techniques = listOf(0,2,3)
         val selected = techniques[Random.nextInt(0,techniques.size)]
         Log.d("RandomTech", "NextQ${selected}")
         sharedViewModel.setTechnique(selected)

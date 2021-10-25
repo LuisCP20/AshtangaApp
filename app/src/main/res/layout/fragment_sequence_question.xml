@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="fragmentSequenceQuestion"
             type="com.example.ashtanga1.ui.main.SequenceQuestionFragment" />
+
         <variable
             name="viewModel"
             type="com.example.ashtanga1.ui.main.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="#FFECB3"
         android:id="@+id/ConstraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -42,76 +43,76 @@
             android:layout_marginTop="128dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="128dp"
+            android:contentDescription="current posture"
+            app:imageResource="@{viewModel.asana.postureImageResourceId}"
             app:layout_constraintBottom_toBottomOf="@+id/ConstraintLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:imageResource = "@{viewModel.asana.postureImageResourceId}"
-            android:contentDescription = "current posture"
             tools:srcCompat="@drawable/sa1" />
 
         <TextView
             android:id="@+id/current_posture_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
             android:layout_marginTop="2dp"
-            tools:text="Current Posture Name"
             android:text="@{viewModel.asana.name}"
+            android:textAlignment="center"
             android:textColor="@color/design_default_color_on_secondary"
             app:layout_constraintEnd_toEndOf="@id/Current_posture_imageView"
             app:layout_constraintStart_toStartOf="@id/Current_posture_imageView"
-            app:layout_constraintTop_toBottomOf="@id/Current_posture_imageView" />
+            app:layout_constraintTop_toBottomOf="@id/Current_posture_imageView"
+            tools:text="Current Posture Name" />
 
 
         <ImageButton
             android:id="@+id/option1_imageButton"
 
-            android:onClick="@{() -> fragmentSequenceQuestion.checkAnswer(viewModel.asanaOptions.get(0).postureImageResourceId)}"
-            android:padding="2dp"
-            android:background="@drawable/roundcorners"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/roundcorners"
+            android:onClick="@{() -> fragmentSequenceQuestion.checkAnswer(viewModel.asanaOptions.get(0).postureImageResourceId)}"
+            android:padding="2dp"
+            android:scaleType="fitCenter"
             android:textAppearance="?attr/textAppearanceHeadline6"
+            app:imageResource="@{viewModel.asanaOptions.get(0).postureImageResourceId}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Current_posture_imageView"
-            app:imageResource = "@{viewModel.asanaOptions.get(0).postureImageResourceId}"
-            tools:srcCompat="@drawable/asanad"
-            tools:ignore="SpeakableTextPresentCheck,ContentDescription,ImageContrastCheck" />
+            tools:ignore="SpeakableTextPresentCheck,ContentDescription,ImageContrastCheck"
+            tools:srcCompat="@drawable/asanad" />
 
         <TextView
             android:id="@+id/option1_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
             android:layout_marginTop="8dp"
-            tools:text="Option 1 Name"
             android:text="@{viewModel.textOptions.get(0)}"
+            android:textAlignment="center"
             android:textColor="@color/design_default_color_on_secondary"
             app:layout_constraintEnd_toEndOf="@+id/option1_imageButton"
             app:layout_constraintStart_toStartOf="@+id/option1_imageButton"
-            app:layout_constraintTop_toBottomOf="@+id/option1_imageButton" />
+            app:layout_constraintTop_toBottomOf="@+id/option1_imageButton"
+            tools:text="Option 1 Name" />
 
         <ImageButton
             android:id="@+id/option2_imageButton"
-            android:onClick="@{() -> fragmentSequenceQuestion.checkAnswer(viewModel.asanaOptions.get(1).postureImageResourceId)}"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginStart="16dp"
             android:layout_marginBottom="32dp"
             android:adjustViewBounds="true"
-            android:hapticFeedbackEnabled="true"
-            android:padding="2dp"
             android:background="@drawable/roundcorners"
+            android:hapticFeedbackEnabled="true"
+            android:onClick="@{() -> fragmentSequenceQuestion.checkAnswer(viewModel.asanaOptions.get(1).postureImageResourceId)}"
+            android:padding="2dp"
             android:scaleType="fitCenter"
             android:textAppearance="?attr/textAppearanceHeadline6"
+            app:imageResource="@{viewModel.asanaOptions.get(1).postureImageResourceId}"
             app:layout_constraintBottom_toTopOf="@+id/Current_posture_imageView"
             app:layout_constraintStart_toStartOf="parent"
-            app:imageResource = "@{viewModel.asanaOptions.get(1).postureImageResourceId}"
             tools:ignore="SpeakableTextPresentCheck,ContentDescription"
             tools:srcCompat="@drawable/asanad" />
 
@@ -119,45 +120,45 @@
             android:id="@+id/option2_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
             android:layout_marginTop="8dp"
-            tools:text="Option 2 Name"
             android:text="@{viewModel.textOptions.get(1)}"
+            android:textAlignment="center"
             android:textColor="@color/design_default_color_on_secondary"
             app:layout_constraintEnd_toEndOf="@+id/option2_imageButton"
             app:layout_constraintStart_toStartOf="@+id/option2_imageButton"
-            app:layout_constraintTop_toBottomOf="@+id/option2_imageButton" />
+            app:layout_constraintTop_toBottomOf="@+id/option2_imageButton"
+            tools:text="Option 2 Name" />
 
         <ImageButton
             android:id="@+id/option3_imageButton"
-            android:onClick="@{() -> fragmentSequenceQuestion.checkAnswer(viewModel.asanaOptions.get(2).postureImageResourceId)}"
-            android:padding="2dp"
-            android:background="@drawable/roundcorners"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/roundcorners"
+            android:onClick="@{() -> fragmentSequenceQuestion.checkAnswer(viewModel.asanaOptions.get(2).postureImageResourceId)}"
+            android:padding="2dp"
+            android:scaleType="fitCenter"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            app:imageResource="@{viewModel.asanaOptions.get(2).postureImageResourceId}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Current_posture_imageView"
-            android:textAppearance="?attr/textAppearanceHeadline6"
-            app:imageResource = "@{viewModel.asanaOptions.get(2).postureImageResourceId}"
-            tools:srcCompat="@drawable/asanad"
-            tools:ignore="SpeakableTextPresentCheck,ContentDescription" />
+            tools:ignore="SpeakableTextPresentCheck,ContentDescription"
+            tools:srcCompat="@drawable/asanad" />
 
         <TextView
             android:id="@+id/option3_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
             android:layout_marginTop="8dp"
-            tools:text="Option 3 Name"
             android:text="@{viewModel.textOptions.get(2)}"
+            android:textAlignment="center"
             android:textColor="@color/design_default_color_on_secondary"
             app:layout_constraintEnd_toEndOf="@+id/option3_imageButton"
             app:layout_constraintStart_toStartOf="@+id/option3_imageButton"
-            app:layout_constraintTop_toBottomOf="@+id/option3_imageButton" />
+            app:layout_constraintTop_toBottomOf="@+id/option3_imageButton"
+            tools:text="Option 3 Name" />
 
 
         <ImageButton
@@ -184,24 +185,24 @@
             android:id="@+id/option4_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
             android:layout_marginTop="8dp"
             android:text="@{viewModel.textOptions.get(3)}"
+            android:textAlignment="center"
             android:textColor="@color/design_default_color_on_secondary"
-            tools:text="Option 4 Name"
             app:layout_constraintEnd_toEndOf="@+id/option4_imageButton"
             app:layout_constraintStart_toStartOf="@+id/option4_imageButton"
-            app:layout_constraintTop_toBottomOf="@+id/option4_imageButton" />
+            app:layout_constraintTop_toBottomOf="@+id/option4_imageButton"
+            tools:text="Option 4 Name" />
 
 
         <ImageButton
             android:id="@+id/imageButton"
-            android:onClick="@{() -> fragmentSequenceQuestion.exit()}"
-            android:background="@android:color/transparent"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="12dp"
             android:layout_marginTop="12dp"
+            android:background="@android:color/transparent"
+            android:onClick="@{() -> fragmentSequenceQuestion.exit()}"
             android:src="@drawable/ic_baseline_close_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -213,14 +214,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="12dp"
+            android:text="@{@string/posture_count(viewModel.questionPosition, viewModel.posCounter)}"
             android:textAlignment="center"
+            android:textAppearance="?attr/textAppearanceHeadline4"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:textAppearance="?attr/textAppearanceHeadline4"
-            android:text="@{@string/posture_count(viewModel.questionPosition, viewModel.posCounter)}"
-             />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

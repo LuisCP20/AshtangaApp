@@ -10,11 +10,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.ashtanga1.databinding.FragmentSequenceQuestionBinding
 import kotlin.random.Random
-import android.R
-
-import android.widget.TextView
-import androidx.core.view.isInvisible
-import androidx.core.view.isVisible
 
 
 class SequenceQuestionFragment : Fragment() {
@@ -66,7 +61,7 @@ class SequenceQuestionFragment : Fragment() {
 
 
     private fun navigateNextScreen(){
-        val techniques = listOf<Int>(0,2) // technique 0: Name technique 2: Drishti
+        val techniques = listOf(0,2) // technique 0: Name technique 2: Drishti
         val selected = techniques[Random.nextInt(0,techniques.size)]
         Log.d("RandomTech", "NextQ${selected}")
         sharedViewModel.setTechnique(selected)

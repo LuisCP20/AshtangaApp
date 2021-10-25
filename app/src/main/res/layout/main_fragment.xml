@@ -3,10 +3,11 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context = ".ui.main.MainFragment">
+    tools:context=".ui.main.MainFragment">
 
 
     <data>
+
         <variable
             name="viewModel"
             type="com.example.ashtanga1.ui.main.MainViewModel" />
@@ -20,8 +21,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFECB3"
-        >
+        android:background="?attr/colorOnBackground">
 
         <ImageView
             android:id="@+id/imageView2"
@@ -32,12 +32,12 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:contentDescription="@string/decorative_yoga_posture"
-            android:src="@drawable/asanad"
-            tools:srcCompat="@drawable/asanad"
+            android:src="@drawable/asanadw"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/asanadw" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -52,54 +52,56 @@
 
             <Button
                 android:id="@+id/postures_main_button"
-                android:onClick="@{() -> mainFragment.goToNextScreen(0)}"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="32dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:onClick="@{() -> mainFragment.goToNextScreen(0)}"
                 android:text="@string/postures"
                 android:textAppearance="?attr/textAppearanceHeadline6" />
 
             <Button
                 android:id="@+id/sequence_main_button"
-                android:onClick="@{() -> mainFragment.goToNextScreen(1)}"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="32dp"
-                android:layout_marginTop="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="32dp"
+                android:onClick="@{() -> mainFragment.goToNextScreen(1)}"
                 android:text="@string/sequence"
                 android:textAppearance="?attr/textAppearanceHeadline6" />
 
             <Button
                 android:id="@+id/combined_main_button"
-                android:onClick="@{() -> mainFragment.goToNextScreen(2)}"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="32dp"
-                android:layout_marginTop="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="32dp"
+                android:onClick="@{() -> mainFragment.goToNextScreen(2)}"
                 android:text="@string/posture_with_sequence"
                 android:textAppearance="?attr/textAppearanceHeadline6" />
 
             <Button
                 android:id="@+id/review_main_button"
-                android:onClick="@{() -> mainFragment.goToNextScreen(3)}"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="32dp"
-                android:layout_marginTop="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="32dp"
+                android:onClick="@{() -> mainFragment.goToNextScreen(3)}"
                 android:text="@string/review"
                 android:textAppearance="?attr/textAppearanceHeadline6" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/title_textView"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/app_name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/design_default_color_on_primary"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/imageView2"
             app:layout_constraintEnd_toEndOf="@+id/imageView2"
             app:layout_constraintStart_toStartOf="@+id/imageView2"

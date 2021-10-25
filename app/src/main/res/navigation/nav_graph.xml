@@ -30,9 +30,6 @@
         <action
             android:id="@+id/action_sequenceQuestionFragment_to_techniqueQuestionFragment"
             app:destination="@id/techniqueQuestionFragment" />
-        <action
-            android:id="@+id/action_sequenceQuestionFragment_to_sequenceChangeFragment"
-            app:destination="@id/sequenceChangeFragment" />
     </fragment>
     <fragment
         android:id="@+id/sequenceMenuFragment2"
@@ -84,9 +81,6 @@
         <action
             android:id="@+id/action_techniqueQuestionFragment_to_postureQuestionFragment2"
             app:destination="@id/postureQuestionFragment2" />
-        <action
-            android:id="@+id/action_techniqueQuestionFragment_to_sequenceChangeFragment"
-            app:destination="@id/sequenceChangeFragment" />
     </fragment>
     <fragment
         android:id="@+id/finishedFragment2"
@@ -118,23 +112,5 @@
         <action
             android:id="@+id/action_postureQuestionFragment2_to_techniqueQuestionFragment"
             app:destination="@id/techniqueQuestionFragment" />
-        <action
-            android:id="@+id/action_postureQuestionFragment2_to_sequenceChangeFragment"
-            app:destination="@id/sequenceChangeFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/sequenceChangeFragment"
-        android:name="com.example.ashtanga1.ui.main.SequenceChangeFragment"
-        android:label="SequenceChangeFragment"
-        tools:layout="@layout/fragment_sequence_change">
-        <action
-            android:id="@+id/action_sequenceChangeFragment_to_techniqueQuestionFragment"
-            app:destination="@id/techniqueQuestionFragment" />
-        <action
-            android:id="@+id/action_sequenceChangeFragment_to_postureQuestionFragment2"
-            app:destination="@id/postureQuestionFragment2" />
-        <action
-            android:id="@+id/action_sequenceChangeFragment_to_sequenceQuestionFragment"
-            app:destination="@id/sequenceQuestionFragment" />
     </fragment>
 </navigation>

@@ -2,16 +2,16 @@
     <!-- Base application theme. -->
     <style name="Theme.Ashtanga1" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#212121</item>
-        <item name ="colorAccent">#E040FB</item>
+        <item name="colorPrimary">@color/purple_p</item>
+        <item name="colorPrimaryVariant">@color/purple_p_dark</item>
         <item name="colorOnPrimary">@color/white</item>
-        <item name="backgroundColor">#FFECB3</item>
+        <item name="colorOnBackground">@color/purple_p_triad</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">#FFECB3</item>
-        <item name="colorSecondaryVariant">#7F59add7</item>
-        <item name="colorOnSecondary">#167ea5</item>
+        <item name="colorSecondary">@color/green_s</item>
+        <item name="colorSecondaryVariant">@color/green_s_dark</item>
+        <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorSecondary</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorOnBackground</item>
         <!-- Customize your theme here. -->
     </style>
 

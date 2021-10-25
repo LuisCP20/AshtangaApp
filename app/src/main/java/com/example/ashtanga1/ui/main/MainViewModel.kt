@@ -21,10 +21,9 @@ class MainViewModel : ViewModel() {
         suryaA, suryaB, standingSequence,
         sittingSequence, finishingSequence, completeSequence
     )
-    val sequencesData: List<List<Asana>> = _sequencesData
 
-    val mainMenu = listOf<String>("Posture", "Sequence", "Posture and Sequence", "Review")
-    private val sequenceMenu = listOf<String>(
+    val mainMenu = listOf("Posture", "Sequence", "Posture and Sequence", "Review")
+    private val sequenceMenu = listOf(
         "Suryanamaskara A",
         "Suryanamaskara B",
         "Standing Sequence",
@@ -32,7 +31,7 @@ class MainViewModel : ViewModel() {
         "Finishing Sequence",
         "Complete Series"
     )
-    val techniqueMenu = listOf<String>("Name", "Bandha", "Drishti", "Posture", "Random")
+    val techniqueMenu = listOf("Name", "Bandha", "Drishti", "Posture", "Random")
 
     // Selected mode
     private val _mode = MutableLiveData<String>()
@@ -42,39 +41,37 @@ class MainViewModel : ViewModel() {
 
     // Selected sequence
     private val _sequence = MutableLiveData<String>()
-    val sequence: LiveData<String> = _sequence
 
     // Selected sequence index
     // TODO: ese 3 a algo mas decente
-    private var _sequenceIndex: Int = 5
-    private var _techniqueIndex: Int = 3
-    var techniqueIndex = _techniqueIndex
+    private var _sequenceIndex: Int = 0
+    private var _techniqueIndex: Int = 0
 
     // Selected technique
     private val _technique = MutableLiveData<String>()
     val technique: LiveData<String> = _technique
 
     // Random technique
-    private val _randomT = MutableLiveData<Boolean>(false)
+    private val _randomT = MutableLiveData(false)
     val randomT = _randomT
 
     // Sequence and posture
-    private val _combined = MutableLiveData<Boolean>(false)
+    private val _combined = MutableLiveData(false)
     val combined = _combined
     private var bothAnswered = false // Advance to next Asana in combined mode
 
     // Length of sequence
-    private val _seqLength = MutableLiveData<Int>(1)
+    private val _seqLength = MutableLiveData(1)
     val seqLength: LiveData<Int>
         get() = _seqLength
 
     // Length of sequence
-    private val _posCounter = MutableLiveData<Int>(1)
+    private val _posCounter = MutableLiveData(1)
     val posCounter: LiveData<Int>
         get() = _posCounter
 
     // Score
-    private val _score = MutableLiveData<Int>(0)
+    private val _score = MutableLiveData(0)
     val score: LiveData<Int>
         get() = _score
 
@@ -145,12 +142,12 @@ class MainViewModel : ViewModel() {
         _randomT.value = activated
     }
 
-    fun setCombinedMode(activated: Boolean) {
+    fun setCombinedMode() {
         _combined.value = true
     }
 
-    fun clearText() {
-        _textOptions.value = mutableListOf<String>("", "", "", "")
+    private fun clearText() {
+        _textOptions.value = mutableListOf("", "", "", "")
     }
 
     fun correctAnswer() {
@@ -245,7 +242,7 @@ class MainViewModel : ViewModel() {
         if (includeCurrent && !bothAnswered) {
             // TODO: los ceros son surya A, cambiarlo para que varie con cada secuencia. Revisar que sirva en las otras
             // TODO: Que no salgan repetidas, pasa porque hay repetidas en las secuencias
-            var options = mutableListOf(
+            val options = mutableListOf(
                 _sequencesData[_sequenceIndex][_sequencePosition.value!! - 1]// Correct answer
                 ,
                 _sequencesData[_sequenceIndex][Random.nextInt(
@@ -278,7 +275,7 @@ class MainViewModel : ViewModel() {
         } else {
             val rightAnswer = _sequencePosition.value ?: 0
             if (rightAnswer < _sequencesData[_sequenceIndex].size) { // Check if last
-                var options = mutableListOf(
+                val options = mutableListOf(
                     _sequencesData[_sequenceIndex][rightAnswer]// Correct answer
                     ,
                     _sequencesData[_sequenceIndex][Random.nextInt(

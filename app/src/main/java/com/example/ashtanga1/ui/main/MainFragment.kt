@@ -40,31 +40,38 @@ class MainFragment : Fragment() {
         binding = null
     }
 
-    fun goToNextScreen(mode: Int){
+    fun goToNextScreen(mode: Int) {
         when (mode) {
             // Techniques
-            0 -> {findNavController().navigate(R.id.action_mainFragment_to_sequenceMenuFragment2)
-                sharedViewModel.setMode(0)}
-            // Sequence Order
-            1 -> {findNavController().navigate(R.id.action_mainFragment_to_sequenceMenuFragment2)
-                sharedViewModel.setMode(1)}
-            // Combined
-            2 -> {combinedMode()
+            0 -> {
                 findNavController().navigate(R.id.action_mainFragment_to_sequenceMenuFragment2)
-                sharedViewModel.setMode(2)}
+                sharedViewModel.setMode(0)
+            }
+            // Sequence Order
+            1 -> {
+                findNavController().navigate(R.id.action_mainFragment_to_sequenceMenuFragment2)
+                sharedViewModel.setMode(1)
+            }
+            // Combined
+            2 -> {
+                combinedMode()
+                findNavController().navigate(R.id.action_mainFragment_to_sequenceMenuFragment2)
+                sharedViewModel.setMode(2)
+            }
             // Review
-            3 -> { // TODO: Ir a ventana de fichas
+            3 -> {
                 sharedViewModel.setMode(3)
                 val intent = Intent(context, ReviewActivity::class.java)
-                context?.startActivity(intent)}
+                context?.startActivity(intent)
+            }
 
 
         }
     }
 
-    private fun combinedMode(){
+    private fun combinedMode() {
         sharedViewModel.setRandomTech(true)
-        sharedViewModel.setCombinedMode(true)
+        sharedViewModel.setCombinedMode()
     }
 
 }

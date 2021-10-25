@@ -12,11 +12,6 @@ import com.example.ashtanga1.databinding.FragmentSequenceMenuBinding
 
 
 class SequenceMenuFragment : Fragment() {
-    /* TODO: Arreglar bug en complete series. Se queda pegado porque la ultima postura de
-    *  TODO: Surya A es igual a la primera de Surya B y yo puse que no la actual no puede ser
-    *  TODO: igual a la siguiente
-    * */
-
 
     private val sharedViewModel: MainViewModel by activityViewModels()
     private var binding: FragmentSequenceMenuBinding? = null

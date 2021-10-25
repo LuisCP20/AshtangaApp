@@ -1,7 +1,6 @@
 package com.example.ashtanga1.ui.main
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,11 +11,6 @@ import com.example.ashtanga1.R
 import com.example.ashtanga1.databinding.FragmentTechniqueMenuBinding
 import kotlin.random.Random
 
-/**
- * A simple [Fragment] subclass.
- * Use the [TechniqueMenuFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class TechniqueMenuFragment : Fragment() {
 
     private val sharedViewModel: MainViewModel by activityViewModels()
@@ -64,7 +58,7 @@ class TechniqueMenuFragment : Fragment() {
     }
 
     fun randomTechnique(): Int{
-        val techniques = listOf<Int>(0,2,3)
+        val techniques = listOf(0,2,3)
         sharedViewModel.setRandomTech(true)
         return techniques[Random.nextInt(0,techniques.size)]
     }
