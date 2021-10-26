@@ -23,15 +23,14 @@
 
         <TextView
             android:id="@+id/bandhas_textView"
-            android:layout_width="300dp"
-            android:layout_height="110dp"
-            android:layout_marginStart="69dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="69dp"
-            android:text="@{viewModel.asana.sequence}"
-            android:textAppearance="?attr/textAppearanceHeadline5"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:text="@{viewModel.asana.bandha}"
+            android:textAlignment="center"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            app:layout_constraintEnd_toEndOf="@+id/drishtitextView"
+            app:layout_constraintStart_toStartOf="@+id/drishtitextView"
             app:layout_constraintTop_toBottomOf="@+id/drishtitextView"
             tools:text="DOS BANDHAS CON NOMBRES LARGOS" />
 
@@ -60,7 +59,7 @@
             android:src="@drawable/ic_baseline_chevron_left_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="SpeakableTextPresentCheck" />
+            tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
         <ImageButton
             android:id="@+id/nextButton"
@@ -72,7 +71,7 @@
             android:src="@drawable/ic_baseline_chevron_right_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:ignore="SpeakableTextPresentCheck" />
+            tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
         <ImageView
             android:id="@+id/postureImageView"
@@ -83,7 +82,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
 
         <ImageButton
             android:id="@+id/imageButton"

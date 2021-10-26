@@ -41,22 +41,21 @@
 
         <TextView
             android:id="@+id/drishtiR"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="44dp"
-            android:layout_marginEnd="68dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="#000000"
-            app:layout_constraintEnd_toStartOf="@+id/postureR"
+            app:layout_constraintStart_toStartOf="@+id/nameR"
             app:layout_constraintTop_toBottomOf="@+id/nameR"
             tools:text="Drishti:" />
 
         <TextView
             android:id="@+id/detailsR"
-            android:layout_width="120dp"
-            android:layout_height="150dp"
+            android:layout_width="119dp"
+            android:layout_height="60dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="48dp"
             android:textColor="#000000"
             app:layout_constraintStart_toEndOf="@+id/postureR"
             app:layout_constraintTop_toTopOf="parent"

@@ -18,6 +18,7 @@ class TechniqueQuestionFragment : Fragment() {
     private val sharedViewModel: MainViewModel by activityViewModels()
     private var binding: FragmentTechniqueQuestionBinding? = null
 
+    // TODO: QUE EN MODO DRISHTI NO SALGAN REPETIDAS
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

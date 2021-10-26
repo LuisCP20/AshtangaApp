@@ -8,7 +8,7 @@ import com.example.ashtanga1.data.DataSource
 import com.example.ashtanga1.model.Asana
 import java.util.*
 import kotlin.random.Random
-
+// TODO: Mejorar UI, que todo funcione bien
 class MainViewModel : ViewModel() {
 
     private val suryaA: List<Asana> = DataSource.suryaA
