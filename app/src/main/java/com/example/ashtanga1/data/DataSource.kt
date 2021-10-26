@@ -203,7 +203,7 @@ object DataSource {
         Asana(
             R.drawable.padangusthsana,
             "Padangusthsana",
-            "Nasagra Drishti",
+            "Nasagrai Drishti",
             "Mula Bhanda\nUddiyana Bhanda", "Standing Sequence"),
 
         Asana(
@@ -320,7 +320,7 @@ object DataSource {
         Asana(
             R.drawable.dandasana,
             "Dandasana",
-            "Nasagra Drishti",
+            "Nasagrai Drishti",
             "Mula Bhanda\nUddiyana Bhanda\nJalandhara Bhanda", "Sitting Sequence"),
 
         Asana(
@@ -332,226 +332,226 @@ object DataSource {
         Asana(
             R.drawable.paschimottanasanab,
             "Paschimottanasana B",
-            "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Padhayoragai Drishti",
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.paschimottanasanac,
             "Paschimottanasana C",
-            "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Padhayoragai Drishti",
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.purvottanasana,
             "Purvottanasana",
-            "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Nasagrai Drishti",
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             // TODO: Ajustar nombres muy largos
             R.drawable.ardhabaddhapadmapaschimottanasana,
             "Ardha Baddha Padma\n" +
                     "Paschimottanasana",
-            "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Padhayoragai Drishti",
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.asanad,
             "Triang Mukhaekapada Paschimottanasana",
-            "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Padhayoragai Drishti",
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.janusirasanaa,
             "Janu Sirsasana A",
-            "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Padhayoragai Drishti",
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.janusirasanab,
             "Janu Sirsasana B",
-            "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Padhayoragai Drishti",
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.janusirasanac,
             "Janu Sirsasana C",
-            "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Padhayoragai Drishti",
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.marichyasanaa,
             "Marichyasana A",
-            "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Padhayoragai Drishti",
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.marichyasanab,
             "Marichyasana B",
-            "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Padhayoragai Drishti",
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.marichyasanac,
             "Marichyasana C",
-            "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Padhayoragai Drishti",
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.marichyasanad,
             "Marichyasana D",
-            "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Padhayoragai Drishti",
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.navasana,
             "Navasana\n" + "Lolasana",
-            "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Padhayoragai Drishti",
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.asanad,
             "Bhujapidasana A",
-            "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Nasagrai Drishti",
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.bhujapidasanab,
             "Bhujapidasana B",
-            "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Nasagrai Drishti",
+            "Mula Bhanda\nUddiyana Bhanda","Sitting Sequence"),
 
         Asana(
             R.drawable.kurmasana,
             "Kurmasana",
-            "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Broomadhya Drishti",
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.suptapadangusthasanaa,
             "Supta Kurmasana A",
-            "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Broomadhya Drishti",
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.suptapadangusthasanab,
             "Supta Kurmasana B",
-            "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Broomadhya Drishti",
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.asanad,
             "Garbha Pindasana",
-            "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Nasagrai Drishti",
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.kukkutasana,
             "Kukkutasana",
-            "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Nasagrai Drishti",
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.baddhakonasanaa,
             "Baddha Konasana A",
-            "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Nasagrai Drishti",
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.baddhakonasanab,
             "Baddha Konasana B",
-            "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Nasagrai Drishti",
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.baddhakonasanac,
             "Baddha Konasana C",
-            "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Nasagrai Drishti",
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.upavishtakonasanaa,
             "Upavishta Konasana A",
-            "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Broomadhya Drishti",
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.upavishtakonasanab,
             "Upavishta Konasana B",
-            "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Urdhva Drishti",
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.asanad,
             "Supta Konasana A",
-            "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Broomadhya Drishti",
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.asanad,
             "Supta Konasana B",
-            "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Urdhva Drishti",
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.suptapadangusthasanaa,
             "Supta Padangusthasana A",
             "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.suptapadangusthasanab,
             "Supta Padangusthasana B",
             "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.asanad,
             "Supta Padangusthasana C",
             "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.asanad,
             "Ubhaya Padangusthasana A",
             "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.ubhayapadangusthasanab,
             "Ubhaya Padangusthasana B",
             "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.urdhvamukhapaschimottanasanaa,
             "Urdhva MukhaPaschimottanasana A",
             "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.urdhvamukhapasciomottanasanab,
             "Urdhva MukhaPaschimottanasana B",
             "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.setubandhasana,
             "Setubandhasana",
             "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.urdhvadhanurasana,
             "Urdhva Dhanurasana",
             "dristhi1",
-            "bandha1", "Sitting Sequence"),
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"),
 
         Asana(
             R.drawable.paschimottanasanac,
             "Paschimottanasana C",
             "dristhi1",
-            "bandha1", "Sitting Sequence")
+            "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence")
     )
 
     val finishingSequence: List<Asana> = listOf(
@@ -559,55 +559,55 @@ object DataSource {
             R.drawable.sarvangasana,
             "Sarvangasana",
             "dristhi1",
-            "bandha1", "Finishing Sequence"),
+            "Mula Bhanda\nUddiyana Bhanda\nJalandhara Bhanda", "Finishing Sequence"),
 
         Asana(
             R.drawable.halasana,
             "Halasana",
             "dristhi1",
-            "bandha1", "Finishing Sequence"),
+            "Mula Bhanda\nUddiyana Bhanda\nJalandhara Bhanda", "Finishing Sequence"),
 
         Asana(
             R.drawable.karnapidasana,
             "Karnapidasana",
             "dristhi1",
-            "bandha1", "Finishing Sequence"),
+            "Mula Bhanda\nUddiyana Bhanda\nJalandhara Bhanda", "Finishing Sequence"),
 
         Asana(
             R.drawable.urdhvapadmasana,
             "Urdhva Padmasana",
             "dristhi1",
-            "bandha1", "Finishing Sequence"),
+            "Mula Bhanda\nUddiyana Bhanda\nJalandhara Bhanda", "Finishing Sequence"),
 
         Asana(
             R.drawable.pindasana,
             "Pindasana",
             "dristhi1",
-            "bandha1", "Finishing Sequence"),
+            "Mula Bhanda\nUddiyana Bhanda\nJalandhara Bhanda", "Finishing Sequence"),
 
         Asana(
             R.drawable.matsyasana,
             "Matsyasana",
             "dristhi1",
-            "bandha1", "Finishing Sequence"),
+            "Mula Bhanda\nUddiyana Bhanda\nJalandhara Bhanda", "Finishing Sequence"),
 
         Asana(
             R.drawable.uttanapadasana,
             "Uttana Padasana",
             "dristhi1",
-            "bandha1", "Finishing Sequence"),
+            "Mula Bhanda\nUddiyana Bhanda", "Finishing Sequence"),
 
         Asana(
             R.drawable.sirasana,
             "Sirsasana",
             "dristhi1",
-            "bandha1", "Finishing Sequence"),
+            "Mula Bhanda\nUddiyana Bhanda","Finishing Sequence"),
 
         Asana(
             R.drawable.asanad,
             "Ardha Sirsasana",
             "dristhi1",
-            "bandha1", "Finishing Sequence"),
+            "Mula Bhanda\nUddiyana Bhanda", "Finishing Sequence"),
 
         Asana(
             R.drawable.asanad,
@@ -619,31 +619,31 @@ object DataSource {
             R.drawable.asanad,
             "Baddha Padmasana",
             "dristhi1",
-            "bandha1", "Finishing Sequence"),
+            "Mula Bhanda\nUddiyana Bhanda", "Finishing Sequence"),
 
         Asana(
             R.drawable.asanad,
             "Yoga Mudra",
             "dristhi1",
-            "bandha1", "Finishing Sequence"),
+            "Mula Bhanda\nUddiyana Bhanda", "Finishing Sequence"),
 
         Asana(
             R.drawable.padmasana,
             "Padmasana",
             "dristhi1",
-            "bandha1", "Finishing Sequence"),
+            "Mula Bhanda\nUddiyana Bhanda", "Finishing Sequence"),
 
         Asana(
             R.drawable.uthpluthi,
             "Uth Pluthi",
             "dristhi1",
-            "bandha1", "Finishing Sequence"),
+            "Mula Bhanda\nUddiyana Bhanda", "Finishing Sequence"),
 
         Asana(
             R.drawable.savasana,
             "Savasana",
             "dristhi1",
-            "bandha1", "Finishing Sequence")
+            "Mula Bhanda\nUddiyana Bhanda", "Finishing Sequence")
     )
 
     val completeSequence: List<Asana> =
