@@ -41,6 +41,7 @@ class MainFragment : Fragment() {
     }
 
     fun goToNextScreen(mode: Int) {
+        // TODO: Probar poner sharedViewModel.setMode(mode) afuera del when y agrupar los casos !3
         when (mode) {
             // Techniques
             0 -> {
@@ -64,6 +65,12 @@ class MainFragment : Fragment() {
                 val intent = Intent(context, ReviewActivity::class.java)
                 context?.startActivity(intent)
             }
+            // Practice
+            4 -> {
+                sharedViewModel.setMode(4)
+                findNavController().navigate(R.id.action_mainFragment_to_sequenceMenuFragment2)
+            }
+
 
 
         }

@@ -17,8 +17,6 @@ class SequenceQuestionFragment : Fragment() {
     private val sharedViewModel: MainViewModel by activityViewModels()
     private var binding: FragmentSequenceQuestionBinding? = null
 
-    // 4 options per asana
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

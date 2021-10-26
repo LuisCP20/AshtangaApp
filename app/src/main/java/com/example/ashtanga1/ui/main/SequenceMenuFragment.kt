@@ -46,8 +46,8 @@ class SequenceMenuFragment : Fragment() {
             sharedViewModel.mainMenu[0] -> findNavController().navigate(R.id.action_sequenceMenuFragment2_to_techniqueMenuFragment)
             sharedViewModel.mainMenu[1] -> findNavController().navigate(R.id.action_sequenceMenuFragment2_to_sequenceQuestionFragment)
             sharedViewModel.mainMenu[2] -> findNavController().navigate(R.id.action_sequenceMenuFragment2_to_techniqueQuestionFragment)
+            sharedViewModel.mainMenu[4] -> findNavController().navigate(R.id.action_sequenceMenuFragment2_to_practiceFragment)
             else -> exit()
-            // TODO: revisar otros casos
         }
     }
     

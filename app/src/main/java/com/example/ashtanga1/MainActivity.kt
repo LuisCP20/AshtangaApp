@@ -5,6 +5,9 @@ import android.os.Bundle
 import androidx.navigation.NavController
 
 class MainActivity : AppCompatActivity(R.layout.main_activity) {
+    // TODO: Agregar modo de practica
+    // TODO: Enseñar errores al usuario
+    // TODO: Agregar información
 
     //private lateinit var navController: NavController
 

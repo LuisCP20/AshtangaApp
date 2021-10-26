@@ -83,6 +83,17 @@
                 android:textAppearance="?attr/textAppearanceHeadline6" />
 
             <Button
+                android:id="@+id/practice_main_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="32dp"
+                android:onClick="@{() -> mainFragment.goToNextScreen(4)}"
+                android:text="@string/practice"
+                android:textAppearance="?attr/textAppearanceHeadline6" />
+
+            <Button
                 android:id="@+id/review_main_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -92,6 +103,7 @@
                 android:onClick="@{() -> mainFragment.goToNextScreen(3)}"
                 android:text="@string/review"
                 android:textAppearance="?attr/textAppearanceHeadline6" />
+
         </LinearLayout>
 
         <TextView

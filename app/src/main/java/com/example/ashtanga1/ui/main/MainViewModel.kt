@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.ashtanga1.data.DataSource
 import com.example.ashtanga1.model.Asana
+import java.util.*
 import kotlin.random.Random
 
 class MainViewModel : ViewModel() {
@@ -22,7 +23,7 @@ class MainViewModel : ViewModel() {
         sittingSequence, finishingSequence, completeSequence
     )
 
-    val mainMenu = listOf("Posture", "Sequence", "Posture and Sequence", "Review")
+    val mainMenu = listOf("Posture", "Sequence", "Posture and Sequence", "Review", "Practice")
     private val sequenceMenu = listOf(
         "Suryanamaskara A",
         "Suryanamaskara B",
@@ -31,6 +32,7 @@ class MainViewModel : ViewModel() {
         "Finishing Sequence",
         "Complete Series"
     )
+
     val techniqueMenu = listOf("Name", "Bandha", "Drishti", "Posture", "Random")
 
     // Selected mode
@@ -43,7 +45,6 @@ class MainViewModel : ViewModel() {
     private val _sequence = MutableLiveData<String>()
 
     // Selected sequence index
-    // TODO: ese 3 a algo mas decente
     private var _sequenceIndex: Int = 0
     private var _techniqueIndex: Int = 0
 
@@ -103,32 +104,10 @@ class MainViewModel : ViewModel() {
 
 
     var finalScoreVar = ""
-    //init{setAsana()}
 
+    // Set current mode from main menu
     fun setMode(selectedMode: Int) {
         _mode.value = mainMenu[selectedMode]
-    }
-
-    fun setSequence(selectedSequence: Int) {
-        _sequenceIndex = selectedSequence
-        _sequence.value = sequenceMenu[selectedSequence]
-        if (combined.value == true) {
-            _seqLength.value = 2 * _sequencesData[selectedSequence].size // 2 questions per Asana
-        } else {
-            _seqLength.value = _sequencesData[selectedSequence].size
-        }// One Q per asana
-
-        if (_mode.value != mainMenu[0]) {
-            setAsana()
-            setOptions()
-        }
-
-        when (_mode.value) {
-            mainMenu[0] -> _posCounter.value = _seqLength.value
-            mainMenu[1] -> _posCounter.value = _seqLength.value?.minus(1)
-            mainMenu[2] -> _posCounter.value = _seqLength.value?.minus(1)
-            mainMenu[3] -> _posCounter.value = 2 * _seqLength.value!! - 1
-        }
     }
 
     fun setTechnique(selectedTechnique: Int) {
@@ -146,10 +125,39 @@ class MainViewModel : ViewModel() {
         _combined.value = true
     }
 
+    // Set the selected sequence from sequence menu
+    fun setSequence(selectedSequence: Int) {
+        _sequenceIndex = selectedSequence
+        _sequence.value = sequenceMenu[selectedSequence]
+
+        // In combined mode there are 2 questions per posture
+        if (combined.value == true) {
+            _seqLength.value = 2 * _sequencesData[selectedSequence].size // 2 questions per Asana
+        } else { // One Q per asana
+            _seqLength.value = _sequencesData[selectedSequence].size
+        }
+
+        // Mode 0 still has to select technique
+        if (_mode.value != mainMenu[0]) {
+            setAsana()
+            setOptions()
+        }
+
+        // Set counter to display as user progresses through the series
+        when (_mode.value) { //
+            mainMenu[0] -> _posCounter.value = _seqLength.value
+            mainMenu[1] -> _posCounter.value = _seqLength.value?.minus(1)
+            mainMenu[2] -> _posCounter.value = _seqLength.value?.minus(1)
+            mainMenu[3] -> _posCounter.value = 2 * _seqLength.value!! - 1
+        }
+    }
+
+    // Used to hide names of postures
     private fun clearText() {
         _textOptions.value = mutableListOf("", "", "", "")
     }
 
+    // Add 1 to score when correct then pick next posture
     fun correctAnswer() {
         _score.value = _score.value?.plus(1)
         advance()
@@ -160,6 +168,7 @@ class MainViewModel : ViewModel() {
         }
     }
 
+    // Don't 1 to score when correct then pick next posture
     fun incorrectAnswer() {
         advance()
         if (_questionPosition.value != _seqLength.value) {
@@ -169,14 +178,16 @@ class MainViewModel : ViewModel() {
         }
     }
 
+    // When possible move position and question counters one position
     private fun advance() {
         Log.d("Test", "Load next asana: ${bothAnswered} Combined: ${combined.value}")
         if (_combined.value == true) { // Progression in combined mode
-            if (bothAnswered) {
+            if (bothAnswered) { // Only advance after 2 questions have been answered per posture
                 _sequencePosition.value = _sequencePosition.value?.plus(1)
             }
             bothAnswered = !bothAnswered
-            _questionPosition.value = _questionPosition.value?.plus(1)
+            _questionPosition.value =
+                _questionPosition.value?.plus(1) // Question counter always advances
         } else {
             _questionPosition.value = _questionPosition.value?.plus(1)
             _sequencePosition.value = _sequencePosition.value?.plus(1)
@@ -208,7 +219,13 @@ class MainViewModel : ViewModel() {
         }
     }
 
+    fun back(){
+        _sequencePosition.value = _sequencePosition.value?.minus(1)
+        _questionPosition.value = _questionPosition.value?.minus(1)
+        // If _asana.value is not in the list the index will be -1
+        _asana.value = _sequencesData[sequenceMenu.indexOf(_sequence.value)][_sequencePosition.value!! - 1]
 
+    }
     private fun setAsana() {
         //sequenceMenu.indexOf(_sequencevalue)
         when (_sequence.value) {
@@ -352,6 +369,8 @@ class MainViewModel : ViewModel() {
 
     fun reset() {
         _score.value = 0
+        _posCounter.value = 0
+        _seqLength.value = 0
         _questionPosition.value = 1
         _sequencePosition.value = 1
         _sequenceIndex = 5
