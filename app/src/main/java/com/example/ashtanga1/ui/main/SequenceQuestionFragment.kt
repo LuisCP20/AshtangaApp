@@ -10,23 +10,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.example.ashtanga1.R
 import com.example.ashtanga1.databinding.FragmentSequenceQuestionBinding
 import java.util.*
-import kotlin.concurrent.thread
 import kotlin.random.Random
-import android.R
-import android.widget.Button
-import android.widget.ImageButton
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.async
-import kotlinx.coroutines.awaitAll
+
 
 
 class SequenceQuestionFragment : Fragment() {
 
     private val sharedViewModel: MainViewModel by activityViewModels()
     private var binding: FragmentSequenceQuestionBinding? = null
-    private val delayTime = 200L // Delay in ms for changing colors between questions
+    private val delayTime = 400L // Delay in ms for changing colors between questions
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -53,36 +48,32 @@ class SequenceQuestionFragment : Fragment() {
         // TODO: revisar el repeat que no funciona
         // TODO: mejorar colores
         // TODO: enseñar respuesta
-        sharedViewModel.enableButtons(false)
+        sharedViewModel.enableButtons(false) // Disable buttons during background change
         if(imageId == sharedViewModel.nextAsana.value?.postureImageResourceId){
-            repeat(3){
-                view?.setBackgroundResource(R.color.holo_green_dark)
-                view?.postDelayed({view?.setBackgroundResource(R.color.white)},delayTime)
-            }
+            view?.setBackgroundResource(R.color.green_s_dark)
+            view?.postDelayed({ view.setBackgroundResource(R.color.white) },delayTime)
             handle.postDelayed({
                 sharedViewModel.correctAnswer()
                 if(sharedViewModel.questionPosition.value == sharedViewModel.seqLength.value){
                     sharedViewModel.finalScoreVar = sharedViewModel.finalScoreString()
-                    findNavController().navigate(com.example.ashtanga1.R.id.action_sequenceQuestionFragment_to_finishedFragment2)
+                    findNavController().navigate(R.id.action_sequenceQuestionFragment_to_finishedFragment2)
                 } else{
                     if(sharedViewModel.combined.value == true){navigateNextScreen()}
                 }
-                sharedViewModel.enableButtons(true)},3*delayTime)
+                sharedViewModel.enableButtons(true)},delayTime)
         }
         else{
-            repeat(3){
-                view?.setBackgroundResource(R.color.holo_red_dark)
-                view?.postDelayed({view?.setBackgroundResource(R.color.white)},delayTime)
-            }
+            view?.setBackgroundResource(R.color.purple_p_triad)
+            view?.postDelayed({ view.setBackgroundResource(R.color.white) },delayTime)
             handle.postDelayed({
                 sharedViewModel.incorrectAnswer()
                 if(sharedViewModel.questionPosition.value == sharedViewModel.seqLength.value){
                     sharedViewModel.finalScoreVar = sharedViewModel.finalScoreString()
-                    findNavController().navigate(com.example.ashtanga1.R.id.action_sequenceQuestionFragment_to_finishedFragment2)
+                    findNavController().navigate(R.id.action_sequenceQuestionFragment_to_finishedFragment2)
                 }else{
                     if(sharedViewModel.combined.value == true){navigateNextScreen()}
                 }
-                sharedViewModel.enableButtons(true)}, 3*delayTime)
+                sharedViewModel.enableButtons(true)}, delayTime)
         }
     }
 
@@ -92,12 +83,12 @@ class SequenceQuestionFragment : Fragment() {
         val selected = techniques[Random.nextInt(0,techniques.size)]
         Log.d("RandomTech", "NextQ${selected}")
         sharedViewModel.setTechnique(selected)
-        findNavController().navigate(com.example.ashtanga1.R.id.action_sequenceQuestionFragment_to_techniqueQuestionFragment)
+        findNavController().navigate(R.id.action_sequenceQuestionFragment_to_techniqueQuestionFragment)
     }
 
     fun exit(){
         sharedViewModel.reset()
-        findNavController().navigate(com.example.ashtanga1.R.id.action_sequenceQuestionFragment_to_mainFragment)
+        findNavController().navigate(R.id.action_sequenceQuestionFragment_to_mainFragment)
 
     }
 
