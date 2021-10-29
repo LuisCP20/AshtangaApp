@@ -1,6 +1,7 @@
 package com.example.ashtanga1.ui.main
 
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -39,14 +40,27 @@ class PostureQuestionFragment : Fragment() {
     }
 
     fun checkAnswer(selection: Asana) {
+        val view = view?.rootView
+        val handle = Handler()
+        sharedViewModel.enableButtons(false)
         Log.d("Test", "${selection}, ${sharedViewModel.asana.value}")
         // Comparar nombres deberia funcionar con Drishti y con imagenes
         if (selection.postureImageResourceId == (sharedViewModel.asana.value?.postureImageResourceId)) {
-            sharedViewModel.correctAnswerTechnique()
-            checkLast()
+            view?.setBackgroundResource(rightColor)
+            view?.postDelayed({ view.setBackgroundResource(defBackg) }, delayTime)
+            handle.postDelayed({
+                sharedViewModel.correctAnswerTechnique()
+                checkLast()
+                sharedViewModel.enableButtons(true)
+            }, delayTime)
         } else {
-            sharedViewModel.incorrectAnswerTechnique()
-            checkLast()
+            view?.setBackgroundResource(wrongColor)
+            view?.postDelayed({ view.setBackgroundResource(defBackg) }, delayTime)
+            handle.postDelayed({
+                sharedViewModel.incorrectAnswerTechnique()
+                checkLast()
+                sharedViewModel.enableButtons(true)
+            }, delayTime)
         }
     }
 

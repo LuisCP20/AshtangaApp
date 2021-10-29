@@ -16,19 +16,17 @@ import java.util.*
 import kotlin.random.Random
 
 
-
 class SequenceQuestionFragment : Fragment() {
 
     private val sharedViewModel: MainViewModel by activityViewModels()
     private var binding: FragmentSequenceQuestionBinding? = null
-    private val delayTime = 400L // Delay in ms for changing colors between questions
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val fragmentBinding = FragmentSequenceQuestionBinding.inflate(inflater, container,false)
+        val fragmentBinding = FragmentSequenceQuestionBinding.inflate(inflater, container, false)
         binding = fragmentBinding
         return fragmentBinding.root
     }
@@ -42,51 +40,55 @@ class SequenceQuestionFragment : Fragment() {
         }
     }
 
-    fun checkAnswer(imageId: Int){
-        val view =  view?.rootView
+    fun checkAnswer(imageId: Int) {
+        val view = view?.rootView
         val handle = Handler()
-        // TODO: revisar el repeat que no funciona
         // TODO: mejorar colores
         // TODO: enseñar respuesta
         sharedViewModel.enableButtons(false) // Disable buttons during background change
-        if(imageId == sharedViewModel.nextAsana.value?.postureImageResourceId){
-            view?.setBackgroundResource(R.color.green_s_dark)
-            view?.postDelayed({ view.setBackgroundResource(R.color.white) },delayTime)
+        if (imageId == sharedViewModel.nextAsana.value?.postureImageResourceId) {
+            view?.setBackgroundResource(rightColor)
+            view?.postDelayed({ view.setBackgroundResource(defBackg) }, delayTime)
             handle.postDelayed({
                 sharedViewModel.correctAnswer()
-                if(sharedViewModel.questionPosition.value == sharedViewModel.seqLength.value){
+                if (sharedViewModel.questionPosition.value == sharedViewModel.seqLength.value) {
                     sharedViewModel.finalScoreVar = sharedViewModel.finalScoreString()
                     findNavController().navigate(R.id.action_sequenceQuestionFragment_to_finishedFragment2)
-                } else{
-                    if(sharedViewModel.combined.value == true){navigateNextScreen()}
+                } else {
+                    if (sharedViewModel.combined.value == true) {
+                        navigateNextScreen()
+                    }
                 }
-                sharedViewModel.enableButtons(true)},delayTime)
-        }
-        else{
-            view?.setBackgroundResource(R.color.purple_p_triad)
-            view?.postDelayed({ view.setBackgroundResource(R.color.white) },delayTime)
+                sharedViewModel.enableButtons(true)
+            }, delayTime)
+        } else {
+            view?.setBackgroundResource(wrongColor)
+            view?.postDelayed({ view.setBackgroundResource(defBackg) }, delayTime)
             handle.postDelayed({
                 sharedViewModel.incorrectAnswer()
-                if(sharedViewModel.questionPosition.value == sharedViewModel.seqLength.value){
+                if (sharedViewModel.questionPosition.value == sharedViewModel.seqLength.value) {
                     sharedViewModel.finalScoreVar = sharedViewModel.finalScoreString()
                     findNavController().navigate(R.id.action_sequenceQuestionFragment_to_finishedFragment2)
-                }else{
-                    if(sharedViewModel.combined.value == true){navigateNextScreen()}
+                } else {
+                    if (sharedViewModel.combined.value == true) {
+                        navigateNextScreen()
+                    }
                 }
-                sharedViewModel.enableButtons(true)}, delayTime)
+                sharedViewModel.enableButtons(true)
+            }, delayTime)
         }
     }
 
 
-    private fun navigateNextScreen(){
-        val techniques = listOf(0,2) // technique 0: Name technique 2: Drishti
-        val selected = techniques[Random.nextInt(0,techniques.size)]
+    private fun navigateNextScreen() {
+        val techniques = listOf(0, 2) // technique 0: Name technique 2: Drishti
+        val selected = techniques[Random.nextInt(0, techniques.size)]
         Log.d("RandomTech", "NextQ${selected}")
         sharedViewModel.setTechnique(selected)
         findNavController().navigate(R.id.action_sequenceQuestionFragment_to_techniqueQuestionFragment)
     }
 
-    fun exit(){
+    fun exit() {
         sharedViewModel.reset()
         findNavController().navigate(R.id.action_sequenceQuestionFragment_to_mainFragment)
 
