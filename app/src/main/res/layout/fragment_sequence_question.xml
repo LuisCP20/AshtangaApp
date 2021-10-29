@@ -15,7 +15,7 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/ConstraintLayout"
+        android:id="@+id/SeqQuestConstraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.main.TechniqueQuestionFragment">
@@ -45,7 +45,7 @@
             android:layout_marginBottom="128dp"
             android:contentDescription="current posture"
             app:imageResource="@{viewModel.asana.postureImageResourceId}"
-            app:layout_constraintBottom_toBottomOf="@+id/ConstraintLayout"
+            app:layout_constraintBottom_toBottomOf="@+id/SeqQuestConstraintLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -75,6 +75,7 @@
             android:adjustViewBounds="true"
             android:background="@drawable/roundcorners"
             android:onClick="@{() -> fragmentSequenceQuestion.checkAnswer(viewModel.asanaOptions.get(0).postureImageResourceId)}"
+            android:clickable="@{viewModel.buttons}"
             android:padding="2dp"
             android:scaleType="fitCenter"
             android:textAppearance="?attr/textAppearanceHeadline6"
@@ -107,6 +108,7 @@
             android:background="@drawable/roundcorners"
             android:hapticFeedbackEnabled="true"
             android:onClick="@{() -> fragmentSequenceQuestion.checkAnswer(viewModel.asanaOptions.get(1).postureImageResourceId)}"
+            android:clickable="@{viewModel.buttons}"
             android:padding="2dp"
             android:scaleType="fitCenter"
             android:textAppearance="?attr/textAppearanceHeadline6"
@@ -138,6 +140,7 @@
             android:adjustViewBounds="true"
             android:background="@drawable/roundcorners"
             android:onClick="@{() -> fragmentSequenceQuestion.checkAnswer(viewModel.asanaOptions.get(2).postureImageResourceId)}"
+            android:clickable="@{viewModel.buttons}"
             android:padding="2dp"
             android:scaleType="fitCenter"
             android:textAppearance="?attr/textAppearanceHeadline6"
@@ -170,6 +173,7 @@
             android:adjustViewBounds="true"
             android:background="@drawable/roundcorners"
             android:onClick="@{() -> fragmentSequenceQuestion.checkAnswer(viewModel.asanaOptions.get(3).postureImageResourceId)}"
+            android:clickable="@{viewModel.buttons}"
             android:outlineProvider="none"
             android:padding="2dp"
             android:scaleType="fitCenter"

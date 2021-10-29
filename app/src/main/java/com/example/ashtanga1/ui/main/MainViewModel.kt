@@ -102,12 +102,21 @@ class MainViewModel : ViewModel() {
     private val _textOptions = MutableLiveData<MutableList<String>>()
     var textOptions = _textOptions
 
+    // Status of the buttons
+    private val _buttons = MutableLiveData(true)
+    var buttons = _buttons
+
 
     var finalScoreVar = ""
 
     // Set current mode from main menu
     fun setMode(selectedMode: Int) {
         _mode.value = mainMenu[selectedMode]
+    }
+
+    // Button enable/disable
+    fun enableButtons(disable: Boolean) {
+        _buttons.value = disable
     }
 
     fun setTechnique(selectedTechnique: Int) {
