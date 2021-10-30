@@ -29,6 +29,7 @@
             android:layout_marginTop="128dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="128dp"
+            android:paddingHorizontal="4dp"
             android:imageResource="@{viewModel.asana.postureImageResourceId}"
             app:layout_constraintBottom_toBottomOf="@+id/ConstraintLayout"
             app:layout_constraintEnd_toEndOf="parent"
@@ -36,69 +37,101 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@drawable/asanad" />
 
-        <Button
-            android:id="@+id/option1_button"
+        <FrameLayout
+            android:id="@+id/option1_frame"
             android:layout_width="180dp"
             android:layout_height="110dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
-            android:background="@drawable/roundcorners"
-            android:onClick="@{() -> fragmentTechniqueQuestion.checkAnswer(viewModel.asanaOptions.get(0))}"
-            android:text="@{viewModel.textOptions.get(0)}"
-            android:clickable="@{viewModel.buttons}"
-            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:paddingHorizontal="4dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2"
-            tools:text="Option 1" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView2">
 
-        <Button
-            android:id="@+id/option2_button"
+            <Button
+                android:id="@+id/option1_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/roundcorners"
+                android:layout_marginHorizontal="8dp"
+                android:onClick="@{() -> fragmentTechniqueQuestion.checkAnswer(viewModel.asanaOptions.get(0))}"
+                android:text="@{viewModel.textOptions.get(0)}"
+                android:clickable="@{viewModel.buttons}"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Option 1" />
+        </FrameLayout>
+
+        <FrameLayout
             android:layout_width="180dp"
             android:layout_height="110dp"
+            android:layout_marginBottom="28dp"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="32dp"
-            android:background="@drawable/roundcorners"
-            android:onClick="@{() -> fragmentTechniqueQuestion.checkAnswer(viewModel.asanaOptions.get(1))}"
-            android:text="@{viewModel.textOptions.get(1)}"
-            android:clickable="@{viewModel.buttons}"
-            android:textAppearance="?attr/textAppearanceHeadline6"
             app:layout_constraintBottom_toTopOf="@+id/imageView2"
-            app:layout_constraintEnd_toStartOf="@+id/option4_button"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:text="Option 2" />
+            app:layout_constraintEnd_toStartOf="@+id/option4_frame"
+            android:paddingHorizontal="4dp"
+            app:layout_constraintStart_toStartOf="parent">
 
-        <Button
-            android:id="@+id/option3_button"
+            <Button
+                android:id="@+id/option2_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/roundcorners"
+                android:onClick="@{() -> fragmentTechniqueQuestion.checkAnswer(viewModel.asanaOptions.get(1))}"
+                android:text="@{viewModel.textOptions.get(1)}"
+                android:clickable="@{viewModel.buttons}"
+                android:layout_marginHorizontal="8dp"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Option 2" />
+        </FrameLayout>
+
+        <FrameLayout
             android:layout_width="180dp"
             android:layout_height="110dp"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/roundcorners"
-            android:onClick="@{() -> fragmentTechniqueQuestion.checkAnswer(viewModel.asanaOptions.get(2))}"
-            android:text="@{viewModel.textOptions.get(2)}"
-            android:clickable="@{viewModel.buttons}"
-            android:textAppearance="?attr/textAppearanceHeadline6"
-            app:layout_constraintEnd_toStartOf="@+id/option1_button"
+            android:layout_marginStart="16dp"
+            android:paddingHorizontal="4dp"
+            app:layout_constraintEnd_toStartOf="@+id/option1_frame"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2"
-            tools:text="Option 3" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView2">
 
-        <Button
-            android:id="@+id/option4_button"
+            <Button
+                android:id="@+id/option3_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/roundcorners"
+                android:onClick="@{() -> fragmentTechniqueQuestion.checkAnswer(viewModel.asanaOptions.get(2))}"
+                android:text="@{viewModel.textOptions.get(2)}"
+                android:clickable="@{viewModel.buttons}"
+                android:layout_marginHorizontal="8dp"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                tools:text="Option 3" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/option4_frame"
             android:layout_width="180dp"
             android:layout_height="110dp"
+            android:layout_marginBottom="28dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginBottom="32dp"
-            android:background="@drawable/roundcorners"
-            android:onClick="@{() -> fragmentTechniqueQuestion.checkAnswer(viewModel.asanaOptions.get(3))}"
-            android:text="@{viewModel.textOptions.get(3)}"
-            android:clickable="@{viewModel.buttons}"
-            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:paddingHorizontal="4dp"
             app:layout_constraintBottom_toTopOf="@+id/imageView2"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:text="Option 4" />
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <Button
+                android:id="@+id/option4_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/roundcorners"
+                android:onClick="@{() -> fragmentTechniqueQuestion.checkAnswer(viewModel.asanaOptions.get(3))}"
+                android:text="@{viewModel.textOptions.get(3)}"
+                android:clickable="@{viewModel.buttons}"
+                android:layout_marginHorizontal="8dp"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                tools:text="Option 4" />
+        </FrameLayout>
 
         <ImageButton
             android:id="@+id/imageButton"
