@@ -107,6 +107,7 @@ class MainViewModel : ViewModel() {
     // Status of the buttons
     private val _buttons = MutableLiveData(true)
     var buttons = _buttons
+    var answerVisibility = MutableLiveData(if(_buttons.value == true) "visible" else "invisible")
 
 
     var finalScoreVar = ""
