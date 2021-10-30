@@ -1,13 +1,11 @@
 <resources>
-    <string name="app_name">Ashtanga1</string>
-    <string name="app_title">Ashtanga Yoga \n Series 1</string>
+    <string name="app_name">Ashtanga I</string>
+    <string name="app_title">Ashtanga Yoga \n Series I</string>
     <string name="postures">Postures</string>
     <string name="sequence">Sequence</string>
     <string name="posture_with_sequence">Posture with Sequence</string>
     <string name="review">Review</string>
     <string name="decorative_yoga_posture">Decorative yoga posture</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="finishing_sequence">Finishing Sequence</string>
     <string name="primary_sequence">Primary Sequence</string>
     <string name="standing_sequence">Standing Sequence</string>
