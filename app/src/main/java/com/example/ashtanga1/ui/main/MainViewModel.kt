@@ -1,6 +1,9 @@
 package com.example.ashtanga1.ui.main
 
+import android.content.Context
 import android.util.Log
+import android.util.TypedValue
+import androidx.annotation.AttrRes
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -26,7 +29,7 @@ class MainViewModel : ViewModel() {
     )
     private val drishtis = listOf<String>("Broomadhya Drishti","Hastagrai Drishti", "Nasagrai Drishti","Padhayoragai Drishti", "Parsva Drishti","Urdhva Drishti")
     val mainMenu = listOf("Posture", "Sequence", "Posture and Sequence", "Review", "Practice")
-    private val sequenceMenu = listOf(
+    val sequenceMenu = listOf(
         "Suryanamaskara A",
         "Suryanamaskara B",
         "Standing Sequence",
@@ -39,7 +42,6 @@ class MainViewModel : ViewModel() {
 
     // Selected mode
     private val _mode = MutableLiveData<String>()
-
     //Backing property
     val mode: LiveData<String> = _mode
 
@@ -107,7 +109,6 @@ class MainViewModel : ViewModel() {
     // Status of the buttons
     private val _buttons = MutableLiveData(true)
     var buttons = _buttons
-    var answerVisibility = MutableLiveData(if(_buttons.value == true) "visible" else "invisible")
 
 
     var finalScoreVar = ""
@@ -349,7 +350,7 @@ class MainViewModel : ViewModel() {
     private fun reRoll(options: MutableList<Asana>, includeCurrent: Boolean):MutableList<Asana>{
         if(includeCurrent){
             if (_technique.value == techniqueMenu[2]){ // Only for drishti
-                var optionsDrishti = mutableListOf<String>()
+                val optionsDrishti = mutableListOf<String>()
                 for(i in 0 until options.size-1){
                     optionsDrishti.add(options[i].drishti)
                 }

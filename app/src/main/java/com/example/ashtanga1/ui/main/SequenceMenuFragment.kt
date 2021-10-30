@@ -53,7 +53,7 @@ class SequenceMenuFragment : Fragment() {
     
     fun exit(){
         sharedViewModel.reset()
-        findNavController().navigate(R.id.action_techniqueQuestionFragment_to_mainFragment)
+        findNavController().navigate(R.id.action_sequenceMenuFragment2_to_mainFragment)
 
     }
 }

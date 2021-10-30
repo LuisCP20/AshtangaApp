@@ -15,13 +15,11 @@
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-        <Button
+        <ImageButton
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="@android:color/transparent"
-            android:text="@string/exit"
-            android:textColor="@color/design_default_color_on_primary"
+            android:background="@drawable/ic_baseline_arrow_back_24"
             app:layout_constraintStart_toStartOf="parent" />
     </androidx.appcompat.widget.Toolbar>
 

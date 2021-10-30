@@ -2,15 +2,27 @@
     <!-- Base application theme. -->
     <style name="Theme.Ashtanga1" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_p_light</item>
-        <item name="colorPrimaryVariant">@color/purple_p</item>
+        <item name="colorPrimary">@color/purple_p</item>
+        <item name="colorPrimaryVariant">@color/purple_p_dark</item>
         <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnBackground">@color/purple_p_triad</item>
+        <item name = "backgroundColor">@color/purple_p_dark</item>
+        <item name = "colorError">@color/red_p_triad</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/green_s_light</item>
-        <item name="colorSecondaryVariant">@color/green_s_light</item>
+        <item name="colorSecondary">@color/green_s</item>
+        <item name="colorSecondaryVariant">@color/green_s_dark</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorOnBackground</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.Ashtanga1.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Ashtanga1.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Ashtanga1.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

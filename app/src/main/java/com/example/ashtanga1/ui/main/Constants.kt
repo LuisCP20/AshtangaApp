@@ -1,10 +1,8 @@
 package com.example.ashtanga1.ui.main
 
-import com.example.ashtanga1.R
-
 // Delay for showing correct/incorrect signals
 const val delayTime = 400L
 // TODO: change colors with theme colors. Dark mode
-const val rightColor = R.color.green_s_dark
-const val wrongColor = R.color.red_p_triad
-const val defBackg = R.color.white
+const val rightColor = com.example.ashtanga1.R.color.green_s_dark
+const val wrongColor = com.example.ashtanga1.R.color.red_p_triad
+const val defBackg = com.example.ashtanga1.R.color.purple_p_dark

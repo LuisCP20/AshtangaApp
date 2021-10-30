@@ -1,6 +1,8 @@
 package com.example.ashtanga1.ui.main
 
+import android.content.Context
 import android.content.Intent
+import android.content.res.TypedArray
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,9 +10,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.example.ashtanga1.R
 import com.example.ashtanga1.ReviewActivity
 import com.example.ashtanga1.databinding.MainFragmentBinding
+
+import android.util.TypedValue
+import androidx.annotation.AttrRes
+import com.example.ashtanga1.R
+import com.example.ashtanga1.data.DataSource
+
 
 class MainFragment : Fragment() {
 
@@ -45,18 +52,18 @@ class MainFragment : Fragment() {
         when (mode) {
             // Techniques
             0 -> {
-                findNavController().navigate(R.id.action_mainFragment_to_sequenceMenuFragment2)
+                findNavController().navigate(com.example.ashtanga1.R.id.action_mainFragment_to_sequenceMenuFragment2)
                 sharedViewModel.setMode(0)
             }
             // Sequence Order
             1 -> {
-                findNavController().navigate(R.id.action_mainFragment_to_sequenceMenuFragment2)
+                findNavController().navigate(com.example.ashtanga1.R.id.action_mainFragment_to_sequenceMenuFragment2)
                 sharedViewModel.setMode(1)
             }
             // Combined
             2 -> {
                 combinedMode()
-                findNavController().navigate(R.id.action_mainFragment_to_sequenceMenuFragment2)
+                findNavController().navigate(com.example.ashtanga1.R.id.action_mainFragment_to_sequenceMenuFragment2)
                 sharedViewModel.setMode(2)
             }
             // Review
@@ -68,7 +75,7 @@ class MainFragment : Fragment() {
             // Practice
             4 -> {
                 sharedViewModel.setMode(4)
-                findNavController().navigate(R.id.action_mainFragment_to_sequenceMenuFragment2)
+                findNavController().navigate(com.example.ashtanga1.R.id.action_mainFragment_to_sequenceMenuFragment2)
             }
 
 
@@ -79,5 +86,4 @@ class MainFragment : Fragment() {
         sharedViewModel.setRandomTech(true)
         sharedViewModel.setCombinedMode()
     }
-
 }

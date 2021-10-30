@@ -9,6 +9,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.ashtanga1.R
 import com.example.ashtanga1.databinding.FragmentPracticeBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class PracticeFragment : Fragment() {
 
@@ -54,8 +55,18 @@ class PracticeFragment : Fragment() {
     }
 
     private fun checkLast() {
+        // TODO: CAMBIAR POR MENSAJE PARA REVISAR SI QUIERE SALIR
         if (sharedViewModel.questionPosition.value == sharedViewModel.seqLength.value?.plus(1)) {
-            findNavController().navigate(R.id.action_practiceFragment_to_finishedFragment2)
+            sharedViewModel.back() // So counter doesn't go higher than sequence size
+            MaterialAlertDialogBuilder(requireContext())
+                .setTitle("Return to Main Menu?")
+                .setNegativeButton("YES") { _, _ ->
+                    findNavController().navigate(R.id.action_practiceFragment_to_mainFragment)
+                    sharedViewModel.reset()
+                }
+                .setPositiveButton("NO") { _, _ ->
+                }
+                .show()
         }
     }
 
