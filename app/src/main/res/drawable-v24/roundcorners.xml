@@ -14,7 +14,7 @@
             <gradient
                 android:angle="90"
                 android:endColor="@color/purple_p_light"
-                android:startColor="@color/red_p_triad"
+                android:startColor="@color/purple_p_dark"
                 android:type="linear" />
             <corners android:radius="16dp" />
         </shape>
