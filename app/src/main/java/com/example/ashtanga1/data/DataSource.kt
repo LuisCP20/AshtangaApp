@@ -1,8 +1,5 @@
 package com.example.ashtanga1.data
 
-import android.content.Context
-import android.util.TypedValue
-import androidx.annotation.AttrRes
 import com.example.ashtanga1.R
 import com.example.ashtanga1.model.Asana
 
@@ -13,7 +10,7 @@ object DataSource {
             R.drawable.samasthitti,
             "Samashthitti",
             "Nasagrai Drishti",
-            "bandha1",
+            "",
             "Suryanamaskara A"
         ),
 
@@ -21,7 +18,7 @@ object DataSource {
             R.drawable.urdhvahasthasana,
             "Urdhva\n Hasthasana",
             "Angustha Drishti",
-            "bandha1",
+            "",
             "Suryanamaskara A"
         ),
 
@@ -29,7 +26,7 @@ object DataSource {
             R.drawable.uttanasana,
             "Uttanasana",
             "Nasagrai Drishti",
-            "bandha1",
+            "",
             "Suryanamaskara A"
         ),
 
@@ -37,7 +34,7 @@ object DataSource {
             R.drawable.ardhauttanasana,
             "Ardha\n Uttanasana",
             "Broomadhya Drishti",
-            "bandha1",
+            "",
             "Suryanamaskara A"
         ),
 
@@ -45,7 +42,7 @@ object DataSource {
             R.drawable.chaturangadandasana,
             "Chaturanga\n Dandasana",
             "Nasagrai Drishti",
-            "bandha1",
+            "",
             "Suryanamaskara A"
         ),
 
@@ -53,7 +50,7 @@ object DataSource {
             R.drawable.urdhvamukhasvanasana,
             "Urdhva Mukha\n Svanasana",
             "Broomadhya Drishti",
-            "bandha1",
+            "",
             "Suryanamaskara A"
         ),
 
@@ -61,7 +58,7 @@ object DataSource {
             R.drawable.adhomukhasvanasana,
             "Adho Mukha\n Svanasana",
             "Nabi Chakra Drishti",
-            "bandha1",
+            "",
             "Suryanamaskara A"
         ),
 
@@ -69,7 +66,7 @@ object DataSource {
             R.drawable.ardhauttanasana,
             "Ardha\n Uttanasana",
             "Broomadhya Drishti",
-            "bandha1",
+            "",
             "Suryanamaskara A"
         ),
 
@@ -77,7 +74,7 @@ object DataSource {
             R.drawable.uttanasana,
             "Uttanasana",
             "Nasagrai Drishti",
-            "bandha1",
+            "",
             "Suryanamaskara A"
         ),
 
@@ -85,14 +82,14 @@ object DataSource {
             R.drawable.urdhvahasthasana,
             "Urdhva\n Hasthasana",
             "Angustha Drishti",
-            "bandha1", "Suryanamaskara A"
+            "", "Suryanamaskara A"
         ),
 
         Asana(
             R.drawable.samasthitti,
             "Samashthitti",
             "Nasagrai Drishti",
-            "bandha1", "Suryanamaskara A"
+            "", "Suryanamaskara A"
         )
     )
 
@@ -102,133 +99,133 @@ object DataSource {
             R.drawable.samasthitti,
             "Samashthitti",
             "Nasagrai Drishti",
-            "bandha1", "Suryanamaskara B"
+            "", "Suryanamaskara B"
         ),
 
         Asana(
             R.drawable.utkatasana,
             "Utkatasana",
             "Angustha Drishti",
-            "bandha1", "Suryanamaskara B"
+            "", "Suryanamaskara B"
         ),
 
         Asana(
             R.drawable.uttanasana,
             "Uttanasana",
             "Nasagrai Drishti",
-            "bandha1", "Suryanamaskara B"
+            "", "Suryanamaskara B"
         ),
 
         Asana(
             R.drawable.ardhauttanasana,
             "Ardha Uttanasana",
             "Broomadhya Drishti",
-            "bandha1", "Suryanamaskara B"
+            "", "Suryanamaskara B"
         ),
 
         Asana(
             R.drawable.chaturangadandasana,
             "Chaturanga Dandasana",
             "Nasagrai Drishti",
-            "bandha1", "Suryanamaskara B"
+            "", "Suryanamaskara B"
         ),
 
         Asana(
             R.drawable.urdhvamukhasvanasana,
             "Urdhva Mukha Svanasana",
             "Broomadhya Drishti",
-            "bandha1", "Suryanamaskara B"
+            "", "Suryanamaskara B"
         ),
 
         Asana(
             R.drawable.adhomukhasvanasana,
             "Adho Mukha Svanasana",
             "Nabi Chakra Drishti",
-            "bandha1", "Suryanamaskara B"
+            "", "Suryanamaskara B"
         ),
 
         Asana(
             R.drawable.virabhadrasanaa,
             "Virabhadrasana A",
             "Angustha Drishti",
-            "bandha1", "Suryanamaskara B"
+            "", "Suryanamaskara B"
         ),
 
         Asana(
             R.drawable.chaturangadandasana,
             "Chaturanga Dandasana",
             "Nasagrai Drishti",
-            "bandha1", "Suryanamaskara B"
+            "", "Suryanamaskara B"
         ),
 
         Asana(
             R.drawable.urdhvamukhasvanasana,
             "Urdhva Mukha Svanasana",
             "Broomadhya Drishti",
-            "bandha1", "Suryanamaskara B"
+            "", "Suryanamaskara B"
         ),
 
         Asana(
             R.drawable.adhomukhasvanasana,
             "Adho Mukha Svanasana",
             "Nabi Chakra Drishti",
-            "bandha1", "Suryanamaskara B"
+            "", "Suryanamaskara B"
         ),
 
         Asana(
             R.drawable.virabhadrasanaa,
             "Virabhadrasana A",
             "Angustha Drishti",
-            "bandha1", "Suryanamaskara B"
+            "", "Suryanamaskara B"
         ),
 
         Asana(
             R.drawable.chaturangadandasana,
             "Chaturanga Dandasana",
             "Nasagrai Drishti",
-            "bandha1", "Suryanamaskara B"
+            "", "Suryanamaskara B"
         ),
 
         Asana(
             R.drawable.urdhvamukhasvanasana,
             "Urdhva Mukha Svanasana",
             "Broomadhya Drishti",
-            "bandha1", "Suryanamaskara B"
+            "", "Suryanamaskara B"
         ),
 
         Asana(
             R.drawable.adhomukhasvanasana,
             "Adho Mukha Svanasana",
             "Nabi Chakra Drishti",
-            "bandha1", "Suryanamaskara B"
+            "", "Suryanamaskara B"
         ),
 
         Asana(
             R.drawable.ardhauttanasana,
             "Ardha Uttanasana",
             "Broomadhya Drishti",
-            "bandha1", "Suryanamaskara B"
+            "", "Suryanamaskara B"
         ),
 
         Asana(
             R.drawable.uttanasana,
             "Uttanasana",
             "Nasagrai Drishti",
-            "bandha1", "Suryanamaskara B"
+            "", "Suryanamaskara B"
         ),
 
         Asana(
             R.drawable.utkatasana,
             "Utkatasana",
             "Angustha Drishti",
-            "bandha1", "Suryanamaskara B"
+            "", "Suryanamaskara B"
         ),
 
         Asana(
             R.drawable.samasthitti,
             "Samashthitti",
             "Nasagrai Drishti",
-            "bandha1", "Suryanamaskara B"
+            "", "Suryanamaskara B"
         )
     )
 
@@ -712,7 +709,7 @@ object DataSource {
             R.drawable.asanad,
             "Balasana",
             "Nasagrai Drishti",
-            "Mula Bhanda\nUddiyana Bhanda",  "Finishing Sequence"
+            "Mula Bhanda\nUddiyana Bhanda", "Finishing Sequence"
         ),
 
         Asana(

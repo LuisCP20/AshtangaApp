@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.res.TypedArray
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +18,7 @@ import android.util.TypedValue
 import androidx.annotation.AttrRes
 import com.example.ashtanga1.R
 import com.example.ashtanga1.data.DataSource
+import kotlin.random.Random
 
 
 class MainFragment : Fragment() {

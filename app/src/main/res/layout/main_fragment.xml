@@ -31,12 +31,11 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="20dp"
             android:contentDescription="@string/decorative_yoga_posture"
-            android:src="@drawable/ic_male_yoga_pose_silhouette_4"
+            android:src="@drawable/uthpluthi"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:srcCompat="@drawable/ic_male_yoga_pose_silhouette_4" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <LinearLayout
             android:id="@+id/linearLayout"

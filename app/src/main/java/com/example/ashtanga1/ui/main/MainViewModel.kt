@@ -11,6 +11,7 @@ import com.example.ashtanga1.data.DataSource
 import com.example.ashtanga1.model.Asana
 import java.util.*
 import kotlin.random.Random
+
 // TODO: Mejorar UI, que todo funcione bien, enseñar score y/o errores
 // TODO: Bug cuando uso el boton de exit mientras esta cambiando el color del fondo para respuesta.
 // TODO: Arreglarlo de una manera que no sea desactivar el boton de exit
@@ -27,7 +28,14 @@ class MainViewModel : ViewModel() {
         suryaA, suryaB, standingSequence,
         sittingSequence, finishingSequence, completeSequence
     )
-    private val drishtis = listOf<String>("Broomadhya Drishti","Hastagrai Drishti", "Nasagrai Drishti","Padhayoragai Drishti", "Parsva Drishti","Urdhva Drishti")
+    private val drishtis = listOf<String>(
+        "Broomadhya Drishti",
+        "Hastagrai Drishti",
+        "Nasagrai Drishti",
+        "Padhayoragai Drishti",
+        "Parsva Drishti",
+        "Urdhva Drishti"
+    )
     val mainMenu = listOf("Posture", "Sequence", "Posture and Sequence", "Review", "Practice")
     val sequenceMenu = listOf(
         "Suryanamaskara A",
@@ -42,6 +50,7 @@ class MainViewModel : ViewModel() {
 
     // Selected mode
     private val _mode = MutableLiveData<String>()
+
     //Backing property
     val mode: LiveData<String> = _mode
 
@@ -232,13 +241,15 @@ class MainViewModel : ViewModel() {
         }
     }
 
-    fun back(){
+    fun back() {
         _sequencePosition.value = _sequencePosition.value?.minus(1)
         _questionPosition.value = _questionPosition.value?.minus(1)
         // If _asana.value is not in the list the index will be -1
-        _asana.value = _sequencesData[sequenceMenu.indexOf(_sequence.value)][_sequencePosition.value!! - 1]
+        _asana.value =
+            _sequencesData[sequenceMenu.indexOf(_sequence.value)][_sequencePosition.value!! - 1]
 
     }
+
     private fun setAsana() {
         //sequenceMenu.indexOf(_sequencevalue)
         when (_sequence.value) {
@@ -347,24 +358,27 @@ class MainViewModel : ViewModel() {
         }
     }
 
-    private fun reRoll(options: MutableList<Asana>, includeCurrent: Boolean):MutableList<Asana>{
-        if(includeCurrent){
-            if (_technique.value == techniqueMenu[2]){ // Only for drishti
+    private fun reRoll(options: MutableList<Asana>, includeCurrent: Boolean): MutableList<Asana> {
+        if (includeCurrent) {
+            if (_technique.value == techniqueMenu[2]) { // Only for drishti
                 val optionsDrishti = mutableListOf<String>()
-                for(i in 0 until options.size-1){
+                for (i in 0 until options.size - 1) {
                     optionsDrishti.add(options[i].drishti)
                 }
-                while (optionsDrishti.distinct().size < optionsDrishti.size || optionsDrishti.contains(_asana.value?.drishti)) {
+                while (optionsDrishti.distinct().size < optionsDrishti.size || optionsDrishti.contains(
+                        _asana.value?.drishti
+                    )
+                ) {
                     for (i in 1..3) { // Add wrong answers
-                        options[i] = _sequencesData[_sequencesData.size-1][Random.nextInt(
+                        options[i] = _sequencesData[_sequencesData.size - 1][Random.nextInt(
                             0,
-                            _sequencesData[_sequencesData.size-1].size
+                            _sequencesData[_sequencesData.size - 1].size
                         )]
-                        optionsDrishti[i-1] = options[i].drishti
+                        optionsDrishti[i - 1] = options[i].drishti
                     }
                     Log.d("Correct", "Drishtis:${optionsDrishti}")
                 }
-            } else{
+            } else {
                 while (options.distinct().size < options.size) {
                     for (i in 1..3) { // Add wrong answers
                         options[i] = _sequencesData[_sequenceIndex][Random.nextInt(
@@ -374,7 +388,7 @@ class MainViewModel : ViewModel() {
                     }
                 }
             }
-        } else{
+        } else {
             while (options.distinct().size < options.size || options.contains(_asana.value)) {
                 for (i in 1..3) { // Add wrong answers
                     options[i] = _sequencesData[_sequenceIndex][Random.nextInt(
@@ -386,6 +400,7 @@ class MainViewModel : ViewModel() {
         }
         return options
     }
+
     private fun setTextOptions(options: List<Asana>) {
         //Log.d("Test", "TechniqueIndex:${_techniqueIndex.toString()}")
 
