@@ -18,6 +18,7 @@
         android:id="@+id/ConstraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/green_s_dark"
         tools:context=".ui.main.SequenceMenuFragment">
 
         <LinearLayout
@@ -39,7 +40,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="64dp"
                 android:text="@string/finished"
-                android:textAppearance="?attr/textAppearanceHeadline4" />
+                android:textAppearance="?attr/textAppearanceHeadline4"
+                android:textColor="?attr/colorOnSecondary"/>
 
             <TextView
                 android:id="@+id/accuracy_textView"
@@ -49,7 +51,8 @@
                 android:layout_marginBottom="64dp"
                 android:text="@{@string/final_score(viewModel.finalScoreVar)}"
                 android:textAppearance="?attr/textAppearanceHeadline4"
-                tools:text="7/14" />
+                tools:text="7/14"
+                android:textColor="?attr/colorOnSecondary"/>
 
             <TextView
                 android:id="@+id/percentage_textView"

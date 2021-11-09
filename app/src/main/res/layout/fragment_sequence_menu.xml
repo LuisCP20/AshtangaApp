@@ -13,14 +13,19 @@
             name="viewModel"
             type="com.example.ashtanga1.ui.main.MainViewModel" />
     </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <ScrollView
         android:id="@+id/ConstraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="?attr/backgroundColor"
         tools:context=".ui.main.SequenceMenuFragment">
 
         <LinearLayout
+
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -39,7 +44,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="64dp"
                 android:text="@string/choose_a_sequence"
-                android:textAppearance="?attr/textAppearanceHeadline4" />
+                android:textAppearance="?attr/textAppearanceHeadline4"
+                android:textColor="#000000" />
 
             <Button
                 android:id="@+id/Suryanamaskara_A_button"
@@ -114,4 +120,20 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/exit_button"
+        android:onClick="@{() -> fragmentSequenceMenu.exit()}"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck,RedundantDescriptionCheck,ImageContrastCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

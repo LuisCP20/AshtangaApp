@@ -26,14 +26,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/choose_right_asana"
+            android:textAlignment="center"
             android:textAllCaps="true"
-            android:textAppearance="?attr/textAppearanceHeadline6"
-            app:layout_constraintBottom_toTopOf="@+id/current_name_textView"
-            app:layout_constraintEnd_toStartOf="@+id/textView"
-            app:layout_constraintHorizontal_bias="0.513"
-            app:layout_constraintStart_toEndOf="@+id/exitButton"
+            app:layout_constraintBottom_toTopOf="@+id/option2_imageButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.516"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.166" />
+            app:layout_constraintVertical_bias="0.177" />
 
         <TextView
             android:id="@+id/current_name_textView"
@@ -53,6 +53,20 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Current Name" />
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:text="@{@string/posture_count(viewModel.questionPosition , viewModel.posCounter)}"
+            android:textAlignment="center"
+            android:textAppearance="?attr/textAppearanceHeadline4"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <ImageButton
             android:id="@+id/option1_imageButton"
             android:layout_width="150dp"
@@ -62,6 +76,7 @@
             android:adjustViewBounds="true"
             android:background="@drawable/roundcorners"
             android:onClick="@{() -> fragmentPostureQuestion.checkAnswer(viewModel.asanaOptions.get(0))}"
+            android:clickable="@{viewModel.buttons}"
             android:padding="2dp"
             android:scaleType="fitCenter"
             android:textAppearance="?attr/textAppearanceHeadline6"
@@ -80,6 +95,7 @@
             android:adjustViewBounds="true"
             android:background="@drawable/roundcorners"
             android:onClick="@{() -> fragmentPostureQuestion.checkAnswer(viewModel.asanaOptions.get(1))}"
+            android:clickable="@{viewModel.buttons}"
             android:padding="2dp"
             android:scaleType="fitCenter"
             android:textAppearance="?attr/textAppearanceHeadline6"
@@ -98,6 +114,7 @@
             android:adjustViewBounds="true"
             android:background="@drawable/roundcorners"
             android:onClick="@{() -> fragmentPostureQuestion.checkAnswer(viewModel.asanaOptions.get(2))}"
+            android:clickable="@{viewModel.buttons}"
             android:padding="2dp"
             android:scaleType="fitCenter"
             android:textAppearance="?attr/textAppearanceHeadline6"
@@ -116,6 +133,7 @@
             android:adjustViewBounds="true"
             android:background="@drawable/roundcorners"
             android:onClick="@{() -> fragmentPostureQuestion.checkAnswer(viewModel.asanaOptions.get(3))}"
+            android:clickable="@{viewModel.buttons}"
             android:padding="2dp"
             android:scaleType="fitCenter"
             android:textAppearance="?attr/textAppearanceHeadline6"
@@ -133,24 +151,25 @@
             android:layout_marginTop="12dp"
             android:background="@android:color/transparent"
             android:onClick="@{() -> fragmentPostureQuestion.exit()}"
+            android:clickable="@{viewModel.buttons}"
             android:src="@drawable/ic_baseline_close_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="SpeakableTextPresentCheck,ContentDescription" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="12dp"
-            android:text="@{@string/posture_count(viewModel.questionPosition , viewModel.posCounter)}"
-            android:textAlignment="center"
-            android:textAppearance="?attr/textAppearanceHeadline4"
-            android:textSize="24sp"
-            android:textStyle="bold"
+            android:text="@{@string/score(viewModel.score.toString())}"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.085"
+            tools:text="SCORE: 204" />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

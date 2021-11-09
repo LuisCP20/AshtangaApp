@@ -63,4 +63,11 @@ class TechniqueMenuFragment : Fragment() {
         return techniques[Random.nextInt(0,techniques.size)]
     }
 
+    fun exit(){
+        val currentMode = sharedViewModel.mainMenu.indexOf(sharedViewModel.mode.value)
+        sharedViewModel.reset()
+        sharedViewModel.setMode(currentMode)
+        findNavController().navigate(R.id.action_techniqueMenuFragment_to_sequenceMenuFragment2)
+    }
+
 }

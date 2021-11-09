@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="fragmentPractice"
+            type="com.example.ashtanga1.ui.main.PracticeFragment" />
+
+        <variable
+            name="viewModel"
+            type="com.example.ashtanga1.ui.main.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/purple_p_light"
+        tools:context=".ui.main.PracticeFragment">
+
+
+        <TextView
+            android:id="@+id/bandhas_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@{viewModel.asana.bandha}"
+            android:textAlignment="center"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            app:layout_constraintEnd_toEndOf="@+id/drishtitextView"
+            app:layout_constraintStart_toStartOf="@+id/drishtitextView"
+            app:layout_constraintTop_toBottomOf="@+id/drishtitextView"
+            tools:text="DOS BANDHAS CON NOMBRES LARGOS" />
+
+        <TextView
+            android:id="@+id/current_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{@string/posture_count(viewModel.sequencePosition, viewModel.seqLength)}"
+            android:textAlignment="center"
+            android:textAppearance="?attr/textAppearanceHeadline4"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/sequenceTextView"
+            app:layout_constraintStart_toStartOf="@+id/sequenceTextView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="25/50" />
+
+        <ImageButton
+            android:id="@+id/previousButton"
+            android:layout_width="108dp"
+            android:layout_height="667dp"
+            android:background="@android:color/transparent"
+            android:hapticFeedbackEnabled="true"
+            android:onClick="@{() -> fragmentPractice.previous()}"
+            android:src="@drawable/ic_baseline_chevron_left_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/nextButton"
+            android:layout_width="108dp"
+            android:layout_height="667dp"
+            android:background="@android:color/transparent"
+            android:hapticFeedbackEnabled="true"
+            android:onClick="@{() -> fragmentPractice.next()}"
+            android:src="@drawable/ic_baseline_chevron_right_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+
+        <ImageView
+            android:id="@+id/postureImageView"
+            android:layout_width="200dp"
+            android:layout_height="350dp"
+            android:layout_marginTop="116dp"
+            app:imageResource="@{viewModel.asana.postureImageResourceId}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription"
+            tools:srcCompat="@drawable/setubandhasana" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:background="@android:color/transparent"
+            android:onClick="@{() -> fragmentPractice.exit()}"
+            android:src="@drawable/ic_baseline_close_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck,ContentDescription" />
+        <TextView
+            android:id="@+id/timer_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:text=""
+            android:textAlignment="center"
+            android:textAppearance="?attr/textAppearanceHeadline4"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:text="52:45"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/sequenceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="36dp"
+            android:text="@{viewModel.asana.sequence}"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toStartOf="@+id/nextButton"
+            app:layout_constraintStart_toEndOf="@+id/previousButton"
+            app:layout_constraintTop_toBottomOf="@+id/current_text_view"
+            tools:text="@string/suryanamaskara_a" />
+
+        <TextView
+            android:id="@+id/nameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="69dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="69dp"
+            android:padding="2dp"
+            android:text="@{viewModel.asana.name}"
+            android:textAlignment="center"
+            android:textAppearance="?attr/textAppearanceHeadline5"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/postureImageView"
+            tools:text="UN nombre de postura bastante largo" />
+
+        <TextView
+            android:id="@+id/drishtitextView"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="69dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="69dp"
+            android:text="@{viewModel.asana.drishti}"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameTextView"
+            tools:text="Drishti: OTRO DRISHTI MUY LARGO" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

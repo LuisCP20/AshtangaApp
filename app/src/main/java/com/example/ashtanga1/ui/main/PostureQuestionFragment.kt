@@ -1,11 +1,13 @@
 package com.example.ashtanga1.ui.main
 
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.ashtanga1.R
@@ -30,7 +32,7 @@ class PostureQuestionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        view.rootView?.setBackgroundResource(defBackg)
         binding?.apply {
             lifecycleOwner = viewLifecycleOwner
             viewModel = sharedViewModel
@@ -39,14 +41,27 @@ class PostureQuestionFragment : Fragment() {
     }
 
     fun checkAnswer(selection: Asana) {
+        val view = view?.rootView
+        val handle = Handler()
+        sharedViewModel.enableButtons(false)
         Log.d("Test", "${selection}, ${sharedViewModel.asana.value}")
         // Comparar nombres deberia funcionar con Drishti y con imagenes
         if (selection.postureImageResourceId == (sharedViewModel.asana.value?.postureImageResourceId)) {
-            sharedViewModel.correctAnswerTechnique()
-            checkLast()
+            view?.setBackgroundResource(rightColor)
+            view?.postDelayed({ view.setBackgroundResource(defBackg) }, delayTime)
+            handle.postDelayed({
+                sharedViewModel.correctAnswerTechnique()
+                checkLast()
+                sharedViewModel.enableButtons(true)
+            }, delayTime)
         } else {
-            sharedViewModel.incorrectAnswerTechnique()
-            checkLast()
+            view?.setBackgroundResource(wrongColor)
+            view?.postDelayed({ view.setBackgroundResource(defBackg) }, delayTime)
+            handle.postDelayed({
+                sharedViewModel.incorrectAnswerTechnique()
+                checkLast()
+                sharedViewModel.enableButtons(true)
+            }, delayTime)
         }
     }
 

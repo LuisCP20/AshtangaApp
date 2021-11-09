@@ -5,26 +5,32 @@
       <map>
         <entry key="..\:/Luis Diego/U/Proyecto_electrico/app/src/main/res/layout/main_fragment.xml" value="0.28252351097178685" />
         <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.31203703703703706" />
-        <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/drawable-v24/roundcorners.xml" value="0.34791666666666665" />
+        <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/drawable-v24/roundcorners.xml" value="0.33" />
+        <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.3203125" />
+        <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/drawable/ic_baseline_chevron_left_24.xml" value="0.3828125" />
+        <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/drawable/ic_baseline_chevron_right_24.xml" value="0.3828125" />
         <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.3828125" />
+        <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/drawable/ic_male_yoga_pose_silhouette_4.xml" value="0.24479166666666666" />
         <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/activity_review.xml" value="0.31875" />
         <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/asana.xml" value="0.14270833333333333" />
-        <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/asana_card.xml" value="0.5" />
+        <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/asana_card.xml" value="0.33" />
         <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/content_scrolling.xml" value="0.31875" />
         <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/fragment_blank.xml" value="0.36666666666666664" />
         <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/fragment_finished.xml" value="0.36666666666666664" />
-        <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/fragment_posture_question.xml" value="0.1" />
+        <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/fragment_posture_question.xml" value="0.33" />
+        <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/fragment_practice.xml" value="0.33" />
         <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/fragment_review.xml" value="0.1" />
         <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/fragment_sequence_change.xml" value="0.31197916666666664" />
         <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/fragment_sequence_menu.xml" value="0.36666666666666664" />
-        <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/fragment_sequence_question.xml" value="0.30808080808080807" />
+        <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/fragment_sequence_question.xml" value="0.33" />
         <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/fragment_technique_menu.xml" value="0.36666666666666664" />
-        <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/fragment_technique_question.xml" value="0.36666666666666664" />
+        <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/fragment_technique_question.xml" value="0.1" />
         <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/list_item.xml" value="0.14270833333333333" />
         <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/main_activity.xml" value="0.36666666666666664" />
-        <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/main_fragment.xml" value="0.32518115942028986" />
+        <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/main_fragment.xml" value="0.34136858475894244" />
         <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/layout/review_activity.xml" value="0.36666666666666664" />
         <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/menu/menu_review.xml" value="0.36666666666666664" />
+        <entry key="..\:/Luis Diego/U/Proyecto_electrico/ashtanga1/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.67" />
       </map>
     </option>
   </component>

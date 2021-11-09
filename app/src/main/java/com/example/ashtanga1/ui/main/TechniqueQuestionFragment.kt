@@ -1,6 +1,7 @@
 package com.example.ashtanga1.ui.main
 
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -18,19 +19,20 @@ class TechniqueQuestionFragment : Fragment() {
     private val sharedViewModel: MainViewModel by activityViewModels()
     private var binding: FragmentTechniqueQuestionBinding? = null
 
+    // TODO: QUE EN MODO DRISHTI NO SALGAN REPETIDAS
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val fragmentBinding = FragmentTechniqueQuestionBinding.inflate(inflater, container,false)
+        val fragmentBinding = FragmentTechniqueQuestionBinding.inflate(inflater, container, false)
         binding = fragmentBinding
         return fragmentBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        view.rootView?.setBackgroundResource(defBackg)
         binding?.apply {
             lifecycleOwner = viewLifecycleOwner
             viewModel = sharedViewModel
@@ -38,51 +40,64 @@ class TechniqueQuestionFragment : Fragment() {
         }
     }
 
-    fun checkAnswer(selection: Asana){
+    fun checkAnswer(selection: Asana) {
+        val view = view?.rootView
+        val handle = Handler()
+        sharedViewModel.enableButtons(false)
         Log.d("Test", "${selection}, ${sharedViewModel.asana.value}")
         // Comparar nombres deberia funcionar con Drishti y con imagenes
-        if(selection.postureImageResourceId == (sharedViewModel.asana.value?.postureImageResourceId)){ // Comparo con imagenes, ya que nombres pueden variar (ABC)
-            sharedViewModel.correctAnswerTechnique()
-            checkLast()
+        if (selection.postureImageResourceId == (sharedViewModel.asana.value?.postureImageResourceId)) { // Comparo con imagenes, ya que nombres pueden variar (ABC)
+            view?.setBackgroundResource(rightColor)
+            view?.postDelayed({ view.setBackgroundResource(defBackg) }, delayTime)
+            handle.postDelayed({
+                sharedViewModel.correctAnswerTechnique()
+                checkLast()
+                sharedViewModel.enableButtons(true)
+            }, delayTime)
+        } else {
+            view?.setBackgroundResource(wrongColor)
+            view?.postDelayed({ view.setBackgroundResource(defBackg) }, delayTime)
+            handle.postDelayed({
+                sharedViewModel.incorrectAnswerTechnique()
+                checkLast()
+                sharedViewModel.enableButtons(true)
+            }, delayTime)
         }
-        else{
-            sharedViewModel.incorrectAnswerTechnique()
-            checkLast()
-        }
-
     }
 
     // Check if current posture was the last one
-    private fun checkLast(){
+    private fun checkLast() {
 
         // Change last question limit depending of mode
         var limit = sharedViewModel.seqLength.value?.plus(1)
-        if(sharedViewModel.combined.value == true){
-            limit = sharedViewModel.seqLength.value}
+        if (sharedViewModel.combined.value == true) {
+            limit = sharedViewModel.seqLength.value
+        }
 
-        if(sharedViewModel.questionPosition.value == limit){
+        if (sharedViewModel.questionPosition.value == limit) {
             sharedViewModel.finalScoreVar = sharedViewModel.finalScoreString()
             findNavController().navigate(R.id.action_techniqueQuestionFragment_to_finishedFragment2)
         } else {
-            if (sharedViewModel.combined.value == true){
+            if (sharedViewModel.combined.value == true) {
                 findNavController().navigate(R.id.action_techniqueQuestionFragment_to_sequenceQuestionFragment)
-            }
-            else if(sharedViewModel.randomT.value == true){
+            } else if (sharedViewModel.randomT.value == true) {
                 val nextTech = randomTechnique()
-                if (nextTech == 3){ findNavController().navigate(R.id.action_techniqueQuestionFragment_to_postureQuestionFragment2) }
+                if (nextTech == 3) {
+                    findNavController().navigate(R.id.action_techniqueQuestionFragment_to_postureQuestionFragment2)
+                }
             }
         }
     }
 
-    private fun randomTechnique() :Int{
-        val techniques = listOf(0,2,3)
-        val selected = techniques[Random.nextInt(0,techniques.size)]
+    private fun randomTechnique(): Int {
+        val techniques = listOf(0, 2, 3)
+        val selected = techniques[Random.nextInt(0, techniques.size)]
         Log.d("RandomTech", "NextQ${selected}")
         sharedViewModel.setTechnique(selected)
         return selected
     }
 
-    fun exit(){
+    fun exit() {
         sharedViewModel.reset()
         findNavController().navigate(R.id.action_techniqueQuestionFragment_to_mainFragment)
 

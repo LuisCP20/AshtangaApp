@@ -45,6 +45,12 @@
         <action
             android:id="@+id/action_sequenceMenuFragment2_to_techniqueQuestionFragment"
             app:destination="@id/techniqueQuestionFragment" />
+        <action
+            android:id="@+id/action_sequenceMenuFragment2_to_practiceFragment"
+            app:destination="@id/practiceFragment" />
+        <action
+            android:id="@+id/action_sequenceMenuFragment2_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/techniqueMenuFragment"
@@ -59,6 +65,9 @@
             app:destination="@id/postureQuestionFragment2" />
         <action
             android:id="@+id/action_techniqueMenuFragment_to_sequenceMenuFragment2"
+            app:destination="@id/sequenceMenuFragment2" />
+        <action
+            android:id="@+id/action_techniqueMenuFragment_to_sequenceMenuFragment22"
             app:destination="@id/sequenceMenuFragment2" />
     </fragment>
     <fragment
@@ -112,5 +121,27 @@
         <action
             android:id="@+id/action_postureQuestionFragment2_to_techniqueQuestionFragment"
             app:destination="@id/techniqueQuestionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/practiceFragment"
+        android:name="com.example.ashtanga1.ui.main.PracticeFragment"
+        android:label="PracticeFragment"
+        tools:layout="@layout/fragment_practice"><![CDATA[>
+        ]]>
+        <action
+            android:id="@+id/action_practiceFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_practiceFragment_to_sequenceMenuFragment2"
+            app:destination="@id/sequenceMenuFragment2"
+            app:popUpTo="@id/sequenceMenuFragment2"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_practiceFragment_to_mainFragment2"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

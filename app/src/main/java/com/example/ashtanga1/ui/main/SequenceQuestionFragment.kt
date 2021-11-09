@@ -1,14 +1,19 @@
 package com.example.ashtanga1.ui.main
 
+import android.graphics.Color
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.example.ashtanga1.R
 import com.example.ashtanga1.databinding.FragmentSequenceQuestionBinding
+import java.util.*
 import kotlin.random.Random
 
 
@@ -17,20 +22,19 @@ class SequenceQuestionFragment : Fragment() {
     private val sharedViewModel: MainViewModel by activityViewModels()
     private var binding: FragmentSequenceQuestionBinding? = null
 
-    // 4 options per asana
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val fragmentBinding = FragmentSequenceQuestionBinding.inflate(inflater, container,false)
+        val fragmentBinding = FragmentSequenceQuestionBinding.inflate(inflater, container, false)
         binding = fragmentBinding
         return fragmentBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        view.rootView?.setBackgroundResource(defBackg)
         binding?.apply {
             lifecycleOwner = viewLifecycleOwner
             viewModel = sharedViewModel
@@ -38,39 +42,57 @@ class SequenceQuestionFragment : Fragment() {
         }
     }
 
-    fun checkAnswer(imageId: Int){
-        if(imageId == sharedViewModel.nextAsana.value?.postureImageResourceId){
-            sharedViewModel.correctAnswer()
-            if(sharedViewModel.questionPosition.value == sharedViewModel.seqLength.value){
-                sharedViewModel.finalScoreVar = sharedViewModel.finalScoreString()
-                findNavController().navigate(com.example.ashtanga1.R.id.action_sequenceQuestionFragment_to_finishedFragment2)
-            } else{
-                if(sharedViewModel.combined.value == true){navigateNextScreen()}
-            }
-        }
-        else{
-            sharedViewModel.incorrectAnswer()
-            if(sharedViewModel.questionPosition.value == sharedViewModel.seqLength.value){
-                sharedViewModel.finalScoreVar = sharedViewModel.finalScoreString()
-                findNavController().navigate(com.example.ashtanga1.R.id.action_sequenceQuestionFragment_to_finishedFragment2)
-            }else{
-                if(sharedViewModel.combined.value == true){navigateNextScreen()}
-            }
+    fun checkAnswer(imageId: Int) {
+        val view = view?.rootView
+        val handle = Handler()
+        // TODO: mejorar colores
+        // TODO: enseñar respuesta
+        sharedViewModel.enableButtons(false) // Disable buttons during background change
+        if (imageId == sharedViewModel.nextAsana.value?.postureImageResourceId) {
+            view?.setBackgroundResource(rightColor)
+            view?.postDelayed({ view.setBackgroundResource(defBackg) }, delayTime)
+            handle.postDelayed({
+                sharedViewModel.correctAnswer()
+                if (sharedViewModel.questionPosition.value == sharedViewModel.seqLength.value) {
+                    sharedViewModel.finalScoreVar = sharedViewModel.finalScoreString()
+                    findNavController().navigate(R.id.action_sequenceQuestionFragment_to_finishedFragment2)
+                } else {
+                    if (sharedViewModel.combined.value == true) {
+                        navigateNextScreen()
+                    }
+                }
+                sharedViewModel.enableButtons(true)
+            }, delayTime)
+        } else {
+            view?.setBackgroundResource(wrongColor)
+            view?.postDelayed({ view.setBackgroundResource(defBackg) }, delayTime)
+            handle.postDelayed({
+                sharedViewModel.incorrectAnswer()
+                if (sharedViewModel.questionPosition.value == sharedViewModel.seqLength.value) {
+                    sharedViewModel.finalScoreVar = sharedViewModel.finalScoreString()
+                    findNavController().navigate(R.id.action_sequenceQuestionFragment_to_finishedFragment2)
+                } else {
+                    if (sharedViewModel.combined.value == true) {
+                        navigateNextScreen()
+                    }
+                }
+                sharedViewModel.enableButtons(true)
+            }, delayTime)
         }
     }
 
 
-    private fun navigateNextScreen(){
-        val techniques = listOf(0,2) // technique 0: Name technique 2: Drishti
-        val selected = techniques[Random.nextInt(0,techniques.size)]
+    private fun navigateNextScreen() {
+        val techniques = listOf(0, 2) // technique 0: Name technique 2: Drishti
+        val selected = techniques[Random.nextInt(0, techniques.size)]
         Log.d("RandomTech", "NextQ${selected}")
         sharedViewModel.setTechnique(selected)
-        findNavController().navigate(com.example.ashtanga1.R.id.action_sequenceQuestionFragment_to_techniqueQuestionFragment)
+        findNavController().navigate(R.id.action_sequenceQuestionFragment_to_techniqueQuestionFragment)
     }
 
-    fun exit(){
+    fun exit() {
         sharedViewModel.reset()
-        findNavController().navigate(com.example.ashtanga1.R.id.action_sequenceQuestionFragment_to_mainFragment)
+        findNavController().navigate(R.id.action_sequenceQuestionFragment_to_mainFragment)
 
     }
 
@@ -78,4 +100,5 @@ class SequenceQuestionFragment : Fragment() {
         super.onDestroyView()
         binding = null
     }
+
 }
