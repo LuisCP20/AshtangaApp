@@ -11,9 +11,10 @@
     <color name="purple_p">#b180b9</color>
     <color name="purple_p_light">#e4b0eb</color>
     <color name="purple_p_dark">#815389</color>
-
     <color name="purple_p_triad">#9580b9</color>
     <color name="red_p_triad">#9e434b</color>
+    <color name="wrong_red">#e53935</color>
+    <color name="right_green">#9ccc65</color>
 
     <color name="green_s">#87b890</color>
     <color name="green_s_light">#b8ecb0</color>

@@ -12,9 +12,6 @@ import com.example.ashtanga1.model.Asana
 import java.util.*
 import kotlin.random.Random
 
-// TODO: Mejorar UI, que todo funcione bien, enseñar score y/o errores
-// TODO: Bug cuando uso el boton de exit mientras esta cambiando el color del fondo para respuesta.
-// TODO: Arreglarlo de una manera que no sea desactivar el boton de exit
 class MainViewModel : ViewModel() {
 
     private val suryaA: List<Asana> = DataSource.suryaA

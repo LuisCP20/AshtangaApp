@@ -322,15 +322,16 @@ object DataSource {
         ),
 
         // TODO: Ver si esta se queda o si le tengo que poner C y a la que sigue D
-        //Asana(
-        //  R.drawable.utthitahastapadangusthasanaa,
-        // "Utthita Hasta Padangusthasana A",
-        // "Padhayoragai Drishti", // TODO: Estar seguro de los drishtis de esta parte (ABCD)
-        //            "Mula Bhanda\nUddiyana Bhanda", "Standing Sequence),
+        Asana(
+          R.drawable.utthitahastapadangusthasanaa,
+         "Utthita Hasta Padangusthasana C",
+         "Padhayoragai Drishti", // TODO: Estar seguro de los drishtis de esta parte (ABCD)
+                    "Mula Bhanda\nUddiyana Bhanda", "Standing Sequence"
+        ),
 
         Asana(
             R.drawable.utthitahastapadangusthasanac,
-            "Utthita Hasta Padangusthasana C",
+            "Utthita Hasta Padangusthasana D",
             "Padhayoragai Drishti",
             "Mula Bhanda\nUddiyana Bhanda", "Standing Sequence"
         ),
@@ -410,7 +411,7 @@ object DataSource {
         ),
 
         Asana(
-            R.drawable.asanad,
+            R.drawable.triangmukhaekapadapasch,
             "Triang Mukhaekapada Paschimottanasana",
             "Padhayoragai Drishti",
             "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"
@@ -439,7 +440,7 @@ object DataSource {
 
         Asana(
             R.drawable.marichyasanaa,
-            "Marichyasana A",
+            "Marichyasana\nA",
             "Padhayoragai Drishti",
             "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"
         ),
@@ -451,6 +452,7 @@ object DataSource {
             "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"
         ),
 
+        // TODO: Nombres no salen completos en modo de fichas
         Asana(
             R.drawable.marichyasanac,
             "Marichyasana C",
@@ -467,13 +469,13 @@ object DataSource {
 
         Asana(
             R.drawable.navasana,
-            "Navasana\n" + "Lolasana",
+            "Navasana Lolasana",
             "Padhayoragai Drishti",
             "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"
         ),
 
         Asana(
-            R.drawable.asanad,
+            R.drawable.bhujapidasanaa,
             "Bhujapidasana A",
             "Nasagrai Drishti",
             "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"
@@ -494,21 +496,21 @@ object DataSource {
         ),
 
         Asana(
-            R.drawable.suptapadangusthasanaa,
+            R.drawable.suptakurmasanaa,
             "Supta Kurmasana A",
             "Broomadhya Drishti",
             "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"
         ),
 
         Asana(
-            R.drawable.suptapadangusthasanab,
+            R.drawable.suptakurmasanab,
             "Supta Kurmasana B",
             "Broomadhya Drishti",
             "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"
         ),
 
         Asana(
-            R.drawable.asanad,
+            R.drawable.garbhapindasana,
             "Garbha Pindasana",
             "Nasagrai Drishti",
             "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"
@@ -557,14 +559,14 @@ object DataSource {
         ),
 
         Asana(
-            R.drawable.asanad,
+            R.drawable.suptakonasanaa,
             "Supta Konasana A",
             "Broomadhya Drishti",
             "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"
         ),
 
         Asana(
-            R.drawable.asanad,
+            R.drawable.upavishtakonasanaa,
             "Supta Konasana B",
             "Nasagrai Drishti",
             "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"
@@ -585,14 +587,16 @@ object DataSource {
         ),
 
         Asana(
-            R.drawable.asanad,
+            R.drawable.suptapadangusthasanaa,
             "Supta Padangusthasana C",
             "Padhayoragai Drishti",
             "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"
         ),
 
+        // TODO: Esta postura es diferente a Urdhva MukhaPaschimottanasana A pero con
+        // los dibujos vectoriales es muy difícil marcar la diferencia
         Asana(
-            R.drawable.asanad,
+            R.drawable.urdhvamukhapaschimottanasanaa,
             "Ubhaya Padangusthasana A",
             "Broomadhya Drishti",
             "Mula Bhanda\nUddiyana Bhanda", "Sitting Sequence"
@@ -699,28 +703,28 @@ object DataSource {
         ),
 
         Asana(
-            R.drawable.asanad,
+            R.drawable.ardhasirasana,
             "Ardha Sirsasana",
             "Nasagrai Drishti",
             "Mula Bhanda\nUddiyana Bhanda", "Finishing Sequence"
         ),
         // https://www.ashtangayoga.info/ashtanga-yoga/cheat-sheets-pdf/ drishti de balasana
         Asana(
-            R.drawable.asanad,
+            R.drawable.balasana,
             "Balasana",
             "Nasagrai Drishti",
             "Mula Bhanda\nUddiyana Bhanda", "Finishing Sequence"
         ),
 
         Asana(
-            R.drawable.asanad,
+            R.drawable.baddhapadmasana,
             "Baddha Padmasana",
             "Nasagrai Drishti",
             "Mula Bhanda\nUddiyana Bhanda", "Finishing Sequence"
         ),
 
         Asana(
-            R.drawable.asanad,
+            R.drawable.yogamudra,
             "Yoga Mudra",
             "Broomadhya Drishti",
             "Mula Bhanda\nUddiyana Bhanda", "Finishing Sequence"
