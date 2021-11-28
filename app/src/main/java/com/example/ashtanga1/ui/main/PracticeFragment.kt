@@ -10,6 +10,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.ashtanga1.R
 import com.example.ashtanga1.databinding.FragmentPracticeBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import android.content.Intent
+import android.net.Uri
+
 
 class PracticeFragment : Fragment() {
 
@@ -54,8 +57,17 @@ class PracticeFragment : Fragment() {
 
     }
 
+    fun help(){
+        val posture = sharedViewModel.asana.value?.name
+        val prefix = "https://images.google.com/images?q="
+        //val helpertext = " posture"
+        var queryUrl: Uri = Uri.parse("${prefix}${posture}")
+        //queryUrl = Uri.parse("${queryUrl}${helpertext}")
+        val browserIntent = Intent(Intent.ACTION_VIEW, queryUrl)
+        startActivity(browserIntent)
+    }
     private fun checkLast() {
-        // TODO: CAMBIAR POR MENSAJE PARA REVISAR SI QUIERE SALIR
+
         if (sharedViewModel.questionPosition.value == sharedViewModel.seqLength.value?.plus(1)) {
             sharedViewModel.back() // So counter doesn't go higher than sequence size
             MaterialAlertDialogBuilder(requireContext())
